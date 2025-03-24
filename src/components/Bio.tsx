@@ -20,13 +20,15 @@ export default function Bio() {
         </Avatar>
         <Divider type="DOUBLE" />
         <div className={styles.content}>
-          Thank you for visiting my personal website.
-          I am a software developer with a passion for building user-friendly applications.
-          I enjoy working with modern web technologies and continuously learning new skills
-          to improve my craft. I have been building linux applications for the past 5 years
-          since moving entirely over to it. I enjoy building things I can actually use in my
-          daily life.
+          I am a 28 year old Software Developer from the FL. I have been building desktop applications since I was 16,
+          and have since dabbled in web development, game development, AI, microcontrollers and mobile applications.
+          Currently, I am working on a few personal projects, including an multi-platform outfit planner, and some rust based desktop applications.
+          Fashion is also big part of my life, and I love to express myself through the clothing i wear or the clothes I make.
+          Education is a continuos journey for me, and I am always looking to learn new things, whether it be a new programming language, a new paradigm, or a new skill.
         </div>
+        <br />
+        <br />
+        Simply sympil.
       </CardDouble>
     </div>
   )
