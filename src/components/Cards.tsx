@@ -1,6 +1,6 @@
 import { Card } from "../common/types";
 import { ButtonCards } from "./ButtonCards";
-import styles from './Links.module.scss';
+import styles from './Cards.module.scss';
 import { motion } from 'framer-motion';
 
 export default function Cards({ cards }: { cards: Card[] }) {

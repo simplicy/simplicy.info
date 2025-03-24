@@ -20,6 +20,7 @@ export default function ButtonCard({
             <div className={styles.title}>
               {obj.name}
             </div>
+            {obj.description && obj.description}
           </span>
         </div>
       </AlertBanner>

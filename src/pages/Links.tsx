@@ -1,9 +1,26 @@
-import { Card } from "../common/types";
-import { ButtonCards } from "./ButtonCards";
+import { ButtonCards } from "../components/ButtonCards";
 import styles from './Links.module.scss';
 import { motion } from 'framer-motion';
 
-export default function Links({ links }: { links: Card[] }) {
+export default function Links() {
+  let links = [
+    {
+      name: "Closyt.com",
+      onClick: () => {
+        window.open("https://closyt.com", "_blank");
+      },
+      description: "Digital Outfit Planner",
+      enabled: true
+    },
+    {
+      name: "Sympil.com",
+      onClick: () => {
+        window.open("https://sympil.com", "_blank");
+      },
+      description: "Personal Blog",
+      enabled: true
+    },
+  ];
   return (
     <>
       <motion.div

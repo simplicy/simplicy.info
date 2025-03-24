@@ -2,26 +2,12 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 import styles from './Home.module.scss';
 import { motion } from 'framer-motion';
-import Bio from '../components/Bio';
+import Biography from '../components/Biography';
 import { Card } from '../common/types';
-import { useContext } from '../components/page/Context';
-import Links from '../components/Links';
 import Cards from '../components/Cards';
-import Resume from '../components/Resume';
-import Portfolio from '../components/Portfolio';
 
 function Home() {
   const navigate = useNavigate();
-  const {
-    view,
-    setView,
-    mobile,
-  } = useContext() as {
-    view: string;
-    setView: (view: string) => void;
-    mobile: boolean;
-  }
-
   //verify cookie expiry and format
   useEffect(() => {
   }, [navigate]);
@@ -29,67 +15,36 @@ function Home() {
   let cards: Card[] = [
     {
       name: "Bio",
-      onClick: () => { setView("bio") },
+      onClick: () => { navigate("bio"); },
       styles: styles.mobile,
       enabled: true,
     },
     {
-      name: "My Links",
-      onClick: () => { setView("links") },
+      name: "Links",
+      onClick: () => { navigate("links") },
       styles: null,
       enabled: true,
     },
     {
       name: "Portfolio",
-      onClick: () => { setView("portfolio"); },
+      onClick: () => { navigate("portfolio"); },
       styles: null,
       enabled: true,
     },
     {
       name: "Work",
-      onClick: () => { setView("resume"); },
+      onClick: () => { navigate("work"); },
+      styles: null,
+      enabled: true,
+    },
+    {
+      name: "Contact",
+      onClick: () => { navigate("contact-me"); },
       styles: null,
       enabled: true,
     }
   ];
 
-  let links = [
-    {
-      name: "GitHub",
-      onClick: () => {
-        window.open("https://GitHub.com/simplicy", "_blank");
-      },
-      enabled: true
-    }
-  ];
-
-  useEffect(() => {
-  }, [mobile]);
-
-  const Switcher = () => {
-    switch (view) {
-      case "bio":
-        return (
-          <Bio />
-        );
-      case "links":
-        return (
-          <Links links={links} />
-        );
-      case "resume":
-        return (
-          <Resume />
-        );
-      case "portfolio":
-        return (
-          <Portfolio />
-        );
-      default:
-        return (
-          <Cards cards={cards} />
-        );
-    }
-  }
 
   return (
     <motion.div
@@ -108,10 +63,10 @@ function Home() {
       <div className={styles.root}>
         {/* Might change later */}
         <div className={styles.desktop}>
-          <Bio />
+          <Biography />
         </div>
         <div className={styles.switcher}>
-          <Switcher />
+          <Cards cards={cards} />
         </div>
       </div>
     </motion.div>

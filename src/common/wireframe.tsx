@@ -22,8 +22,8 @@ function Wireframe() {
         <Row
           style={{
             display: "flex",
-            width: '100%',
-            padding: "3ch 0 1ch 0",
+            width: "100%",
+            height: "100%",
             marginLeft: "var(--sidebar-margins)",
             marginRight: "var(--sidebar-margins)",
             flexDirection: 'column',

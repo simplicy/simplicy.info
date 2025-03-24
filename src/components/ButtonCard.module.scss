@@ -1,9 +1,11 @@
 .root {
-  min-width: 13.75ch;
+  max-width: 25.75ch;
+  min-width: 25.75ch;
   position: relative;
   display: flex;
   flex-direction: column;
   padding: 0;
+  align-items: center;
   margin: 0;
   border-radius: var(--theme-border-radius);
   box-shadow: var(--theme-box-shadow);
@@ -27,6 +29,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: 600;
+  text-align: center;
   font-size: var(--font-size);
   font-family: var(--font-family-mono);
   text-transform: uppercase;

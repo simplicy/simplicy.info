@@ -2,13 +2,10 @@
   padding: 1ch 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 2ch;
   width: 100%;
   height: 100%;
-  @media (max-width: 768px) {
-    align-items: center;
-  }
 }
 
 
