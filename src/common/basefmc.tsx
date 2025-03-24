@@ -1,8 +1,4 @@
 import { toast } from "react-toastify";
-import Cookies from 'js-cookie';
-import { closytUserFmc } from "./models";
-import { useNavigate } from "react-router-dom";
-import { useAuth0 } from "@auth0/auth0-react";
 
 export interface ModelMutateResultData { id: string, }
 
@@ -10,23 +6,7 @@ export class BaseFmc<M, C, U> {
   #cmd_suffix: string
   auth0token: string = "";
   get cmd_suffix() { return this.#cmd_suffix; }
-  handleLogout: () => void = async () => {
-    const navigate = useNavigate();
-    const { logout, getAccessTokenSilently } = useAuth0();
-    let token = await getAccessTokenSilently();
-    await closytUserFmc.logout(token).then(() => {
-      Cookies.remove('loggedin');
-      // if not home navigate to home
-      if (window.location.pathname !== '/') {
-        navigate('/');
-      }
-      logout({
-        logoutParams: {
-          returnTo: window.location.origin,
-        },
-      });
-    });
-  };
+  ;
 
   constructor(cmd_suffix: string) {
     this.#cmd_suffix = cmd_suffix;
@@ -50,7 +30,6 @@ export class BaseFmc<M, C, U> {
       }
     }).catch((error) => {
       toast.error("Error Ocurred:" + error.message)
-      this.handleLogout();
       console.error('Error:', error);
       return false;
     });
@@ -100,7 +79,6 @@ export class BaseFmc<M, C, U> {
       }
     }).catch((error) => {
       toast.error("Error Ocurred:" + error.message)
-      this.handleLogout();
       console.error('Error:', error);
       return false;
     });
@@ -128,7 +106,6 @@ export class BaseFmc<M, C, U> {
       }
     }).catch((error) => {
       toast.error("Error Ocurred:" + error.message)
-      this.handleLogout();
       console.error('Error:', error);
       return false;
     });
@@ -156,7 +133,6 @@ export class BaseFmc<M, C, U> {
       }
     }).catch((error) => {
       toast.error("Error Ocurred:" + error.message)
-      this.handleLogout();
       console.error('Error:', error);
       return false;
     });
@@ -184,7 +160,6 @@ export class BaseFmc<M, C, U> {
       }
     }).catch((error) => {
       toast.error("Error Ocurred:" + error.message)
-      this.handleLogout();
       console.error('Error:', error);
       return false;
     });
@@ -213,7 +188,6 @@ export class BaseFmc<M, C, U> {
       else {
         toast.error("Error Ocurred:" + error.message)
       }
-      this.handleLogout();
       console.error('Error:', error);
       return false;
     });
@@ -236,7 +210,6 @@ export class BaseFmc<M, C, U> {
         return Promise.resolve(res);
       }).catch((error) => {
         toast.error("Error Ocurred:" + error.message)
-        this.handleLogout();
         console.error('Error:', error);
         return error;
       });
@@ -258,7 +231,6 @@ export class BaseFmc<M, C, U> {
       })
       .catch((error) => {
         toast.error("Error Ocurred:" + error.message)
-        this.handleLogout();
         console.error('Error:', error);
         return "";
       });
@@ -281,7 +253,6 @@ export class BaseFmc<M, C, U> {
       }
     }).catch((error) => {
       toast.error("Error Ocurred:" + error.message)
-      this.handleLogout();
       console.error('Error:', error);
       return false;
     });
