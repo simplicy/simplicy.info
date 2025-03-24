@@ -24,10 +24,10 @@ const ButtonGroup = (props: any) => {
             </DropdownMenuTrigger>
           );
         }
-
+        let random = Math.random();
         return (
-          <ActionButton key={each.body} icon={each.icon} onClick={each.onClick} hotkey={each.hotkey} isSelected={each.selected}>
-            {each.body}
+          <ActionButton key={random} icon={each.icon} onClick={each.onClick} hotkey={each.hotkey} isSelected={each.selected}>
+            {each.body ? null : each.body}
           </ActionButton>
         );
       })}

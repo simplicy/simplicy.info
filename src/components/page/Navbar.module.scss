@@ -38,3 +38,10 @@
   height: calc(var(--font-size) * var(--theme-line-height-base));
   vertical-align: bottom;
 }
+
+.mobile {
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}

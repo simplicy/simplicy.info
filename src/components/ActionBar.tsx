@@ -4,9 +4,11 @@ import styles from './ActionBar.module.scss';
 
 import * as React from 'react';
 import * as Utilities from '../common/utilities';
-import Hanger from "../assets/clothes-hanger.svg";
-import Outfit from "../assets/outfit.svg";
-import Tags from "../assets/tags.svg";
+
+import Insta from "../assets/insta.svg";
+import XLogo from "../assets/x.svg";
+import LinkedIn from "../assets/linkedin.svg";
+import Github from "../assets/github.svg";
 
 
 import { useHotkeys } from '../common/hotkeys';
@@ -68,26 +70,25 @@ const ClosytActionBar: React.FC<ClosytActionBarProps> = () => {
       <ActionBar
         items={[
           {
-            icon: Hanger,
-            body: 'X',
-            selected: window.location.pathname === "/items",
+            icon: XLogo,
             openHotkey: 'ctrl+i',
             onClick: () => { window.open("https://x.com/simplicy_", "_blank") }
           },
           {
-            body: 'Github',
-            icon: Tags,
-            selected: window.location.pathname === "/tags",
+            icon: Github,
             openHotkey: 'ctrl+t',
             onClick: () => { window.open("https://github.com/simplicy", "_blank") }
           },
           {
-            body: 'Instagram',
-            icon: Outfit,
-            selected: window.location.pathname === "/outfits",
+            icon: Insta,
             openHotkey: 'ctrl+o',
             onClick: () => { window.open("https://instagram.com/simplicy_", "_blank") },
           },
+          {
+            icon: LinkedIn,
+            openHotkey: 'ctrl+o',
+            onClick: () => { window.open("https://linkedin.com/in/sean-p-hopkins", "_blank") },
+          }
         ]}
       />
     </div>

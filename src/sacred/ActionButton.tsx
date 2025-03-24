@@ -21,9 +21,11 @@ const ActionButton = React.forwardRef<HTMLDivElement, ActionButtonProps>(({ onCl
     <div className={Utilities.classNames(styles.root, rootStyle, isSelected ? styles.selected : null)} onClick={onClick} tabIndex={0} ref={ref} role="button">
       {Utilities.isEmpty(hotkey) ? null : <span className={styles.hotkey}>{hotkey}</span>}
       {Utilities.isEmpty(icon) ? null : <span className={classNames}> <img src={icon} className={classNames} /></span>}
-      <span className={cn} style={style}>
-        {children}
-      </span>
+      {!children ? null :
+        <span className={cn} style={style}>
+          {children}
+        </span>
+      }
     </div>
   );
 });

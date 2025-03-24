@@ -8,6 +8,7 @@ import { useContext } from '../components/page/Context';
 import Links from '../components/Links';
 import Cards from '../components/Cards';
 import Resume from '../components/Resume';
+import Portfolio from '../components/Portfolio';
 
 function Home() {
   const navigate = useNavigate();
@@ -25,8 +26,6 @@ function Home() {
   useEffect(() => {
   }, [navigate]);
 
-
-
   let cards: Card[] = [
     {
       name: "Bio",
@@ -42,12 +41,12 @@ function Home() {
     },
     {
       name: "Portfolio",
-      onClick: () => { console.log("Card 3 clicked"); },
+      onClick: () => { setView("portfolio"); },
       styles: null,
       enabled: true,
     },
     {
-      name: "Resume",
+      name: "Work",
       onClick: () => { setView("resume"); },
       styles: null,
       enabled: true,
@@ -81,6 +80,10 @@ function Home() {
         return (
           <Resume />
         );
+      case "portfolio":
+        return (
+          <Portfolio />
+        );
       default:
         return (
           <Cards cards={cards} />
@@ -107,7 +110,9 @@ function Home() {
         <div className={styles.desktop}>
           <Bio />
         </div>
-        <Switcher />
+        <div className={styles.switcher}>
+          <Switcher />
+        </div>
       </div>
     </motion.div>
   );

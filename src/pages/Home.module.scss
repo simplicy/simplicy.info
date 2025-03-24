@@ -2,10 +2,18 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
   gap: 2ch;
   width: 100%;
   height: 100%;
+  @media (max-width: 768px) {
+    align-items: center;
+  }
+}
+.switcher {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 2ch;
 }
 
 .content{
