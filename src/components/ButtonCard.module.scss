@@ -1,0 +1,31 @@
+.root {
+  width:  13.75ch;
+  min-width: 13.75ch;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  border-radius: var(--theme-border-radius);
+  box-shadow: var(--theme-box-shadow);
+}
+
+.box {
+  overflow: hidden;
+}
+
+.size {
+  padding: 0 0.5ch;
+  background: var(--theme-background-modal-footer);
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  font-size: var(--font-size);
+  font-family: var(--font-family-mono);
+  text-transform: uppercase;
+}

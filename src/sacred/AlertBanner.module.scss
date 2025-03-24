@@ -1,0 +1,25 @@
+.root {
+  display: block;
+  background: var(--theme-border);
+  box-shadow: 1ch 1ch 0 0 var(--theme-border-subdued);
+  // padding: calc(var(--font-size) * var(--theme-line-height-base)) 1ch calc(var(--font-size) * var(--theme-line-height-base)) 1ch;
+  padding: 1ch;
+  font-weight: 400;
+  
+  &:hover {
+    box-shadow: 1ch 1ch 0 0 var(--theme-focused-foreground-subdued);
+  }
+
+
+  &:focus  {
+    box-shadow: 1ch 1ch 0 0 var(--theme-focused-foreground-subdued);
+  }
+}
+
+.onClick {
+  cursor: pointer;
+}
+
+.selected {
+  box-shadow: 1ch 1ch 0 0 var(--theme-focused-foreground) !important;
+}

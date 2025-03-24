@@ -1,0 +1,35 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY package.json .
+
+COPY yarn.lock .
+
+RUN yarn install
+
+RUN yarn global add serve
+
+RUN yarn global add typescript
+
+COPY . .
+
+ARG VITE_AUTH0_DOMAIN
+ARG VITE_AUTH0_CLIENT_ID
+ARG VITE_AUTH0_CALLBACK_URL
+ARG VITE_AUTH0_AUDIENCE
+
+ENV VITE_AUTH0_DOMAIN="closyt.us.auth0.com"
+ENV VITE_AUTH0_CLIENT_ID="N3DB0jDXJGdePAGyjswXBwcBzWKrAHXY"
+ENV VITE_AUTH0_CALLBACK_URL="https://closyt.com"
+ENV VITE_AUTH0_AUDIENCE="https://closyt.com/"
+#
+# ENV VITE_AUTH0_DOMAIN ${VITE_AUTH0_DOMAIN}
+# ENV VITE_AUTH0_CLIENT_ID ${VITE_AUTH0_CLIENT_ID}
+# ENV VITE_AUTH0_CALLBACK_URL ${VITE_AUTH0_CALLBACK_URL}
+# ENV VITE_AUTH0_AUDIENCE ${VITE_AUTH0_AUDIENCE}
+
+#
+RUN yarn build
+
+CMD [ "serve", "-s", "dist" ]

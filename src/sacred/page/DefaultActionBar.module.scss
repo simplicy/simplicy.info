@@ -1,0 +1,8 @@
+.root {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-left: var(--sidebar-margins);
+  margin-right: var(--sidebar-margins);
+  z-index: 1;
+}
