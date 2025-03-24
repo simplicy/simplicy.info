@@ -3,11 +3,12 @@
 import AlertBanner from '../sacred/AlertBanner';
 import styles from './ButtonCard.module.scss';
 
-export default function ButtonCard({ obj, onClick, index }: { obj: any, onClick?: () => void, index: number }) {
+export default function ButtonCard({
+  obj, onClick, index, styles: advStyle }: { obj: any, onClick?: () => void, index: number, styles: string | null }) {
   return (
-    <>
+    <div className={advStyle ? advStyle : ''}>
       <AlertBanner
-        key={obj.id + index}
+        key={obj.name + index}
         onClick={() => {
           if (onClick) {
             onClick();
@@ -22,7 +23,7 @@ export default function ButtonCard({ obj, onClick, index }: { obj: any, onClick?
           </span>
         </div>
       </AlertBanner>
-    </>
+    </div>
   );
 }
 

@@ -6,7 +6,6 @@ import * as React from 'react';
 import * as Utilities from '../common/utilities';
 import Hanger from "../assets/clothes-hanger.svg";
 import Outfit from "../assets/outfit.svg";
-import Calendar from "../assets/calendar.svg";
 import Tags from "../assets/tags.svg";
 
 
@@ -14,7 +13,6 @@ import { useHotkeys } from '../common/hotkeys';
 
 
 import ActionBar from '../sacred/ActionBar';
-import { useNavigate } from 'react-router';
 
 export const useGlobalNavigationHotkeys = () => {
   const onHandleSubmit = (event: KeyboardEvent) => {
@@ -62,9 +60,6 @@ export const useGlobalNavigationHotkeys = () => {
 interface ClosytActionBarProps { }
 
 const ClosytActionBar: React.FC<ClosytActionBarProps> = () => {
-  let navigate = useNavigate();
-  React.useEffect(() => {
-  }, []);
 
   useGlobalNavigationHotkeys();
 
@@ -74,31 +69,24 @@ const ClosytActionBar: React.FC<ClosytActionBarProps> = () => {
         items={[
           {
             icon: Hanger,
-            body: 'ITEMS',
+            body: 'X',
             selected: window.location.pathname === "/items",
             openHotkey: 'ctrl+i',
-            onClick: () => { navigate("/items") },
+            onClick: () => { window.open("https://x.com/simplicy_", "_blank") }
           },
           {
-            body: 'TAGS',
+            body: 'Github',
             icon: Tags,
             selected: window.location.pathname === "/tags",
             openHotkey: 'ctrl+t',
-            onClick: () => { navigate("/tags") },
+            onClick: () => { window.open("https://github.com/simplicy", "_blank") }
           },
           {
-            body: 'OUTFITS',
+            body: 'Instagram',
             icon: Outfit,
             selected: window.location.pathname === "/outfits",
             openHotkey: 'ctrl+o',
-            onClick: () => { navigate("/outfits") },
-          },
-          {
-            body: 'CALENDAR',
-            icon: Calendar,
-            selected: window.location.pathname === "/calendar",
-            openHotkey: 'ctrl+i',
-            onClick: () => { navigate("/calendar") },
+            onClick: () => { window.open("https://instagram.com/simplicy_", "_blank") },
           },
         ]}
       />

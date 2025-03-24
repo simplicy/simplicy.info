@@ -14,9 +14,13 @@ export default function Navbar() {
     <div className={styles.root}>
       {/* Navbar content goes here */}
 
-      <h1>
-        {Package.name.toUpperCase()}
-      </h1>
+      <div className={styles.title}>
+        <h1>
+          {Package.name.toUpperCase()}
+        </h1>
+
+        <span className={styles.blink}></span>
+      </div>
       {view !== "" &&
         <ActionButton onClick={() => { setView("") }}>
           Back

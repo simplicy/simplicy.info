@@ -15,7 +15,7 @@ export function ButtonCards({ cards }: CardsProps) {
         return null;
       }
       return (
-        <ButtonCard obj={item} key={item.id} onClick={item.onClick ? item.onClick : empty} index={index} />
+        <ButtonCard obj={item} key={item.name + index} styles={item.styles} onClick={item.onClick ? item.onClick : empty} index={index} />
       )
     })
   }

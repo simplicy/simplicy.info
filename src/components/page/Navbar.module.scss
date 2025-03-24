@@ -14,3 +14,27 @@
     align-items: center !important;
   }
 }
+
+.title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: var(--font-size);
+  font-weight: var(--theme-font-weight-bold);
+  color: var(--theme-text);
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.blink {
+  animation: blink 1s step-start 0s infinite;
+  display: inline-block;
+  min-width: 1ch;
+  background: var(--theme-text);
+  height: calc(var(--font-size) * var(--theme-line-height-base));
+  vertical-align: bottom;
+}

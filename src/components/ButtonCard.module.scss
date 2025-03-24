@@ -1,5 +1,4 @@
 .root {
-  width:  13.75ch;
   min-width: 13.75ch;
   position: relative;
   display: flex;
@@ -8,6 +7,9 @@
   margin: 0;
   border-radius: var(--theme-border-radius);
   box-shadow: var(--theme-box-shadow);
+  @media (max-width: 768px) {
+    min-width: 10ch;
+  }
 }
 
 .box {

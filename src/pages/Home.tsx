@@ -7,6 +7,7 @@ import { Card } from '../common/types';
 import { useContext } from '../components/page/Context';
 import Links from '../components/Links';
 import Cards from '../components/Cards';
+import Resume from '../components/Resume';
 
 function Home() {
   const navigate = useNavigate();
@@ -28,28 +29,33 @@ function Home() {
 
   let cards: Card[] = [
     {
-      id: "1",
       name: "Bio",
       onClick: () => { setView("bio") },
-      enabled: mobile,
+      styles: styles.mobile,
+      enabled: true,
     },
     {
-      id: "2",
-      name: "Links",
+      name: "My Links",
       onClick: () => { setView("links") },
-      enabled: true
+      styles: null,
+      enabled: true,
     },
     {
-      id: "3",
       name: "Portfolio",
       onClick: () => { console.log("Card 3 clicked"); },
-      enabled: true
+      styles: null,
+      enabled: true,
+    },
+    {
+      name: "Resume",
+      onClick: () => { setView("resume"); },
+      styles: null,
+      enabled: true,
     }
   ];
 
   let links = [
     {
-      id: "1",
       name: "GitHub",
       onClick: () => {
         window.open("https://GitHub.com/simplicy", "_blank");
@@ -70,6 +76,10 @@ function Home() {
       case "links":
         return (
           <Links links={links} />
+        );
+      case "resume":
+        return (
+          <Resume />
         );
       default:
         return (
@@ -94,9 +104,9 @@ function Home() {
     >
       <div className={styles.root}>
         {/* Might change later */}
-        {!mobile && view !== "bio" &&
+        <div className={styles.desktop}>
           <Bio />
-        }
+        </div>
         <Switcher />
       </div>
     </motion.div>

@@ -18,3 +18,18 @@
   height: 100%;
 }
 
+.desktop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+.mobile {
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
