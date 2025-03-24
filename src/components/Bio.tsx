@@ -24,7 +24,7 @@ export default function Bio() {
           and have since dabbled in web development, IT management, devops, game development, AI, microcontrollers and mobile applications.
           Currently, I am working on a few personal projects, including an multi-platform outfit planner, and some rust based desktop applications.
           Fashion is also big part of my life, and I love to express myself through the clothing i wear or the clothes I make.
-          Education is a continuos journey for me, and I am always looking to learn new things, whether it be a new programming language, a new paradigm, or a new skill.
+          Education is a continuous journey for me, and I am always looking to learn new things, whether it be a new programming language, a new paradigm, or a new skill.
         </div>
         <br />
         <br />
