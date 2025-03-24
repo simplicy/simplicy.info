@@ -17,6 +17,6 @@
   overflow-Y: auto;
   @media (max-width: 768px) {
     align-items: flex-start;
-    max-height: calc(100vh - 10ch);
+    max-height: calc(100vh - 20ch);
   }
 }
