@@ -57,7 +57,7 @@
 }
 
 .quote {
-  font-size: var(--font-size);
+  font-size: calc(var(--font-size)*.9);
   align-items: center;
   justify-content: center;
   height: 100%;

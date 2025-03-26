@@ -81,7 +81,7 @@ function Home() {
           alignContent: "center",
         }}
         initial={{ opacity: 1, }}
-        animate={{ opacity: 0, display: "none" }}
+        //animate={{ opacity: 0, display: "none" }}
         transition={{
           delay: delay - 1,
           duration: 0.5,
@@ -91,29 +91,29 @@ function Home() {
         <Calendar />
       </motion.div>
 
-      <motion.div
-        layout
-        style={{
-          height: "100%",
-          width: "100%",
-        }}
-        initial={{ opacity: 0, }}
-        animate={{ opacity: 1, }}
-        transition={{
-          delay: delay,
-          duration: 0.5,
-          ease: "easeInOut",
-        }}
-      >
-        <div className={styles.root}>
-          <div className={styles.desktop}>
-            <Biography />
-          </div>
-          <div className={styles.switcher}>
-            <Cards cards={cards} />
-          </div>
-        </div>
-      </motion.div>
+      {/* <motion.div */}
+      {/*   layout */}
+      {/*   style={{ */}
+      {/*     height: "100%", */}
+      {/*     width: "100%", */}
+      {/*   }} */}
+      {/*   initial={{ opacity: 0, }} */}
+      {/*   animate={{ opacity: 1, }} */}
+      {/*   transition={{ */}
+      {/*     delay: delay, */}
+      {/*     duration: 0.5, */}
+      {/*     ease: "easeInOut", */}
+      {/*   }} */}
+      {/* > */}
+      {/*   <div className={styles.root}> */}
+      {/*     <div className={styles.desktop}> */}
+      {/*       <Biography /> */}
+      {/*     </div> */}
+      {/*     <div className={styles.switcher}> */}
+      {/*       <Cards cards={cards} /> */}
+      {/*     </div> */}
+      {/*   </div> */}
+      {/* </motion.div> */}
     </motion.div>
   );
 }
