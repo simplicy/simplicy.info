@@ -5,8 +5,13 @@ import { motion } from 'framer-motion';
 import Biography from '../components/Biography';
 import { Card } from '../common/types';
 import Cards from '../components/Cards';
+import Calendar from '../components/Calendar';
+import { useContext } from '../components/page/Context';
 
 function Home() {
+  const { delay } = useContext() as {
+    delay: number,
+  }
   const navigate = useNavigate();
   //verify cookie expiry and format
   useEffect(() => {
@@ -60,15 +65,48 @@ function Home() {
         ease: "easeInOut",
       }}
     >
-      <div className={styles.root}>
-        {/* Might change later */}
-        <div className={styles.desktop}>
-          <Biography />
+      <motion.div
+        layout
+        style={{
+          display: "flex",
+          width: "100%",
+          height: "100%",
+          alignContent: "center",
+        }}
+        initial={{ opacity: 1, }}
+        animate={{ opacity: 0, display: "none" }}
+        transition={{
+          delay: delay - 1,
+          duration: 0.5,
+          ease: "easeInOut",
+        }}
+      >
+        <Calendar />
+      </motion.div>
+
+      <motion.div
+        layout
+        style={{
+          height: "100%",
+          width: "100%",
+        }}
+        initial={{ opacity: 0, }}
+        animate={{ opacity: 1, }}
+        transition={{
+          delay: delay,
+          duration: 0.5,
+          ease: "easeInOut",
+        }}
+      >
+        <div className={styles.root}>
+          <div className={styles.desktop}>
+            <Biography />
+          </div>
+          <div className={styles.switcher}>
+            <Cards cards={cards} />
+          </div>
         </div>
-        <div className={styles.switcher}>
-          <Cards cards={cards} />
-        </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }

@@ -8,11 +8,15 @@ import { useEffect } from 'react';
 interface ContextType {
   themes: any;
   fonts: any;
+  currentMonth: number;
+  delay: number;
 }
 
 const Context = React.createContext<ContextType | null>(null);
 
 export const Provider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  let currentMonth = new Date().getMonth();
+  let delay = currentMonth + 6.5;
   const navigate = useNavigate();
   if (Cookies.get("theme")) {
     let index = themes.findIndex((theme) => theme.children === Cookies.get("theme"));
@@ -37,6 +41,8 @@ export const Provider: React.FC<{ children: React.ReactNode }> = ({ children }) 
     <Context.Provider value={{
       themes,
       fonts,
+      currentMonth,
+      delay
     }}>
       {children}
     </Context.Provider>
