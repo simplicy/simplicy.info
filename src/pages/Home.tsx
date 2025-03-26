@@ -7,6 +7,7 @@ import { Card } from '../common/types';
 import Cards from '../components/Cards';
 import Calendar from '../components/Calendar';
 import { useContext } from '../components/page/Context';
+import Cookies from "js-cookie";
 
 function Home() {
   const { delay } = useContext() as {
@@ -49,6 +50,12 @@ function Home() {
       enabled: true,
     }
   ];
+  useEffect(() => {
+    // On first load of the hour add cookie. If cookie exists, skip animation
+    if (!Cookies.get("intro")) {
+      Cookies.set("intro", "true", { expires: 1 / 48 });
+    }
+  }, []);
 
 
   return (
