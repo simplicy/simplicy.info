@@ -21,7 +21,7 @@ export default function Navbar() {
       </div>
     );
   }
-  if (window.location.pathname === "/") {
+  if (window.location.pathname === "/" && delay > 0) {
     return (
       <motion.div
         layout
