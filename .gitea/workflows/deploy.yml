@@ -24,4 +24,4 @@ jobs:
           VITE_API_URL: ${{vars.VITE_API_URL}}
         with:
           push: true
-          tags: ${{vars.HOST}}/${{ vars.OWNER }}/${{ vars.REPO }}:stable
+          tags: ${{vars.HOST}}/${{ vars.OWNER }}/simplicy.info:stable
