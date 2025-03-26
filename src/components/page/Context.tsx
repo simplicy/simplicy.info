@@ -16,7 +16,7 @@ const Context = React.createContext<ContextType | null>(null);
 
 export const Provider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   let currentMonth = new Date().getMonth();
-  let delay = currentMonth + 6.5;
+  let delay = currentMonth + 7;
   const navigate = useNavigate();
   if (Cookies.get("theme")) {
     let index = themes.findIndex((theme) => theme.children === Cookies.get("theme"));
