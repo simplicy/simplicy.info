@@ -6,17 +6,32 @@ export default function Quote() {
     currentMonth: number,
   }
   return (
-    <div style={{
-      position: "relative",
-      margin: "auto",
-    }}>
+    <motion.div
+      layout
+      style={{
+        display: "none",
+        flexDirection: "column",
+        width: "100%",
+        height: "100%",
+        justifyContent: "center",
+        alignContent: "center",
+      }}
+      initial={{ opacity: 0, }}
+      animate={{ opacity: 1, display: "flex", }}
+      transition={{
+        delay: currentMonth + 2.5,
+        duration: 0.5,
+        ease: "easeInOut",
+      }}
+    >
       <motion.div
         layout
         style={{
           display: "none",
-          width: "100%",
-          height: "100%",
+          width: "fit-content",
+          height: "fit-content",
           justifyContent: "center",
+          alignSelf: "center",
           alignContent: "center",
         }}
         initial={{ opacity: 0, }}
@@ -37,14 +52,15 @@ export default function Quote() {
       <motion.div
         layout
         style={{
-          display: "none",
-          width: "100%",
-          height: "100%",
+          display: "flex",
+          width: "fit-content",
+          height: "fit-content",
+          alignSelf: "center",
           justifyContent: "flex-end",
-          alignContent: "center",
+          alignContent: "flex-end",
         }}
         initial={{ opacity: 0, }}
-        animate={{ opacity: 1, display: "flex" }}
+        animate={{ opacity: 1, }}
         transition={{
           delay: currentMonth + 4.75,
           duration: 1,
@@ -53,6 +69,6 @@ export default function Quote() {
       >
         <span className={styles.peep}>— Handler Walter</span>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }
