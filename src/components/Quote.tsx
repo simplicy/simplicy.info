@@ -37,16 +37,14 @@ export default function Quote() {
       <motion.div
         layout
         style={{
-          position: "absolute",
-          top: "3ch",
-          left: "33ch",
+          display: "none",
           width: "100%",
           height: "100%",
-          justifyContent: "center",
+          justifyContent: "flex-end",
           alignContent: "center",
         }}
         initial={{ opacity: 0, }}
-        animate={{ opacity: 1 }}
+        animate={{ opacity: 1, display: "flex" }}
         transition={{
           delay: currentMonth + 4.75,
           duration: 1,

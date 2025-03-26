@@ -52,8 +52,12 @@
   }
 }
 
+.peep{
+  margin-right: 1ch;
+}
+
 .quote {
-  font-size: 2ch;
+  font-size: var(--font-size);
   align-items: center;
   justify-content: center;
   height: 100%;
