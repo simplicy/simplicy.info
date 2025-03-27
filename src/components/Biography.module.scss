@@ -5,6 +5,7 @@
   flex-wrap: wrap;
   margin: 0 auto;
   width: 100%;
+  min-width: 50ch;
   @media (max-width: 768px) {
     align-items: flex-start;
     max-height: calc(100vh - 40ch);
