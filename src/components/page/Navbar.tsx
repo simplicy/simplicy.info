@@ -3,7 +3,9 @@ import Package from '../../../package.json';
 import { motion } from 'framer-motion';
 import { useContext } from './Context';
 import ToggleTheme from '../ToggleTheme';
+import { useNavigate } from 'react-router-dom';
 export default function Navbar() {
+  const navigate = useNavigate();
   const { delay } = useContext() as {
     delay: number,
   }
@@ -13,7 +15,11 @@ export default function Navbar() {
       <div className={styles.root}>
         {/* Navbar content goes here */}
 
-        <div className={styles.title}>
+        <div className={styles.title}
+          onClick={() => {
+            navigate("/")
+          }}
+        >
           <h1>
             {Package.name.toUpperCase()}
           </h1>
