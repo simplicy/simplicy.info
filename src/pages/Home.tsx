@@ -94,6 +94,8 @@ function Home() {
       <motion.div
         layout
         style={{
+          display: "flex",
+          justifyContent: "center",
           height: "100%",
           width: "100%",
         }}
