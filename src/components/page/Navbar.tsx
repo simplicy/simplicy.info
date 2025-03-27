@@ -2,10 +2,12 @@ import styles from './Navbar.module.scss';
 import Package from '../../../package.json';
 import { motion } from 'framer-motion';
 import { useContext } from './Context';
+import ToggleTheme from '../ToggleTheme';
 export default function Navbar() {
   const { delay } = useContext() as {
     delay: number,
   }
+
   let logo = () => {
     return (
       <div className={styles.root}>
@@ -18,7 +20,8 @@ export default function Navbar() {
 
           <span className={styles.blink}></span>
         </div>
-      </div>
+        <ToggleTheme />
+      </div >
     );
   }
   if (window.location.pathname === "/" && delay > 0) {

@@ -1,13 +1,11 @@
 .root{
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
   gap: 2ch;
   width: 100%;
   height: 100%;
-  @media (max-width: 768px) {
-    align-items: center;
-  }
+  align-items: flex-start;
+  justify-content: center;
 }
 .switcher {
   display: flex;

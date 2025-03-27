@@ -20,12 +20,12 @@
 }
 
 .default {
-  color: lightgray;
+  color: var(--theme-text);
 }
 
 .active {
   transition: color 0.5s ease;
-  color: var(--theme-text-secondary);
+  color: var(--theme-focused-foreground);
 }
 
 .quote {

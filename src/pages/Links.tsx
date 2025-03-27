@@ -26,8 +26,10 @@ export default function Links() {
       <motion.div
         layout
         style={{
+          display: "flex",
           overflow: "hidden",
           height: "100%",
+          justifyContent: "center",
           width: "100%",
         }}
         initial={{ opacity: 0, }}

@@ -6,12 +6,8 @@ import Row from "../sacred/Row";
 import ModalStack from "../sacred/ModalStack";
 import Navbar from "../components/page/Navbar";
 import ClosytActionBar from "../components/ActionBar";
-import { useEffect } from "react";
 function Wireframe() {
   let loading = false;
-  useEffect(() => {
-    //toggleDebugGrid();
-  }, []);
   return (
     <DefaultLayout previewPixelSRC="https://intdev-global.s3.us-west-2.amazonaws.com/template-app-icon.png">
       <DebugGrid />

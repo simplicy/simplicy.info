@@ -9,8 +9,10 @@ type TextAreaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
   autoPlay?: string;
   autoPlaySpeedMS?: number;
   isBlink?: boolean;
+  cursor?: boolean,
+  style?: React.CSSProperties;
 };
-function TextArea({ autoPlay, autoPlaySpeedMS = 40, isBlink, placeholder, onChange, ...rest }: TextAreaProps) {
+function TextArea({ cursor = true, autoPlay, autoPlaySpeedMS = 40, isBlink, style, placeholder, onChange, ...rest }: TextAreaProps) {
   const textAreaRef = React.useRef<HTMLTextAreaElement | null>(null);
   const measurementRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -163,10 +165,10 @@ function TextArea({ autoPlay, autoPlaySpeedMS = 40, isBlink, placeholder, onChan
   const containerClasses = Utilities.classNames(styles.root, isFocused && styles.focused);
 
   return (
-    <div className={containerClasses}>
-      <div className={Utilities.classNames(styles.displayed, isPlaceholderVisible && styles.placeholder)}>
+    <div className={containerClasses} >
+      <div style={style} className={Utilities.classNames(styles.displayed, isPlaceholderVisible && styles.placeholder)}>
         {isPlaceholderVisible ? placeholder : text.substring(0, selectionStart)}
-        {!isPlaceholderVisible && <span className={Utilities.classNames(styles.block, isBlink && styles.blink)}></span>}
+        {!isPlaceholderVisible && cursor && <span className={Utilities.classNames(styles.block, isBlink && styles.blink)}></span>}
         {!isPlaceholderVisible && text.substring(selectionStart)}
       </div>
 

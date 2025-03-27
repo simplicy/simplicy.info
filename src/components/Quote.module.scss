@@ -69,11 +69,11 @@
   white-space: nowrap; /* Keeps the content on a single line */
   letter-spacing: .2em; /* Adjust as needed */
   animation: 
-    typing 2.5s steps(13, end),
+    typing 2.5s steps(9, end),
 }
 
 .raven {
-  color: red;
+  color: var(--theme-focused-foreground);
 }
 
 
