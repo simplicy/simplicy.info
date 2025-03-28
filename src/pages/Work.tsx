@@ -46,7 +46,6 @@ export default function Work() {
       }}
     >
       <div className={styles.root}>
-
         <Timeline list={work} />
       </div>
     </motion.div>
