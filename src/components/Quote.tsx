@@ -57,10 +57,15 @@ export default function Quote() {
           height: "fit-content",
           alignSelf: "center",
           justifyContent: "flex-end",
-          alignContent: "flex-end",
         }}
-        initial={{ opacity: 0, }}
-        animate={{ opacity: 1, }}
+        initial={{
+          opacity: 0,
+          y: "15px",
+        }}
+        animate={{
+          opacity: 1,
+          transform: "translateY(0px)",
+        }}
         transition={{
           delay: currentMonth + 4.75,
           duration: 1,

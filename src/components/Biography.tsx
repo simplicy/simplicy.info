@@ -25,7 +25,7 @@ export default function Biography() {
           Education is a continuous journey for me, and I am always looking to learn new things, whether it be a new programming language, a new paradigm, or a new skill.
           Currently, I am working on a few personal projects, including an multi-platform outfit planner, and some rust based desktop applications.
           <br />
-          Fashion is also big part of my life, and I love to express myself through the clothes I wear or make.
+          Fashion is also big part of my life, wanting to learn more I turned to sewing in order to create my own clothes and bags.
         </div>
       </CardDouble>
     </div>

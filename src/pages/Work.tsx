@@ -1,6 +1,27 @@
 import { motion } from "framer-motion";
 import styles from "./Work.module.scss";
+import Timeline from "../components/Timeline";
 export default function Work() {
+  let work = [
+    {
+      "companyname": "Map Communications",
+      "title": "Software Developer",
+      "start": "2023",
+      "end": "Present",
+    },
+    {
+      "companyname": "Corporate Message Services",
+      "title": "IT Manager",
+      "start": "2021",
+      "end": "2023",
+    },
+    {
+      "companyname": "MSC Cruises",
+      "title": "IT Support Specialist",
+      "start": "2015",
+      "end": "2020",
+    }
+  ]
   return (
     <motion.div
       layout
@@ -11,16 +32,22 @@ export default function Work() {
         justifyContent: "center",
         width: "100%",
       }}
-      initial={{ opacity: 0, }}
-      animate={{ opacity: 1, }}
+      initial={{
+        opacity: 0,
+        y: "var(--fade-distance)",
+      }}
+      animate={{
+        opacity: 1,
+        transform: "translateY(0px)",
+      }}
       transition={{
         duration: 0.5,
         ease: "easeInOut",
       }}
     >
       <div className={styles.root}>
-        Work
 
+        <Timeline list={work} />
       </div>
     </motion.div>
   );

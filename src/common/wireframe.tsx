@@ -28,22 +28,7 @@ function Wireframe() {
             overflowY: 'hidden',
           }}>
           <Navbar />
-          {/* <motion.div */}
-          {/*   layoutId="outlet" */}
-          {/*   style={{ */}
-          {/*     height: "100%", */}
-          {/*     minWidth: "100%", */}
-          {/*     width: "100%", */}
-          {/*   }} */}
-          {/*   initial={{ */}
-          {/*     opacity: 0.4 */}
-          {/*   }} */}
-          {/*   animate={{ opacity: 1 }} */}
-          {/*   exit={{ opacity: 0.4 }} */}
-          {/*   transition={{ duration: 1 }} */}
-          {/* > */}
           <Outlet />
-          {/* </motion.div> */}
         </Row>
       }
     </DefaultLayout>

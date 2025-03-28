@@ -1,14 +1,14 @@
-import { Card } from "../common/types";
-import styles from './ButtonCards.module.scss';
+import { BoxItemProps } from "../common/types";
+import styles from './ItemBoxes.module.scss';
 import * as Utilities from '../common/utilities';
-import AlertBanner from "../sacred/AlertBanner";
+import Card from "../sacred/Card";
 
 interface CardsProps {
-  cards: Card[];
+  cards: BoxItemProps[];
 }
 
 
-export function ButtonCards({ cards }: CardsProps) {
+export function ItemBoxes({ cards }: CardsProps) {
   const empty = () => { return; }
   const cardsmap = (data: any[]) => {
     return data?.map((item: any, index: any) => {
@@ -16,7 +16,7 @@ export function ButtonCards({ cards }: CardsProps) {
         return null;
       }
       return (
-        <ButtonCard obj={item} key={item.name + index} styles={item.styles} onClick={item.onClick ? item.onClick : empty} index={index} />
+        <BoxItem obj={item} key={item.name + index} styles={item.styles} onClick={item.onClick ? item.onClick : empty} index={index} />
       )
     })
   }
@@ -28,12 +28,13 @@ export function ButtonCards({ cards }: CardsProps) {
   );
 }
 
-export default function ButtonCard({
-  obj, onClick, index, styles: advStyle }: { obj: any, onClick?: () => void, index: number, styles: string | null }) {
+export default function BoxItem({
+  obj, onClick, index, styles: advStyle,
+}: { obj: any, onClick?: () => void, index: number, styles: string | null }) {
   let adStyle = Utilities.classNames(advStyle, styles.base)
   return (
     <div className={advStyle ? adStyle : styles.base}>
-      <AlertBanner
+      <Card
         key={obj.name + index}
         onClick={() => {
           if (onClick) {
@@ -41,7 +42,14 @@ export default function ButtonCard({
           }
         }}
       >
-        <div className={styles.cardroot}>
+        <div className={styles.root}>
+          {obj.imgs && obj.imgs[0] &&
+            <div className={styles.imgbox}>
+              <img src={obj.imgs[0]}
+                className={styles.img}
+              />
+            </div>
+          }
           <span className={styles.box}>
             <div className={styles.title}>
               {obj.name}
@@ -49,7 +57,7 @@ export default function ButtonCard({
             {obj.description && obj.description}
           </span>
         </div>
-      </AlertBanner>
+      </Card>
     </div>
   );
 }

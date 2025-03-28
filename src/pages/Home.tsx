@@ -4,10 +4,10 @@ import styles from './Home.module.scss';
 import { motion } from 'framer-motion';
 import Biography from '../components/Biography';
 import { Card } from '../common/types';
-import Cards from '../components/Cards';
 import Calendar from '../components/Calendar';
 import { useContext } from '../components/page/Context';
 import Cookies from "js-cookie";
+import { ButtonCards } from '../components/ButtonCards';
 
 function Home() {
   const { delay } = useContext() as {
@@ -99,8 +99,14 @@ function Home() {
           height: "100%",
           width: "100%",
         }}
-        initial={{ opacity: 0, }}
-        animate={{ opacity: 1, }}
+        initial={{
+          opacity: 0,
+          y: "var(--fade-distance)",
+        }}
+        animate={{
+          opacity: 1,
+          transform: "translateY(0px)",
+        }}
         transition={{
           delay: delay,
           duration: 0.5,
@@ -112,7 +118,23 @@ function Home() {
             <Biography />
           </div>
           <div className={styles.switcher}>
-            <Cards cards={cards} />
+            <motion.div
+              layout
+              style={{
+                height: "100%",
+                width: "100%",
+              }}
+              initial={{ opacity: 0, }}
+              animate={{ opacity: 1, }}
+              transition={{
+                duration: 0.5,
+                ease: "easeInOut",
+              }}
+            >
+              <div className={styles.cards}>
+                <ButtonCards cards={cards} />
+              </div>
+            </motion.div>
           </div>
         </div>
       </motion.div>

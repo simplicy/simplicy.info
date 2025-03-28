@@ -523,6 +523,7 @@ body {
 
   --theme-text: var(--color-black-100);
   --theme-line-height-base: 1.25;
+  --fade-distance: 5ch;
   --font-size: 16px;
 
   --z-index-page: 1;
@@ -541,6 +542,8 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-variant-numeric: tabular-nums lining-nums;
+  transition-property: background-color, color, border-color, fill, stroke;
+  transition: 0.5s ease-in-out;
 
   &::-webkit-scrollbar {
     background: transparent;

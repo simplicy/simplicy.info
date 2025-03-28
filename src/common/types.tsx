@@ -5,3 +5,11 @@ export type Card = {
   styles?: string | null;
 }
 
+export type BoxItemProps = {
+  name: string;
+  onClick?: () => void;
+  enabled?: boolean;
+  images?: any[];
+  styles?: string | null;
+}
+
