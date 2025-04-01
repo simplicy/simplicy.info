@@ -33,7 +33,7 @@ export default function ContactForm() {
     }
     await refetch().then(() => {
       if (res) {
-        toast.success("Email Sent");
+        toast.success("Submitted!");
         setName("");
         setTitle("");
         setMessage("");
