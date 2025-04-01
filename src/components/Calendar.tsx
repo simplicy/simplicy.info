@@ -44,7 +44,7 @@ export default function Calendar() {
   useEffect(() => {
     setTimeout(() => {
       toggleMonth();
-    }, 1000);
+    }, 750);
   }, [count]);
 
   // View
@@ -61,7 +61,7 @@ export default function Calendar() {
         initial={{ opacity: 1, }}
         animate={{ opacity: 0, display: "none" }}
         transition={{
-          delay: currentMonth + 2,
+          delay: currentMonth + .25,
           duration: 0.5,
           ease: "easeInOut",
         }}

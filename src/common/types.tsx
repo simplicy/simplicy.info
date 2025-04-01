@@ -13,3 +13,10 @@ export type BoxItemProps = {
   styles?: string | null;
 }
 
+export type EmailForCreate = {
+  sender_name: string;
+  subject: string;
+  message: string;
+  from: string;
+}
+

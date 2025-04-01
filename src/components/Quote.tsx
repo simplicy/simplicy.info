@@ -19,7 +19,7 @@ export default function Quote() {
       initial={{ opacity: 0, }}
       animate={{ opacity: 1, display: "flex", }}
       transition={{
-        delay: currentMonth + 2.5,
+        delay: currentMonth + .75,
         duration: 0.5,
         ease: "easeInOut",
       }}
@@ -37,7 +37,7 @@ export default function Quote() {
         initial={{ opacity: 0, }}
         animate={{ opacity: 1, display: "flex" }}
         transition={{
-          delay: currentMonth + 2.5,
+          delay: currentMonth + .5,
           duration: 0.5,
           ease: "easeInOut",
         }}
@@ -67,7 +67,7 @@ export default function Quote() {
           transform: "translateY(0px)",
         }}
         transition={{
-          delay: currentMonth + 4.75,
+          delay: currentMonth + 2.5,
           duration: 1,
           ease: "easeInOut",
         }}

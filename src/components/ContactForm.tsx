@@ -3,12 +3,43 @@ import TextArea from "../sacred/TextArea";
 import Button from "../sacred/Button";
 import styles from './ContactForm.module.scss';
 import Divider from "../sacred/Divider";
+import { contactFmc } from "../common/models";
+import { EmailForCreate } from "../common/types";
+import { toast } from "react-toastify";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
+
+  const handleSubmit = () => {
+    let data: EmailForCreate = {
+      sender_name: name,
+      subject: title,
+      message: message,
+      from: email
+    }
+    if (data.sender_name === "" || data.subject === "" || data.message === "" || data.from === "") {
+      toast.error("Please fill out all fields");
+      return;
+    }
+    //Check if email is somewhat an email address
+    if (data.from.indexOf("@") === -1 || data.from.indexOf(".") === -1) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+    contactFmc.send_email(data).then((res) => {
+      if (res) {
+        toast.success("Email Sent");
+        setName("");
+        setTitle("");
+        setMessage("");
+        setEmail("");
+      }
+    });
+
+  }
 
   return (
     <>
@@ -44,10 +75,7 @@ export default function ContactForm() {
         </div>
         <div className={styles.submit}>
           <Button onClick={() => {
-            console.log("Title: ", title);
-            console.log("Name: ", name);
-            console.log("Email: ", email);
-            console.log("Message: ", message);
+            handleSubmit();
           }}>
             Submit
           </Button>
