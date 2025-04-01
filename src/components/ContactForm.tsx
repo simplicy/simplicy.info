@@ -15,7 +15,7 @@ export default function ContactForm() {
   const [email, setEmail] = useState("");
   const { data: res, isFetching, refetch } = useContact({ sender_name: name, subject: title, message: message, from: email });
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     let data: EmailForCreate = {
       sender_name: name,
       subject: title,
@@ -31,7 +31,7 @@ export default function ContactForm() {
       toast.error("Please enter a valid email address");
       return;
     }
-    refetch().then(() => {
+    await refetch().then(() => {
       if (res) {
         toast.success("Email Sent");
         setName("");
