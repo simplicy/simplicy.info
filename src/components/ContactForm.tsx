@@ -3,15 +3,17 @@ import TextArea from "../sacred/TextArea";
 import Button from "../sacred/Button";
 import styles from './ContactForm.module.scss';
 import Divider from "../sacred/Divider";
-import { contactFmc } from "../common/models";
 import { EmailForCreate } from "../common/types";
 import { toast } from "react-toastify";
+import { useContact } from "../common/hooks";
+import BlockLoader from "../sacred/BlockLoader";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
+  const { data: res, isFetching, refetch } = useContact({ sender_name: name, subject: title, message: message, from: email });
 
   const handleSubmit = () => {
     let data: EmailForCreate = {
@@ -29,7 +31,7 @@ export default function ContactForm() {
       toast.error("Please enter a valid email address");
       return;
     }
-    contactFmc.send_email(data).then((res) => {
+    refetch().then(() => {
       if (res) {
         toast.success("Email Sent");
         setName("");
@@ -74,11 +76,18 @@ export default function ContactForm() {
             onChange={(e) => setName(e.target.value)} />
         </div>
         <div className={styles.submit}>
-          <Button onClick={() => {
-            handleSubmit();
-          }}>
-            Submit
-          </Button>
+          {isFetching ?
+            <BlockLoader mode={7} />
+
+            :
+            <Button onClick={() => {
+              handleSubmit();
+            }}
+              disabled={isFetching}
+            >
+              SUBMIT
+            </Button>
+          }
         </div>
       </div>
     </>
