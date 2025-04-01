@@ -22,13 +22,6 @@ export default function Portfolio() {
       imgs: [Cane],
       enabled: true
     },
-    {
-      name: "More comming soon...",
-      onClick: () => {
-      },
-      imgs: [],
-      enabled: true
-    },
   ];
   return (
     <motion.div

@@ -7,7 +7,6 @@ interface CardsProps {
   cards: BoxItemProps[];
 }
 
-
 export function ItemBoxes({ cards }: CardsProps) {
   const empty = () => { return; }
   const cardsmap = (data: any[]) => {
@@ -16,7 +15,13 @@ export function ItemBoxes({ cards }: CardsProps) {
         return null;
       }
       return (
-        <BoxItem obj={item} key={item.name + index} styles={item.styles} onClick={item.onClick ? item.onClick : empty} index={index} />
+        <BoxItem
+          obj={item}
+          key={item.name + index}
+          styles={item.styles}
+          onClick={item.onClick ? item.onClick : empty}
+          index={index}
+        />
       )
     })
   }
@@ -33,9 +38,20 @@ export default function BoxItem({
 }: { obj: any, onClick?: () => void, index: number, styles: string | null }) {
   let adStyle = Utilities.classNames(advStyle, styles.base)
   return (
-    <div className={advStyle ? adStyle : styles.base}>
+    <div className={advStyle ? adStyle : styles.base}
+      style={{
+        animationDelay: `${index * 0.1}s`,
+        transform: `translateY(${index * 20}px)`
+      }}
+    >
+      <div className={styles.label}>
+        {obj.name}
+      </div>
       <Card
         key={obj.name + index}
+        style={{
+          backgroundColor: "var(--theme-background)",
+        }}
         onClick={() => {
           if (onClick) {
             onClick();

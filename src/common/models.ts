@@ -45,7 +45,7 @@ export class ContactFmc extends BaseFmc<any, any, any> {
         return res.data;
       }
     }).catch((error) => {
-      toast.error("Error Ocurred:" + error.message)
+      toast.error("Error Ocurred! Please try again later.")
       console.error('Error:', error);
       return false;
     });
