@@ -13,24 +13,20 @@ export default function Navbar() {
   let logo = () => {
     return (
       <div className={styles.root}>
-        {/* Navbar content goes here */}
-
         <div className={styles.title}
-          onClick={() => {
-            navigate("/")
-          }}
-        >
+          onClick={() => { navigate("/") }}>
           <h1>
             {Package.name.toUpperCase()}
           </h1>
-
           <span className={styles.blink}></span>
         </div>
         <ToggleTheme />
       </div >
     );
   }
-  if (window.location.pathname === "/" && delay > 0) {
+
+  console.log(delay);
+  if (window.location.pathname === "/" && delay != 0) {
     return (
       <motion.div
         layout
@@ -48,9 +44,11 @@ export default function Navbar() {
       </motion.div>
     );
   }
-  return (
-    <>
-      {logo()}
-    </>
-  );
+  else {
+    return (
+      <>
+        {logo()}
+      </>
+    );
+  }
 }

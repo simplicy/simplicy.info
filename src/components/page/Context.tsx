@@ -5,12 +5,20 @@ import { fonts, themes } from '../../common/vars';
 import { toggleDebugGrid } from '../../sacred/DebugGrid';
 import { useEffect } from 'react';
 import * as Utilities from '../../common/utilities';
+import { useAuth0 } from '@auth0/auth0-react';
+import { closytUserFmc } from '../../common/models';
+import { useClosytAuth } from '../../common/hooks';
 
 interface ContextType {
   themes: any;
   fonts: any;
   currentMonth: number;
   delay: number;
+  handleLogout?: () => void;
+  refetchClosytAuth: () => void;
+  isClosytAuthenticated: boolean;
+  isAuthError: boolean;
+  isAuthFetching: boolean;
 }
 
 const Context = React.createContext<ContextType | null>(null);
@@ -21,6 +29,44 @@ export const Provider: React.FC<{ children: React.ReactNode }> = ({ children }) 
   if (Cookies.get("intro")) {
     delay = 0;
   }
+  const { logout, getAccessTokenSilently, user, isAuthenticated } = useAuth0();
+  const handleLogout = async () => {
+    let token = await getAccessTokenSilently();
+    await closytUserFmc.logout(token).then(() => {
+      Cookies.remove('loggedin');
+      Cookies.remove('auth');
+      // if not home navigate to home
+      if (window.location.pathname !== '/') {
+        navigate('/');
+      }
+      logout({
+        logoutParams: {
+          returnTo: window.location.origin,
+        },
+      });
+    });
+  };
+  const preFetch = () => {
+    return;
+
+  }
+
+  const {
+    data: isClosytAuthenticated,
+    refetch: refetchClosytAuth,
+    isError: isAuthError,
+    isFetching: isAuthFetching,
+  } = useClosytAuth(isAuthenticated, user, handleLogout, preFetch, getAccessTokenSilently) as {
+    data: boolean,
+    isError: boolean,
+    isFetching: boolean,
+    refetch: () => void,
+  };
+
+  if (isAuthenticated && !isClosytAuthenticated && window.location.pathname.includes('admin')) {
+    refetchClosytAuth();
+  }
+
   const navigate = useNavigate();
   // Set theme if set
   if (Cookies.get("theme")) {
@@ -53,6 +99,11 @@ export const Provider: React.FC<{ children: React.ReactNode }> = ({ children }) 
   return (
     <Context.Provider value={{
       themes,
+      refetchClosytAuth,
+      isClosytAuthenticated,
+      isAuthError,
+      isAuthFetching,
+      handleLogout,
       fonts,
       currentMonth,
       delay

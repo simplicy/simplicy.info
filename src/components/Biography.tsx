@@ -4,6 +4,7 @@ import CardDouble from "../sacred/CardDouble";
 import Divider from "../sacred/Divider";
 import Indent from "../sacred/Indent";
 import styles from "./Biography.module.scss";
+import Me from "../assets/me.jpg";
 
 export default function Biography() {
 
@@ -11,7 +12,7 @@ export default function Biography() {
     <div className={styles.root}>
 
       <CardDouble title="Bio">
-        <Avatar src="../me.jpg" target="_blank">
+        <Avatar src={Me} target="_blank">
           <Indent>
             {Package.author}
             <br />

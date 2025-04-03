@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import styles from "./Portfolio.module.scss";
 import { ItemBoxes } from "../components/ItemBoxes";
-import Bag from "../../public/bag.jpg";
-import BagBack from "../../public/bag_back.jpg"; // Example image import, if needed
-import Cane from "../../public/smart_cane.jpg";
+import Bag from "../assets/bag.jpg";
+import BagBack from "../assets/bag_back.jpg"; // Example image import, if needed
+import Cane from "../assets/smart_cane.jpg";
 export default function Portfolio() {
   let cards = [
     {

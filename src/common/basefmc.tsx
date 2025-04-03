@@ -105,7 +105,6 @@ export class BaseFmc<M, C, U> {
         return res.data;
       }
     }).catch((error) => {
-      toast.error("Error Ocurred:" + error.message)
       console.error('Error:', error);
       return false;
     });

@@ -6,8 +6,21 @@ import Row from "../sacred/Row";
 import ModalStack from "../sacred/ModalStack";
 import Navbar from "../components/page/Navbar";
 import ClosytActionBar from "../components/ActionBar";
+import { useAuth0 } from "@auth0/auth0-react";
+import { useEffect } from "react";
+import { useContext } from "../components/page/Context";
 function Wireframe() {
-  let loading = false;
+  const loading = false;
+  const { isAuthenticated } = useAuth0();
+  const { handleLogout } = useContext() as {
+    handleLogout: () => void;
+  }
+  useEffect(() => {
+    if (isAuthenticated && !window.location.pathname.includes('admin')) {
+      handleLogout();
+    }
+
+  }, []);
   return (
     <DefaultLayout previewPixelSRC="https://intdev-global.s3.us-west-2.amazonaws.com/template-app-icon.png">
       <DebugGrid />

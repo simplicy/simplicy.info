@@ -1,27 +1,47 @@
 .root{
   padding: .5ch 0;
+  height: 100%;
   display: flex;
   position: relative;
   flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
   background-color: var(--theme-background);
-  gap: 2ch;
   width: 100%;
 }
 
-.base{
+.map {
+  position: relative;
+  display: flex;
+  width: 100%;
   height: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.base{
+  display: flex;
+  flex-direction: column;
   width: 100%;
   position: absolute;
   cursor: pointer;
   align-content: flex-start;
   transition: transform .2s ease-in-out;
   transform: translateY(0);
-  &:hover{
-    transform: translateY(-25ch) !important;
-  }
+  
+}
+
+.unfocused {
+  height: 100%;
+  transform: translateY(0);
+  height: 5ch;
+  justify-content: flex-end;
+}
+
+.focused{
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  transform: translateY(-15ch) !important;
 }
 
 .label{
@@ -32,7 +52,8 @@
 }
 
 .imgbox{
-  height: 20ch;
+  height: 30ch;
+  width: 30ch;
   overflow: hidden;
 }
 

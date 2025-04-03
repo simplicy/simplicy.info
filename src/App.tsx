@@ -8,6 +8,8 @@ import Portfolio from './pages/Portfolio.tsx';
 import Work from './pages/Work.tsx';
 import Bio from './pages/Bio.tsx';
 import Contact from './pages/Contact.tsx';
+import { AuthenticationGuard } from './common/auth0.tsx';
+import Admin from './pages/Admin.tsx';
 
 
 
@@ -21,6 +23,7 @@ function App() {
         <Route path="links" element={<Links />} />
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="work" element={<Work />} />
+        <Route path="admin" element={<AuthenticationGuard component={Admin} />} />
         <Route path="contact-me" element={<Contact />} />
         <Route path="bio" element={<Bio />} />
         <Route path="error" element={<Error />} />

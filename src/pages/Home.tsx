@@ -8,15 +8,22 @@ import Calendar from '../components/Calendar';
 import { useContext } from '../components/page/Context';
 import Cookies from "js-cookie";
 import { ButtonCards } from '../components/ButtonCards';
+import { useMeta } from '../common/hooks';
 
 function Home() {
   const { delay } = useContext() as {
     delay: number,
   }
+  let data = {
+    something: "data"
+  }
+
+  const { refetch } = useMeta(data);
   const navigate = useNavigate();
   //verify cookie expiry and format
   useEffect(() => {
-  }, [navigate]);
+    refetch();
+  }, []);
 
   let cards: Card[] = [
     {
@@ -52,9 +59,11 @@ function Home() {
   ];
   useEffect(() => {
     // On first load of the hour add cookie. If cookie exists, skip animation
-    if (!Cookies.get("intro")) {
-      Cookies.set("intro", "true", { expires: 1 / 48 });
-    }
+    setTimeout(() => {
+      if (!Cookies.get("intro")) {
+        Cookies.set("intro", "true", { expires: 1 / 48 });
+      }
+    }, 1000 * delay);
   }, []);
 
 

@@ -10,6 +10,7 @@ export default function Timeline({ list }: TimelineProps) {
     let timeline = list.map((item: any, index: number) => {
       return (
         <motion.div
+          key={index}
           layout
           style={{
             display: "flex",

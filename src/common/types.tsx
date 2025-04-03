@@ -1,6 +1,7 @@
 export type Card = {
   name: string;
   onClick?: () => void;
+  isSelected?: boolean;
   enabled?: boolean;
   styles?: string | null;
 }
@@ -18,5 +19,20 @@ export type EmailForCreate = {
   subject: string;
   message: string;
   from: string;
+}
+
+export type ClosytUser = {
+  id: string,
+  email: string,
+  name: string,
+  user_type: string,
+  privacy: string,
+  dob: string,
+  bio: string,
+  picture: string,
+  last_login: string,
+  role: string,
+  ctime: string,
+  utime: string,
 }
 

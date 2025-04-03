@@ -20,6 +20,15 @@ export default function Links() {
       description: "Personal Blog",
       enabled: true
     },
+    {
+      name: "Ko-Fi",
+      onClick: () => {
+        window.open("https://ko-fi.com/simplicy", "_blank");
+      },
+      description: "Donate",
+      enabled: true
+    },
+
   ];
   return (
     <>

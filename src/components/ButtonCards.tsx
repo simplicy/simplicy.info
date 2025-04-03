@@ -16,7 +16,14 @@ export function ButtonCards({ cards }: CardsProps) {
         return null;
       }
       return (
-        <ButtonCard obj={item} key={item.name + index} styles={item.styles} onClick={item.onClick ? item.onClick : empty} index={index} />
+        <ButtonCard
+          obj={item}
+          isSelected={item.isSelected}
+          key={item.name + index}
+          styles={item.styles}
+          onClick={item.onClick ? item.onClick : empty}
+          index={index}
+        />
       )
     })
   }
@@ -29,11 +36,19 @@ export function ButtonCards({ cards }: CardsProps) {
 }
 
 export default function ButtonCard({
-  obj, onClick, index, styles: advStyle }: { obj: any, onClick?: () => void, index: number, styles: string | null }) {
+  obj,
+  isSelected,
+  onClick, index, styles: advStyle }:
+  {
+    obj: any,
+    isSelected?: boolean,
+    onClick?: () => void, index: number, styles: string | null
+  }) {
   let adStyle = Utilities.classNames(advStyle, styles.base)
   return (
     <div className={advStyle ? adStyle : styles.base}>
       <AlertBanner
+        isSelected={isSelected}
         key={obj.name + index}
         onClick={() => {
           if (onClick) {
