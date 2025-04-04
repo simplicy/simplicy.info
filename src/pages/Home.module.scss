@@ -23,6 +23,25 @@
   gap: 2ch;
 }
 
+.avi {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5ch;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5ch;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
 .content{
   display: flex;
   flex-direction: column;
@@ -43,9 +62,8 @@
 }
 
 .mobile {
-  display: none;
-  @media (max-width: 768px) {
-    display: block;
+  @media (min-width: 768px) {
+    display: none;
   }
 }
 

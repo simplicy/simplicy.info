@@ -6,34 +6,7 @@ import Indent from "../sacred/Indent";
 import styles from "./Biography.module.scss";
 import Me from "../assets/me.jpg";
 import ActionButton from "../sacred/ActionButton";
-import Insta from "../assets/insta.svg";
-import XLogo from "../assets/x.svg";
-import LinkedIn from "../assets/linkedin.svg";
-import Github from "../assets/github.svg";
-
-
-let items = [
-  {
-    icon: XLogo,
-    openHotkey: 'Twitter',
-    onClick: () => { window.open("https://x.com/simplicy_", "_blank") }
-  },
-  {
-    icon: Github,
-    openHotkey: 'GitHub',
-    onClick: () => { window.open("https://github.com/simplicy", "_blank") }
-  },
-  {
-    icon: Insta,
-    openHotkey: 'Instagram',
-    onClick: () => { window.open("https://instagram.com/simplicy_", "_blank") },
-  },
-  {
-    icon: LinkedIn,
-    openHotkey: 'LinkedIn',
-    onClick: () => { window.open("https://linkedin.com/in/sean-p-hopkins", "_blank") },
-  }
-];
+import { items } from "../pages/Home.tsx";
 
 export default function Biography() {
 
@@ -42,11 +15,20 @@ export default function Biography() {
 
       <CardDouble title="Bio">
         <div className={styles.desc}>
-          <Avatar src={Me} target="_blank">
-            <Indent>
-              {Package.author}
-              <br />
-              Software Developer
+          <Avatar src={Me} target="_blank" style={{
+            width: "7ch",
+            height: "7ch",
+          }}>
+            <Indent style={{
+              display: "flex",
+              flexDirection: "column",
+              fontSize: "2ch",
+              fontWeight: "bold",
+              color: "var(--text-color)",
+              justifyContent: "space-between",
+            }}>
+              <p>{Package.author}</p>
+              <p>Software Developer</p>
             </Indent>
 
           </Avatar>

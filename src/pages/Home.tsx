@@ -9,6 +9,38 @@ import { useContext } from '../components/page/Context';
 import Cookies from "js-cookie";
 import { ButtonCards } from '../components/ButtonCards';
 import { useMeta } from '../common/hooks';
+import Insta from "../assets/insta.svg";
+import XLogo from "../assets/x.svg";
+import LinkedIn from "../assets/linkedin.svg";
+import Github from "../assets/github.svg";
+import ActionButton from '../sacred/ActionButton';
+import * as Utilities from '../common/utilities.tsx';
+import Tooltip from '../sacred/Tooltip';
+import Avatar from '../sacred/Avatar';
+import Me from "../assets/me.jpg";
+import Package from "../../package.json";
+export let items = [
+  {
+    icon: XLogo,
+    openHotkey: 'Twitter',
+    onClick: () => { window.open("https://x.com/simplicy_", "_blank") }
+  },
+  {
+    icon: Github,
+    openHotkey: 'GitHub',
+    onClick: () => { window.open("https://github.com/simplicy", "_blank") }
+  },
+  {
+    icon: Insta,
+    openHotkey: 'Instagram',
+    onClick: () => { window.open("https://instagram.com/simplicy_", "_blank") },
+  },
+  {
+    icon: LinkedIn,
+    openHotkey: 'LinkedIn',
+    onClick: () => { window.open("https://linkedin.com/in/sean-p-hopkins", "_blank") },
+  }
+];
 
 function Home() {
   const { delay } = useContext() as {
@@ -140,7 +172,31 @@ function Home() {
                 ease: "easeInOut",
               }}
             >
+
               <div className={styles.cards}>
+                <div className={Utilities.classNames(styles.mobile, styles.avi)}>
+                  <Avatar src={Me} target="_blank" style={{
+                    width: "8ch",
+                    height: "8ch",
+                    borderRadius: "50%",
+                  }} >
+                  </Avatar>
+                  {Package.author}
+                </div>
+                <div className={Utilities.classNames(styles.mobile, styles.buttons)}>
+                  {items.map((item, index) => (
+                    <Tooltip
+                      title={item.openHotkey}
+                      key={index}
+                    >
+                      <ActionButton
+                        key={index}
+                        onClick={item.onClick}
+                        icon={item.icon}
+                      />
+                    </Tooltip>
+                  ))}
+                </div>
                 <ButtonCards cards={cards} />
               </div>
             </motion.div>
