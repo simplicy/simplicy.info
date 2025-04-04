@@ -69,11 +69,11 @@ export default function BoxItem({
             <div className={styles.root}>
               {obj.imgs && obj.imgs[0] &&
                 <div
-                  // onClick={() => {
-                  //   if (onClick) {
-                  //     onClick();
-                  //   }
-                  // }}
+                  onClick={() => {
+                    if (onClick) {
+                      onClick();
+                    }
+                  }}
                   className={styles.imgbox}>
                   <img src={obj.imgs[0]}
                     className={styles.img}
