@@ -28,6 +28,7 @@ export default function Contact() {
     >
       <div className={styles.root}>
         <h1>Contact</h1>
+        <p>If you have any questions or feedback, feel free to reach out!</p>
         <ContactForm />
 
       </div >

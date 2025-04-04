@@ -10,6 +10,18 @@
   }
 }
 
+.root {
+  padding: 2ch;
+  display: flex;
+  flex-direction: column;
+  gap: 1ch;
+  width: 100%;
+  @media (min-width: 768px) {
+    max-width: 50ch;
+  }
+}
+
+
 .from {
   display: flex;
   justify-content: flex-start;

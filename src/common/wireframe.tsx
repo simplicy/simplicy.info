@@ -5,7 +5,6 @@ import DefaultLayout from "../sacred/page/DefaultLayout";
 import Row from "../sacred/Row";
 import ModalStack from "../sacred/ModalStack";
 import Navbar from "../components/page/Navbar";
-import ClosytActionBar from "../components/ActionBar";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect } from "react";
 import { useContext } from "../components/page/Context";
@@ -25,7 +24,6 @@ function Wireframe() {
     <DefaultLayout previewPixelSRC="https://intdev-global.s3.us-west-2.amazonaws.com/template-app-icon.png">
       <DebugGrid />
       <ModalStack />
-      <ClosytActionBar />
       {/* if not logged in (Authenticated with Auth0 but not with closyt server) or loading - show loader */}
       {loading ? <Loader /> :
         <Row

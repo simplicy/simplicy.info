@@ -5,6 +5,35 @@ import Divider from "../sacred/Divider";
 import Indent from "../sacred/Indent";
 import styles from "./Biography.module.scss";
 import Me from "../assets/me.jpg";
+import ActionButton from "../sacred/ActionButton";
+import Insta from "../assets/insta.svg";
+import XLogo from "../assets/x.svg";
+import LinkedIn from "../assets/linkedin.svg";
+import Github from "../assets/github.svg";
+
+
+let items = [
+  {
+    icon: XLogo,
+    openHotkey: 'Twitter',
+    onClick: () => { window.open("https://x.com/simplicy_", "_blank") }
+  },
+  {
+    icon: Github,
+    openHotkey: 'GitHub',
+    onClick: () => { window.open("https://github.com/simplicy", "_blank") }
+  },
+  {
+    icon: Insta,
+    openHotkey: 'Instagram',
+    onClick: () => { window.open("https://instagram.com/simplicy_", "_blank") },
+  },
+  {
+    icon: LinkedIn,
+    openHotkey: 'LinkedIn',
+    onClick: () => { window.open("https://linkedin.com/in/sean-p-hopkins", "_blank") },
+  }
+];
 
 export default function Biography() {
 
@@ -12,13 +41,27 @@ export default function Biography() {
     <div className={styles.root}>
 
       <CardDouble title="Bio">
-        <Avatar src={Me} target="_blank">
-          <Indent>
-            {Package.author}
-            <br />
-            Software Developer
-          </Indent>
-        </Avatar>
+        <div className={styles.desc}>
+          <Avatar src={Me} target="_blank">
+            <Indent>
+              {Package.author}
+              <br />
+              Software Developer
+            </Indent>
+
+          </Avatar>
+          <div className={styles.buttons}>
+            {items.map((item, index) => (
+              <ActionButton
+                key={index}
+                onClick={item.onClick}
+                hotkey={item.openHotkey}
+                icon={item.icon}
+                className={styles.actionButton}
+              />
+            ))}
+          </div>
+        </div>
         <Divider type="DOUBLE" />
         <div className={styles.content}>
           I am a 28 year old Software Developer born and raised in South Florida. I have been building desktop applications since I was 16.

@@ -7,6 +7,7 @@ import { EmailForCreate } from "../common/types";
 import { toast } from "react-toastify";
 import { useContact } from "../common/hooks";
 import BlockLoader from "../sacred/BlockLoader";
+import AlertBanner from "../sacred/AlertBanner";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
@@ -42,50 +43,55 @@ export default function ContactForm() {
 
   return (
     <>
-      <div className={styles.form}>
-        <div className={styles.title}>
-          <TextArea value={title}
-            placeholder="TITLE" name="title"
-            cursor={false}
-            onChange={(e) => setTitle(e.target.value)} />
-        </div>
-        <div className={styles.from}>
-          From:
-          <TextArea value={email}
-            cursor={false}
-            placeholder="EMAIL" name="email"
-            onChange={(e) => setEmail(e.target.value)} />
-        </div>
-        <Divider />
-        <div className={styles.message}>
-          <TextArea value={message}
-            cursor={false}
-            name="message"
-            style={{ minHeight: "15ch" }}
-            placeholder="MESSAGE"
-            onChange={(e) => setMessage(e.target.value)} />
-        </div>
-        <div className={styles.signature}>
-          Signed,
-          <TextArea value={name}
-            cursor={false}
-            placeholder="NAME" name="name"
-            onChange={(e) => setName(e.target.value)} />
-        </div>
-        <div className={styles.submit}>
-          {isFetching ?
-            <BlockLoader mode={7} />
+      <div className={styles.root}>
+        <AlertBanner
+        >
+          <div className={styles.form}>
+            <div className={styles.title}>
+              <TextArea value={title}
+                placeholder="TITLE" name="title"
+                cursor={false}
+                onChange={(e) => setTitle(e.target.value)} />
+            </div>
+            <div className={styles.from}>
+              From:
+              <TextArea value={email}
+                cursor={false}
+                placeholder="EMAIL" name="email"
+                onChange={(e) => setEmail(e.target.value)} />
+            </div>
+            <Divider />
+            <div className={styles.message}>
+              <TextArea value={message}
+                cursor={false}
+                name="message"
+                style={{ minHeight: "15ch" }}
+                placeholder="MESSAGE"
+                onChange={(e) => setMessage(e.target.value)} />
+            </div>
+            <div className={styles.signature}>
+              Signed,
+              <TextArea value={name}
+                cursor={false}
+                placeholder="NAME" name="name"
+                onChange={(e) => setName(e.target.value)} />
+            </div>
+            <div className={styles.submit}>
+              {isFetching ?
+                <BlockLoader mode={7} />
 
-            :
-            <Button onClick={() => {
-              handleSubmit();
-            }}
-              disabled={isFetching}
-            >
-              SUBMIT
-            </Button>
-          }
-        </div>
+                :
+                <Button onClick={() => {
+                  handleSubmit();
+                }}
+                  disabled={isFetching}
+                >
+                  SUBMIT
+                </Button>
+              }
+            </div>
+          </div>
+        </AlertBanner>
       </div>
     </>
   );
