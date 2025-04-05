@@ -7,15 +7,19 @@ interface AlertBannerProps {
   style?: any;
   onClick?: () => void;
   isSelected?: boolean;
+  hover?: boolean,
   children?: any;
 }
 
-const AlertBanner: React.FC<AlertBannerProps> = ({ style: propStyle, onClick, isSelected, ...rest }) => {
+const AlertBanner: React.FC<AlertBannerProps> = ({
+  style: propStyle,
+  hover = true,
+  onClick, isSelected, ...rest }) => {
   let style: React.CSSProperties = {
     ...propStyle,
     cursor: onClick ? 'pointer' : 'default',
   };
-  let stylz = Utilities.classNames(styles.root, isSelected ? styles.selected : null);
+  let stylz = Utilities.classNames(styles.root, isSelected ? styles.selected : null, hover ? styles.hover : null);
 
   return (
     <div className={stylz} {...rest} style={style} onClick={onClick} />

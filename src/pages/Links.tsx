@@ -1,4 +1,4 @@
-import { ButtonCards } from "../components/ButtonCards";
+import ButtonCards from "../components/ButtonCards";
 import styles from './Links.module.scss';
 import { motion } from 'framer-motion';
 

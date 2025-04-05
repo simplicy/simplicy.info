@@ -8,7 +8,7 @@ interface CardsProps {
 }
 
 
-export function ButtonCards({ cards }: CardsProps) {
+export default function ButtonCards({ cards }: CardsProps) {
   const empty = () => { return; }
   const cardsmap = (data: any[]) => {
     return data?.map((item: any, index: any) => {
@@ -35,7 +35,7 @@ export function ButtonCards({ cards }: CardsProps) {
   );
 }
 
-export default function ButtonCard({
+export function ButtonCard({
   obj,
   isSelected,
   onClick, index, styles: advStyle }:

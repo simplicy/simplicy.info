@@ -7,6 +7,7 @@ import styles from "./Biography.module.scss";
 import Me from "../assets/me.jpg";
 import ActionButton from "../sacred/ActionButton";
 import { items } from "../pages/Home.tsx";
+import Tooltip from "../sacred/Tooltip.tsx";
 
 export default function Biography() {
 
@@ -24,13 +25,28 @@ export default function Biography() {
               flexDirection: "column",
               fontSize: "2ch",
               fontWeight: "bold",
-              color: "var(--text-color)",
               justifyContent: "space-between",
             }}>
               <p>{Package.author}</p>
-              <p>Software Developer</p>
+              <p style={{
+                color: "var(--theme-focused-foreground)",
+              }}
+              >Software Developer</p>
             </Indent>
-
+            <div className={styles.icons}>
+              {items.map((item, index) => (
+                <Tooltip
+                  title={item.openHotkey}
+                  key={index}
+                >
+                  <ActionButton
+                    key={index}
+                    onClick={item.onClick}
+                    icon={item.icon}
+                  />
+                </Tooltip>
+              ))}
+            </div>
           </Avatar>
           <div className={styles.buttons}>
             {items.map((item, index) => (

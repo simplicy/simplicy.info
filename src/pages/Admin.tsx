@@ -6,7 +6,7 @@ import styles from "./Admin.module.scss";
 import Loader from "../components/Loader";
 import { useEffect, useState } from "react";
 import ActionButton from "../sacred/ActionButton";
-import { ButtonCards } from "../components/ButtonCards";
+import ButtonCards from "../components/ButtonCards";
 
 export default function Admin() {
   const { handleLogout, isClosytAuthenticated } = useContext() as {

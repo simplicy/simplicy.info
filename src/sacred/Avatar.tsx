@@ -6,24 +6,25 @@ import * as Utilities from '../common/utilities';
 interface AvatarProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style' | 'className' | 'children'> {
   src?: string;
   href?: string;
+  className?: string;
   target?: string;
   style?: React.CSSProperties;
   children?: React.ReactNode;
 }
 
 const Avatar: React.FC<AvatarProps> = (props) => {
-  const { src, style: propStyle, href, target, children, ...rest } = props;
+  const { src, className: cls, style: propStyle, href, target, children, ...rest } = props;
 
   const backgroundStyle = src ? { backgroundImage: `url(${src})` } : {};
 
-  const combinedStyle = { ...propStyle, ...backgroundStyle };
+  const combinedStyle = { ...propStyle, ...backgroundStyle, };
 
   let avatarElement: React.ReactElement;
 
   if (href) {
-    avatarElement = <a className={Utilities.classNames(src ? styles.root : styles.placeholder)} style={combinedStyle} href={href} target={target} tabIndex={0} role="link" />;
+    avatarElement = <a className={Utilities.classNames(src ? styles.root : styles.placeholder, cls)} style={combinedStyle} href={href} target={target} tabIndex={0} role="link" />;
   } else {
-    avatarElement = <figure className={Utilities.classNames(src ? styles.root : styles.placeholder)} style={combinedStyle} />;
+    avatarElement = <figure className={Utilities.classNames(src ? styles.root : styles.placeholder, cls)} style={combinedStyle} />;
   }
 
   if (!children) {

@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 import Quote from './Quote';
 import { useContext } from './page/Context';
 export default function Calendar() {
-  const { currentMonth } = useContext() as {
+  const { currentMonth, delay } = useContext() as {
+    delay: number,
     currentMonth: number,
   };
   let [count, setCount] = useState(0);
@@ -61,18 +62,58 @@ export default function Calendar() {
         initial={{ opacity: 1, }}
         animate={{ opacity: 0, display: "none" }}
         transition={{
-          delay: currentMonth + .25,
+          delay: delay - 1,
           duration: 0.5,
           ease: "easeInOut",
         }}
       >
-        <div className={styles.root}>
-          <div className={styles.container}>
-            {buildView()}
-          </div>
-        </div>
+        <motion.div
+          layout
+          style={{
+            display: "flex",
+            overflow: "hidden",
+            height: "100%",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "100%",
+          }}
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.5,
+            ease: "easeInOut",
+          }}
+        >
+          <motion.div
+            layout
+            style={{
+              display: "flex",
+              width: "100%",
+              justifyContent: "center",
+              height: "100%",
+              alignContent: "center",
+            }}
+            initial={{ opacity: 1, }}
+            animate={{ opacity: 0, display: "none" }}
+            transition={{
+              delay: currentMonth + .25,
+              duration: 0.5,
+              ease: "easeInOut",
+            }}
+          >
+            <div className={styles.root}>
+              <div className={styles.container}>
+                {buildView()}
+              </div>
+            </div>
+          </motion.div>
+          <Quote />
+        </motion.div>
       </motion.div>
-      <Quote />
     </>
   );
 }

@@ -44,12 +44,15 @@ export default function ContactForm() {
   return (
     <>
       <div className={styles.root}>
-        <AlertBanner
-        >
+        <AlertBanner hover={false}>
           <div className={styles.form}>
-            <div className={styles.title}>
+            <h1 style={{
+              alignSelf: "center"
+            }}>Contact</h1>
+            <div className={styles.from}>
+              Subject:
               <TextArea value={title}
-                placeholder="TITLE" name="title"
+                placeholder="SUBJECT" name="title"
                 cursor={false}
                 onChange={(e) => setTitle(e.target.value)} />
             </div>
@@ -57,7 +60,7 @@ export default function ContactForm() {
               From:
               <TextArea value={email}
                 cursor={false}
-                placeholder="EMAIL" name="email"
+                placeholder="YOUR EMAIL" name="email"
                 onChange={(e) => setEmail(e.target.value)} />
             </div>
             <Divider />
@@ -73,7 +76,7 @@ export default function ContactForm() {
               Signed,
               <TextArea value={name}
                 cursor={false}
-                placeholder="NAME" name="name"
+                placeholder="NAME/HANDLE" name="name"
                 onChange={(e) => setName(e.target.value)} />
             </div>
             <div className={styles.submit}>
