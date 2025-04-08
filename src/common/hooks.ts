@@ -21,7 +21,7 @@ export const useAbout = () => useQuery('about', async () => {
 export const useMeta = (
   data: any,
 ) => useQuery('meta', async () => {
-  return await contactFmc.post(data, "/").then((data) => {
+  return await contactFmc.post(data, "").then((data) => {
     return data;
   });
 }, { enabled: false });

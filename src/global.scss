@@ -234,8 +234,13 @@ body.theme-light {
   --theme-button-text: var(--color-white);
   --theme-button-foreground: var(--color-gray-30);
   --theme-button-background: var(--color-gray-20);
-  --theme-focused-foreground: var(--color-neon-green-50);
-  --theme-focused-foreground-subdued: var(--color-neon-green-50-5);
+  
+  --theme-focused-foreground: rgba(77, 144, 200, 1);
+  --theme-focused-foreground-subdued: rgba(77, 144, 200, 0.5);
+
+
+  --theme-focused-foreground: var(--color-neon-green-100-4);
+  --theme-focused-foreground-subdued: var(--color-neon-green-100-4);
 }
 
 body.theme-dark {

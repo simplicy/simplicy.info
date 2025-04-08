@@ -29,6 +29,7 @@ export default function Biography() {
             }}>
               <p>{Package.author}</p>
               <p style={{
+                transition: "color 0.3s ease",
                 color: "var(--theme-focused-foreground)",
               }}
               >Software Developer</p>
@@ -63,7 +64,8 @@ export default function Biography() {
         <Divider type="DOUBLE" />
         <div className={styles.content}>
           I am a 28 year old Software Developer born and raised in South Florida. I have been building desktop applications since I was 16.
-          Since then I have explored web development, IT management, devops, game development, AI model training, microcontrollers and mobile applications.
+          Since then I have explored Web & Mobile development, Computer Repair, Devops, Game development,
+          AI, Microcontrollers, Micro-Soldering, and Drones.
           Education is a continuous journey for me, and I am always looking to learn new things, whether it be a new programming language, a new paradigm, or a new skill.
           Currently, I am working on a few personal projects, including an multi-platform outfit planner, and some rust based desktop applications.
           <br />

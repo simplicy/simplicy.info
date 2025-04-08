@@ -82,7 +82,6 @@ export default function Homeview() {
           <Biography />
         </div>
         <div className={styles.switcher}>
-
           <div className={styles.cards}>
             <div className={Utilities.classNames(styles.mobile, styles.avi)}>
               <Avatar src={Me} target="_blank"

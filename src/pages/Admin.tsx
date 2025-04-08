@@ -33,7 +33,7 @@ export default function Admin() {
     }
   }, []);
 
-  if (isFetching) {
+  if (isFetching || !closytUser) {
     return <Loader />;
   }
 
@@ -70,6 +70,7 @@ export default function Admin() {
       enabled: true,
     },
   ];
+
 
   return (
     <div className={styles.root}>
