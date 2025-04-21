@@ -36,7 +36,7 @@ export default function Homeview() {
       name: "Portfolio",
       onClick: () => { navigate("portfolio"); },
       styles: null,
-      enabled: true,
+      enabled: false,
     },
     {
       name: "Work",
