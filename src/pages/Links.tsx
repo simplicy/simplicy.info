@@ -21,6 +21,14 @@ export default function Links() {
       enabled: true
     },
     {
+      name: "blog.simplicy.info",
+      onClick: () => {
+        window.open("https://blog.simplicy.info", "_blank");
+      },
+      description: "Tech Blog",
+      enabled: true
+    },
+    {
       name: "Ko-Fi",
       onClick: () => {
         window.open("https://ko-fi.com/simplicy", "_blank");
