@@ -33,8 +33,8 @@ export default function Navbar() {
         style={{
           width: "100%",
         }}
-        initial={{ opacity: 0, }}
-        animate={{ opacity: 1, }}
+        initial={{ opacity: 0, display: "none" }}
+        animate={{ opacity: 1, display: "flex" }}
         transition={{
           delay: delay,
           duration: 0.5,
