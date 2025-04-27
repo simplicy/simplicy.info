@@ -5,7 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import { BrowserRouter } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion';
 import 'react-toastify/dist/ReactToastify.css';
-import './global.scss';
+import './common/style/global.scss';
 import Providers from './components/Providers.tsx';
 import { Auth0ProviderWithNavigate } from './common/auth0.tsx';
 

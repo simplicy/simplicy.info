@@ -1,5 +1,5 @@
 import { BoxItemProps } from "../common/types";
-import styles from './ItemBoxes.module.scss';
+import styles from './style/ItemBoxes.module.scss';
 import * as Utilities from '../common/utilities';
 import Card from "../sacred/Card";
 import { useEffect, useState } from "react";

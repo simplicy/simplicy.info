@@ -1,14 +1,14 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Calendar from '../components/Calendar';
 import { useContext } from '../components/page/Context';
 import Cookies from "js-cookie";
 import { useMeta } from '../common/hooks';
-import Insta from "../assets/insta.svg";
-import XLogo from "../assets/x.svg";
-import LinkedIn from "../assets/linkedin.svg";
-import Github from "../assets/github.svg";
+import Insta from "../common/assets/insta.svg";
+import XLogo from "../common/assets/x.svg";
+import LinkedIn from "../common/assets/linkedin.svg";
+import Github from "../common/assets/github.svg";
 import Homeview from '../components/Homeview';
+import Intro from '../components/Intro';
 export let items = [
   {
     icon: XLogo,
@@ -81,7 +81,7 @@ function Home() {
         ease: "easeInOut",
       }}
     >
-      <Calendar />
+      <Intro />
       <Homeview />
     </motion.div>
   );

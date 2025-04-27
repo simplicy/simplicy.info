@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Cookies from 'js-cookie';
-import styles from "./ToggleTheme.module.scss";
+import styles from "./style/ToggleTheme.module.scss";
 import * as Utilities from "../common/utilities";
-import Moon from "../assets/moon.svg";
-import Sun from "../assets/sun.svg";
+import Moon from "../common/assets/moon.svg";
+import Sun from "../common/assets/sun.svg";
 export default function ToggleTheme() {
   const [theme, setTheme] = useState(Cookies.get("theme") === "Black Midnight Vapor" ? "dark" : "light");
   const toggleTheme = () => {

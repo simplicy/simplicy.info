@@ -1,4 +1,4 @@
-import styles from "./Homeview.module.scss";
+import styles from "./style/Homeview.module.scss";
 import * as Utilities from "../common/utilities";
 import Biography from "./Biography";
 import Avatar from "../sacred/Avatar";
@@ -9,7 +9,7 @@ import { Card } from "../common/types";
 import Tooltip from "../sacred/Tooltip";
 import ActionButton from "../sacred/ActionButton";
 import Package from "../../package.json";
-import Me from "../assets/me.jpg";
+import Me from "../common/assets/me.jpg";
 import { items } from "../pages/Home";
 import ButtonCards from "./ButtonCards";
 

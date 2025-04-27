@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import styles from './Calendar.module.scss';
+import styles from './style/Calendar.module.scss';
 import { motion } from 'framer-motion';
 import Quote from './Quote';
 import { useContext } from './page/Context';

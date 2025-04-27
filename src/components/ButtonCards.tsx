@@ -1,5 +1,5 @@
 import { Card } from "../common/types";
-import styles from './ButtonCards.module.scss';
+import styles from './style/ButtonCards.module.scss';
 import * as Utilities from '../common/utilities';
 import AlertBanner from "../sacred/AlertBanner";
 

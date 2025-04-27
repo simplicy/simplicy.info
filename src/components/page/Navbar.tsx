@@ -1,4 +1,4 @@
-import styles from './Navbar.module.scss';
+import styles from '../style/Navbar.module.scss';
 import Package from '../../../package.json';
 import { motion } from 'framer-motion';
 import { useContext } from './Context';

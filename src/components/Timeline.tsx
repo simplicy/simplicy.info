@@ -1,5 +1,5 @@
 import Card from '../sacred/Card';
-import styles from './Timeline.module.scss';
+import styles from './style/Timeline.module.scss';
 import { motion } from 'framer-motion';
 
 interface TimelineProps {
