@@ -10,10 +10,15 @@ import Bio from './pages/Bio.tsx';
 import Contact from './pages/Contact.tsx';
 import { AuthenticationGuard } from './common/auth0.tsx';
 import Admin from './pages/Admin.tsx';
+import eruda from "eruda";
 
 
 
 function App() {
+  // If in dev mode do this
+  if (import.meta.env.MODE === 'development') {
+    eruda.init();
+  }
   let location = useLocation();
   return (
     <Routes location={location} key={location.pathname}>
