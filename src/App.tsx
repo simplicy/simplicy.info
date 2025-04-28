@@ -16,7 +16,7 @@ import eruda from "eruda";
 
 function App() {
   // If in dev mode do this
-  if (import.meta.env.MODE === 'development') {
+  if (import.meta.env.VITE_MODE === 'development') {
     eruda.init();
   }
   let location = useLocation();
