@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import styles from './style/Calendar.module.scss';
+import styles from '../style/Calendar.module.scss';
 import { motion } from 'framer-motion';
 import Quote from './Quote';
-import { useContext } from './page/Context';
+import { useContext } from '../page/Context';
 export default function Calendar() {
   const { currentMonth, delay } = useContext() as {
     delay: number,

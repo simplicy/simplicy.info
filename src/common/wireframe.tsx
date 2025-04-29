@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Loader from "../components/Loader";
+import Loader from "../components/page/Loader";
 import DebugGrid from "../sacred/DebugGrid";
 import DefaultLayout from "../sacred/page/DefaultLayout";
 import Row from "../sacred/Row";

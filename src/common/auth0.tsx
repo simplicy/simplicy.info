@@ -1,6 +1,6 @@
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import React, { ComponentType, useEffect } from "react";
-import Loader from "../components/Loader";
+import Loader from "../components/page/Loader";
 import { Auth0Provider, AppState, } from "@auth0/auth0-react";
 import { PropsWithChildren } from "react";
 import { useNavigate } from "react-router-dom";

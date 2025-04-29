@@ -8,7 +8,7 @@ import XLogo from "../common/assets/x.svg";
 import LinkedIn from "../common/assets/linkedin.svg";
 import Github from "../common/assets/github.svg";
 import Homeview from '../components/Homeview';
-import Intro from '../components/Intro';
+import Intro from '../components/intro/Intro';
 export let items = [
   {
     icon: XLogo,

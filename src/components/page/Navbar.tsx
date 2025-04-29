@@ -2,7 +2,7 @@ import styles from '../style/Navbar.module.scss';
 import Package from '../../../package.json';
 import { motion } from 'framer-motion';
 import { useContext } from './Context';
-import ToggleTheme from '../ToggleTheme';
+import ToggleTheme from './ToggleTheme';
 import { useNavigate } from 'react-router-dom';
 export default function Navbar() {
   const navigate = useNavigate();

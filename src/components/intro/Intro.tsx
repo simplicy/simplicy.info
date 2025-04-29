@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useContext } from './page/Context';
+import { useContext } from '../page/Context';
 import Calendar from './Calendar';
 export default function Intro() {
   const { delay } = useContext() as {

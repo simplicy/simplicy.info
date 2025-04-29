@@ -1,6 +1,6 @@
-import styles from './style/Quote.module.scss';
+import styles from '../style/Quote.module.scss';
 import { motion } from 'framer-motion';
-import { useContext } from './page/Context';
+import { useContext } from '../page/Context';
 export default function Quote() {
   const { currentMonth } = useContext() as {
     currentMonth: number,

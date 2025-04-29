@@ -1,8 +1,8 @@
 'use client';
 
 import * as React from 'react';
-import { Provider } from './page/Context';
-import { ModalProvider } from '../sacred/page/ModalContext';
+import { Provider } from './Context';
+import { ModalProvider } from '../../sacred/page/ModalContext';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 interface ClosytProvidersProps {

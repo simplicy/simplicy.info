@@ -7,7 +7,6 @@ interface CardsProps {
   cards: Card[];
 }
 
-
 export default function ButtonCards({ cards }: CardsProps) {
   const empty = () => { return; }
   const cardsmap = (data: any[]) => {

@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import BlockLoader from '../sacred/BlockLoader';
+import BlockLoader from '../../sacred/BlockLoader';
 function Loader() {
   return (
     <Box sx={{

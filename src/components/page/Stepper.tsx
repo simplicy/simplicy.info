@@ -1,5 +1,5 @@
 import styles from "./Stepper.module.scss";
-import * as Utilities from "../common/utilities";
+import * as Utilities from "../../common/utilities";
 
 export default function StepperBar(
   { steps, step }: {
