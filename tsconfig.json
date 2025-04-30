@@ -9,7 +9,6 @@
     ],
     "types": [
       "node",
-      "jest",
       "vite-plugin-glsl/ext"
     ],
     "module": "ESNext",
