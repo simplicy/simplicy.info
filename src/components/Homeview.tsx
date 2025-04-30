@@ -88,6 +88,9 @@ export default function Homeview() {
                 className={styles.avatar}
               />
               @{Package.author}
+              <p>
+                Software Developer
+              </p>
             </div>
             <div className={Utilities.classNames(styles.mobile, styles.buttons)}>
               {items.map((item, index) => (

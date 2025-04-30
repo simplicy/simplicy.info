@@ -48,6 +48,15 @@
   src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/e049dfb6-9c5d-4ac4-97c2-eb6e95c61d09.woff2') format('woff2');
 }
 
+canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+}
+
 a,
 abbr,
 acronym,
@@ -238,9 +247,6 @@ body.theme-light {
   --theme-focused-foreground: rgba(77, 144, 200, 1);
   --theme-focused-foreground-subdued: rgba(77, 144, 200, 0.5);
 
-
-  --theme-focused-foreground: var(--color-neon-green-100-4);
-  --theme-focused-foreground-subdued: var(--color-neon-green-100-4);
 }
 
 body.theme-dark {

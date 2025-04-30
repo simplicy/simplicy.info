@@ -1,4 +1,5 @@
 import react from '@vitejs/plugin-react'
+import glsl from 'vite-plugin-glsl';
 import { defineConfig, loadEnv } from 'vite';
 // https://vitejs.dev/config/
 
@@ -7,7 +8,7 @@ export default ({ mode }) => {
   const API_URL = `${env.VITE_API_URL}`;
 
   return defineConfig({
-    plugins: [react()],
+    plugins: [react(), glsl()],
     server: {
       proxy: {
         '/api': {

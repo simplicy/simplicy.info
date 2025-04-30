@@ -23,6 +23,7 @@
   font-weight: var(--theme-font-weight-bold);
   color: var(--theme-text);
   cursor: pointer;
+  z-index: 100;
 }
 
 @keyframes blink {
