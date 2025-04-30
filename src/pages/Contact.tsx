@@ -1,4 +1,4 @@
-import styles from '../common/style/Contact.module.scss';
+import styles from '../style/Contact.module.scss';
 import ContactForm from "../components/ContactForm";
 import { motion } from 'framer-motion';
 

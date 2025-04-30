@@ -1,4 +1,4 @@
-import styles from "./Stepper.module.scss";
+import styles from "../style/Stepper.module.scss";
 import * as Utilities from "../../common/utilities";
 
 export default function StepperBar(

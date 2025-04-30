@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import styles from "../common/style/Work.module.scss";
+import styles from "../style/Work.module.scss";
 import Timeline from "../components/page/Timeline";
 export default function Work() {
   let work = [

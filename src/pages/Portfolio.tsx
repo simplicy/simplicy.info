@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import styles from "../common/style/Portfolio.module.scss";
+import styles from "../style/Portfolio.module.scss";
 import { ItemBoxes } from "../components/ItemBoxes";
 import Bag from "../common/assets/bag.jpg";
 import BagBack from "../common/assets/bag_back.jpg"; // Example image import, if needed

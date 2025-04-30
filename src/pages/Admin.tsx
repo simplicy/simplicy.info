@@ -2,7 +2,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { Card, ClosytUser } from "../common/types";
 import { useContext } from "../components/page/Context";
 import { useClosytUser } from "../common/hooks";
-import styles from "../common/style/Admin.module.scss";
+import styles from "../style/Admin.module.scss";
 import Loader from "../components/page/Loader";
 import { useEffect, useState } from "react";
 import ActionButton from "../sacred/ActionButton";
