@@ -1,81 +1,88 @@
 
-#define TAU 6.28318530718
 
+// Author: Patricio Gonzalez Vivo
+#ifdef GL_ES
 precision mediump float;
+#endif
 
-varying vec2 vPosition;
-uniform float uTime;
+#define PI 3.1415926535
+#define HALF_PI 1.57079632679
 
-uniform vec2 iResolution;
-uniform vec2 iMouse;
-uniform float iTime;
-uniform float iTimeDelta;
-uniform float iFrame;
-uniform float iChannelTime[4];
-uniform vec3 iChannelResolution[4];
-uniform sampler2D iChannel0;
-uniform sampler2D iChannel1;
-uniform sampler2D iChannel2;
-uniform sampler2D iChannel3;
+uniform vec2 u_resolution;
+uniform float u_time;
+uniform sampler2D u_tex0;
+uniform vec2 u_tex0Resolution; 
 
-  
-uniform float foo[2];
+uniform sampler2D u_logo; // data/logo.jpg
+uniform vec2 u_logoResolution;
 
-vec3 rgb(int r, int g, int b) {
-  return vec3(float(r), float(g), float(b))/256.; 
+vec2 scale(vec2 st, float s) {
+    return (st-.5)*s+.5;
 }
-  
-void main() {
-        // Period
-        const float T = 20.;
-        const float w = TAU / T;
-  
-        float nSymmetries = 1. + 2.*sin(w * uTime);
-        vec2 uv = vPosition.xy;
-        vec3 color = vec3(0.);
-  
-        const int nColors = 3;
-        vec3 colors[nColors];
 
-        /* colors defined by 
-        https://meodai.github.io/rampensau/
-        generateColorRamp({
-  total: 4,
-  hStart: 202.000,
-  hStartCenter: 1.000,
-  hEasing: 
-    x => x,
-  hCycles: 1.577,
+vec2 ratio(in vec2 st, in vec2 s) {
+    return mix( vec2((st.x*s.x/s.y)-(s.x*.5-s.y*.5)/s.y,st.y),
+                vec2(st.x,st.y*(s.y/s.x)-(s.y*.5-s.x*.5)/s.x),
+                step(s.x,s.y));
+}
 
-  sRange: [0.863, 0.992],
-  lRange: [0.379, 0.826],
-  
-  sEasing:
-    x => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2),
-  lEasing: 
-    x => -(Math.cos(Math.PI * x) - 1) / 2,
-});
+float circleSDF(vec2 st) {
+    return length(st - 0.5) * 2.0;
+}
 
-        */
-  
-        colors[0] = rgb(1,1,1);
-        colors[1] = rgb(150,150,150);
-        colors[2] = rgb(100,100,100);
-  
-        float a = TAU/nSymmetries;
+vec2 sphereCoords(vec2 _st, float _scale){
+    float maxFactor = sin(1.570796327);
+    vec2 uv = vec2(0.0);
+    vec2 xy = 2.0 * _st.xy - 1.0;
+    float d = length(xy);
+    if (d < (2.0-maxFactor)){
+        d = length(xy * maxFactor);
+        float z = sqrt(1.0 - d * d);
+        float r = atan(d, z) / 3.1415926535 * _scale;
+        float phi = atan(xy.y, xy.x);
+        uv.x = r * cos(phi) + 0.5;
+        uv.y = r * sin(phi) + 0.5;
+    } else {
+        uv = _st.xy;
+    }
+    return uv;
+}
 
-        float theta = atan(uv.y, uv.x); // between -TAU/2 and TAU/2
-        float rho = length(uv);
+vec4 sphereTexture(in sampler2D _tex, in vec2 _uv, float _time) {
+    vec2 st = sphereCoords(_uv, 1.0);
+    float aspect = u_tex0Resolution.y/u_tex0Resolution.x;
+    st.x = fract(st.x * aspect + _time);
+    return texture2D(_tex, st);
+}
 
-        theta += uTime/10. + 20. +  2.*sin(w * uTime + floor(rho*2.)) + uTime/2. *floor(rho*1.);      
-      
-        theta = mod(theta + TAU, TAU);      
-  
-        float theta_ix = floor(theta/a);
-        theta = mod(theta, a);
-  
-        for(int i = 0; i < nColors; i ++){
-          color = i == int(theta_ix) ? colors[i] : color;
-        }
-        gl_FragColor = theta/a * vec4(color, 1.);
+vec3 sphereNormals(in vec2 uv) {
+    uv = fract(uv)*2.0-1.0; 
+    vec3 ret;
+    ret.xy = sqrt(uv * uv) * sign(uv);
+    ret.z = sqrt(abs(1.0 - dot(ret.xy,ret.xy)));
+    ret = ret * 0.5 + 0.5;    
+    return mix(vec3(0.0), ret, smoothstep(1.0,0.98,dot(uv,uv)) );
+}
+
+void main(){
+    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    st = scale(st, 2.0);
+    st = ratio(st, u_resolution);
+
+    vec3 color = vec3(0.0);
+    color = sphereTexture(u_tex0, st, u_time * 0.01).rgb;
+
+    // Calculate sun direction
+    float speedSun = 0.6;
+    vec3 sunPos = normalize(vec3(cos(u_time * speedSun - HALF_PI), 0.0, sin(speedSun * u_time - HALF_PI)));
+    vec3 surface = normalize(sphereNormals(st)*2.0-1.0);
+   
+    // Add Shadows
+    color *= clamp(dot(sunPos, surface), 0.0, 1.0);
+    // Blend black the edge of the sphere
+    float radius = 1.0 - circleSDF(st);
+    color *= smoothstep(0.001, 0.02, radius);
+
+    st = scale(st, 2.);
+    gl_FragColor = vec4(color, 1.0);
 }

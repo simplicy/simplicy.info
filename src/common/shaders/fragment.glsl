@@ -1,69 +1,59 @@
-
-#define TAU 6.28318530718
-
+uniform float iTime;
+uniform float iTimeDelta;
+uniform vec2 iResolution;
+uniform vec3 iMouse;
+uniform sampler2D iChannel0;
+#ifdef GL_ES
 precision mediump float;
+#endif
 
-varying vec2 vPosition;
-uniform float uTime;
-  
-uniform float foo[2];
+// http://www.iquilezles.org/www/articles/smoothvoronoi/smoothvoronoi.htm
 
-vec3 rgb(int r, int g, int b) {
-  return vec3(float(r), float(g), float(b))/256.; 
+uniform float time;
+uniform vec2 mouse;
+uniform vec2 resolution;
+
+vec2 random2f( vec2 seed ) {
+	float t = sin(seed.x+seed.y*1e3);
+	return vec2(fract(t*1e4), fract(t*1e6));
 }
-  
-void main() {
-        // Period
-        const float T = 30.;
-        const float w = TAU / T;
-  
-        float nSymmetries = 2. + 1.*sin(w * uTime);
-        vec2 uv = vPosition.xy;
-        vec3 color = vec3(0.);
-  
-        const int nColors = 3;
-        vec3 colors[nColors];
 
-        /* colors defined by 
-        https://meodai.github.io/rampensau/
-        generateColorRamp({
-  total: 4,
-  hStart: 202.000,
-  hStartCenter: 1.000,
-  hEasing: 
-    x => x,
-  hCycles: 1.577,
+float voronoi( in vec2 x )
+{
+    vec2 p = floor( x );
+    vec2  f = fract( x );
 
-  sRange: [0.863, 0.992],
-  lRange: [0.379, 0.826],
-  
-  sEasing:
-    x => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2),
-  lEasing: 
-    x => -(Math.cos(Math.PI * x) - 1) / 2,
-});
+    float res = 0.0;
+    for( int j=-1; j<=1; j++ )
+    for( int i=-1; i<=1; i++ )
+    {
+        vec2 b = vec2( i, j );
+        vec2  r = vec2( b ) - f + random2f( p + b );
+        float d = dot( r, r );
 
-        */
-  
-        colors[0] = rgb(111,242,252);
-        colors[1] = rgb(235,61,14);
-        colors[2] = rgb(13,118,180);
-  
-        float a = TAU/nSymmetries;
+        res += 1.0/pow( d, 8.0 );
+    }
+    return pow( 1.0/res, 1.0/16.0 );
+}
 
-        float theta = atan(uv.y, uv.x); // between -TAU/2 and TAU/2
-        float rho = length(uv);
+vec3 normal(vec2 p) {
+	float d = 0.01;
+	vec3 dx = vec3(d, 0.0, voronoi(p + vec2(d, 0.0))) - vec3(-d, 0.0, voronoi(p + vec2(-d, 0.0)));
+	vec3 dy = vec3(0.0, d, voronoi(p + vec2(0.0, d))) - vec3(0.0, -d, voronoi(p + vec2(0.0, -d)));
+	return normalize(cross(dx,dy));
+}
 
-        theta += uTime/10. + 20. +  2.*sin(w * uTime + floor(rho*2.)) + uTime/3. *floor(rho*2.);      
-      
-        theta = mod(theta + TAU, TAU);      
-  
-        float theta_ix = floor(theta/a);
-        theta = mod(theta, a);
-  
-        for(int i = 0; i < nColors; i ++){
-          color = i == int(theta_ix) ? colors[i] : color;
-        }
-        gl_FragColor = theta/a * vec4(color, 1.);
+void main( void )
+{
+	vec2 p = gl_FragCoord.xy / resolution.xy;
+
+	float color = voronoi(p*15.);
+  gl_FragColor = vec4(vec3(color), 1.);
+	return;
+	
+	vec3 light = normalize(vec3(1.0,0.1,1.0));
+	
+	float shade = dot(light,normal(p*15.))+0.5;
+	gl_FragColor = vec4(vec3(shade*color), 1.0);
 }
 

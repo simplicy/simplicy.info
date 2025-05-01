@@ -1,18 +1,14 @@
 import { motion } from 'framer-motion';
 import { useContext } from '../page/Context';
 import Calendar from './Calendar';
-import QShader from '../../common/qshader';
-import test from '../../common/shaders/test.glsl?raw';
+import intro from '../../common/shaders/intro.glsl?raw';
 import { useEffect } from 'react';
-export default function Intro() {
-  const { delay } = useContext() as {
-    delay: number,
-  };
-  useEffect(() => {
-    QShader("#intro-canvas", test);
-  }, []);
+import GlslCanvas from 'glslCanvas';
+import moon from '../../common/assets/moon.jpg';
+import planet from '../../common/assets/pluto.jpg';
 
-  // View
+export default function Intro() {
+  const { delay } = useContext();
   return (
     <>
       <motion.div
@@ -31,7 +27,9 @@ export default function Intro() {
           duration: 0.5,
           ease: "easeInOut",
         }}>
-        <canvas id='intro-canvas' />
+        <canvas className='glslCanvas' data-fragment={intro} id="intro-canvas"
+          width={window.innerWidth} height={window.innerHeight} data-textures={planet}
+        />
         <Calendar />
       </motion.div>
     </>
