@@ -245,10 +245,8 @@ body.theme-light {
   --theme-button-text: var(--color-white);
   --theme-button-foreground: var(--color-gray-30);
   --theme-button-background: var(--color-gray-20);
-  
-  --theme-focused-foreground: rgba(77, 144, 200, 1);
-  --theme-focused-foreground-subdued: rgba(77, 144, 200, 0.5);
-
+  --theme-focused-foreground: var(--color-daybreak-10);
+  --theme-focused-foreground-subdued: var(--color-daybreak-10-5);
 }
 
 body.theme-dark {
@@ -264,8 +262,9 @@ body.theme-dark {
   --theme-button-text: var(--color-black-100);
   --theme-button-foreground: var(--color-gray-90);
   --theme-button-background: var(--color-gray-80);
-  --theme-focused-foreground: var(--color-daybreak-10);
-  --theme-focused-foreground-subdued: var(--color-daybreak-10-5);
+  
+  --theme-focused-foreground: rgba(157, 171, 152, 1);
+  --theme-focused-foreground-subdued: rgba(157, 174, 152, 0.5);
 }
 
 body.theme-green {
