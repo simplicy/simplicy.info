@@ -29,11 +29,11 @@ export default function Links() {
       enabled: true
     },
     {
-      name: "Ebay Shop",
+      name: "Ebay",
       onClick: () => {
         window.open("https://ebay.com/usr/simplicy_0", "_blank");
       },
-      description: "Shop",
+      description: "Ebay Store",
       enabled: true
     },
     {
