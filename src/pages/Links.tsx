@@ -29,6 +29,14 @@ export default function Links() {
       enabled: true
     },
     {
+      name: "Ebay Shop",
+      onClick: () => {
+        window.open("https://ebay.com/simplicy_01", "_blank");
+      },
+      description: "Shop",
+      enabled: true
+    },
+    {
       name: "Ko-Fi",
       onClick: () => {
         window.open("https://ko-fi.com/simplicy", "_blank");
