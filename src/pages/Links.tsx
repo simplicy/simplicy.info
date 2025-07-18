@@ -31,7 +31,7 @@ export default function Links() {
     {
       name: "Ebay Shop",
       onClick: () => {
-        window.open("https://ebay.com/simplicy_01", "_blank");
+        window.open("https://ebay.com/usr/simplicy_0", "_blank");
       },
       description: "Shop",
       enabled: true
