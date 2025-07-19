@@ -29,6 +29,8 @@ export const Provider: React.FC<{ children: React.ReactNode }> = ({ children }) 
   if (Cookies.get("intro")) {
     delay = 0;
   }
+  // Override to disable intro animation
+  delay = 0;
   const { logout, getAccessTokenSilently, user, isAuthenticated } = useAuth0();
   const handleLogout = async () => {
     let token = await getAccessTokenSilently();
