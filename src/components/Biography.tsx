@@ -65,8 +65,7 @@ export default function Biography() {
         <Divider type="DOUBLE" />
         <TextArea
           className={styles.content}
-          autoPlay="
-          I am a 28 year old Software Developer born and raised in South Florida.
+          autoPlay="I am a 28 year old Software Developer born and raised in South Florida.
           My free time is split between programming, gaming, sewing, or modding electronics.
           Currently working on a multi-platform outfit planner and a VoIP/Messaging application.
           " autoPlaySpeedMS={100} isBlink />
