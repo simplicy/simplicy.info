@@ -8,6 +8,7 @@ import Me from "../common/assets/me.jpg";
 import ActionButton from "../sacred/ActionButton";
 import { items } from "../pages/Home.tsx";
 import Tooltip from "../sacred/Tooltip.tsx";
+import TextArea from "../sacred/TextArea.tsx";
 
 export default function Biography() {
 
@@ -62,11 +63,13 @@ export default function Biography() {
           </div>
         </div>
         <Divider type="DOUBLE" />
-        <div className={styles.content}>
+        <TextArea
+          className={styles.content}
+          autoPlay="
           I am a 28 year old Software Developer born and raised in South Florida.
           My free time is split between programming, gaming, sewing, or modding electronics.
           Currently working on a multi-platform outfit planner and a VoIP/Messaging application.
-        </div>
+          " autoPlaySpeedMS={100} isBlink />
       </CardDouble>
     </div>
   )
