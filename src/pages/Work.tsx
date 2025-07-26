@@ -4,10 +4,10 @@ import Timeline from "../components/Timeline";
 export default function Work() {
   let work = [
     {
-      "companyname": "Map Communications",
-      "title": "Software Developer",
-      "start": "2023",
-      "end": "Present",
+      "companyname": "MSC Cruises",
+      "title": "IT Support Specialist",
+      "start": "2015",
+      "end": "2020",
     },
     {
       "companyname": "Corporate Message Services",
@@ -16,11 +16,11 @@ export default function Work() {
       "end": "2023",
     },
     {
-      "companyname": "MSC Cruises",
-      "title": "IT Support Specialist",
-      "start": "2015",
-      "end": "2020",
-    }
+      "companyname": "Map Communications",
+      "title": "Software Developer",
+      "start": "2023",
+      "end": "Present",
+    },
   ]
   return (
     <motion.div
