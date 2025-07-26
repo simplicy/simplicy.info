@@ -49,29 +49,7 @@ export default function Contact() {
             ease: "easeInOut",
           }}>
 
-          <p>Contact me if you have a question or want to work together.</p>
-        </motion.div>
-        <motion.div
-          style={{
-            display: "flex",
-            flexWrap: 'nowrap',
-            flexDirection: 'column',
-            overflow: "hidden",
-            textWrap: 'wrap',
-            textAlign: "center",
-            translateX: "-8ch",
-            opacity: 0,
-          }}
-          animate={{
-            translateX: "0px",
-            opacity: 1,
-          }}
-          transition={{
-            delay: 0.25,
-            duration: .55,
-            ease: "easeInOut",
-          }}>
-          <p>I will get back to you as soon as I can.</p>
+          <p>Contact me with questions or work you may have.</p>
         </motion.div>
         <ContactForm />
       </div >
