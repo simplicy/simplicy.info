@@ -5,15 +5,15 @@ import { motion } from 'framer-motion';
 export default function Links() {
   let links = [
     {
-      name: "Closyt.com",
+      name: "Closyt",
       onClick: () => {
         window.open("https://closyt.com", "_blank");
       },
-      description: "Digital Outfit Planner",
+      description: "",
       enabled: true
     },
     {
-      name: "blog.simplicy.info",
+      name: "Blog",
       onClick: () => {
         window.open("https://blog.simplicy.info", "_blank");
       },
@@ -21,7 +21,7 @@ export default function Links() {
       enabled: true
     },
     {
-      name: "Sympil.com",
+      name: "Sympil",
       onClick: () => {
         window.open("https://sympil.com", "_blank");
       },
