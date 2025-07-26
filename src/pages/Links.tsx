@@ -13,19 +13,19 @@ export default function Links() {
       enabled: true
     },
     {
-      name: "Sympil.com",
-      onClick: () => {
-        window.open("https://sympil.com", "_blank");
-      },
-      description: "Personal Blog",
-      enabled: true
-    },
-    {
       name: "blog.simplicy.info",
       onClick: () => {
         window.open("https://blog.simplicy.info", "_blank");
       },
-      description: "Tech Blog",
+      description: "",
+      enabled: true
+    },
+    {
+      name: "Sympil.com",
+      onClick: () => {
+        window.open("https://sympil.com", "_blank");
+      },
+      description: "",
       enabled: true
     },
     {
@@ -33,7 +33,7 @@ export default function Links() {
       onClick: () => {
         window.open("https://ebay.com/usr/simplicy_0", "_blank");
       },
-      description: "Ebay Store",
+      description: "",
       enabled: true
     },
     {
@@ -41,7 +41,7 @@ export default function Links() {
       onClick: () => {
         window.open("https://ko-fi.com/simplicy", "_blank");
       },
-      description: "Donate",
+      description: "",
       enabled: true
     },
 
