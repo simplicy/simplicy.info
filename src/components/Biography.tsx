@@ -64,8 +64,8 @@ export default function Biography() {
         </div>
         <Divider type="DOUBLE" />
         <TextArea
-          autoPlay="I am a 28 year old Software Developer born and raised in South Florida. My free time is split between programming, gaming, sewing, or modding electronics. Currently working on a multi-platform outfit planner and a VoIP/Messaging application."
-          autoPlaySpeedMS={30} isBlink />
+          value="I am a 28 year old Software Developer born and raised in South Florida. My free time is split between programming, gaming, sewing, or modding electronics. Currently working on a multi-platform outfit planner and a VoIP/Messaging application."
+          isBlink />
       </CardDouble>
     </div>
   )
