@@ -49,7 +49,7 @@ export default function Contact() {
             ease: "easeInOut",
           }}>
 
-          <p>Contact me with questions or work you may have.</p>
+          <p>For business inquries and questions, please fill out the form below.</p>
         </motion.div>
         <ContactForm />
       </div >
