@@ -18,6 +18,20 @@ jobs:
           registry: ${{vars.HOST}}
           username: ${{vars.USERNAME}}
           password: ${{ secrets.TOKEN }}
+      - name: Install all dependencies
+        run: yarn
+      - name: Build
+        run: yarn run build # The build command of your project
+      - name: Build
+        run: ls
+      - name: Push
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: build # The branch name where you want to push the assets
+          FOLDER: dist # The directory where your assets are generated
+          GITHUB_TOKEN: ${{ secrets.TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
+          MESSAGE: "Build: ({sha}) {msg}" # The commit
       - name: Build and push
         uses: docker/build-push-action@v4
         args:
