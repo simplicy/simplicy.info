@@ -39,8 +39,10 @@ jobs:
           repository: ${{ vars.OWNER }}/${{ vars.REPO }}
           token: ${{ secrets.TOKEN }} # `GH_PAT` is a secret that contains your PAT
         env:
+          REPO: self
           BRANCH: build # The branch name where you want to push the assets
           FOLDER: dist # The directory where your assets are generated
+          TOKEN: ${{ secrets.TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
           MESSAGE: "Build: ({sha}) {msg}" # The commit
       - name: Build and push
         uses: docker/build-push-action@v4
