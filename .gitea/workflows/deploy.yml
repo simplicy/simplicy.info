@@ -18,11 +18,14 @@ jobs:
           registry: ${{vars.HOST}}
           username: ${{vars.USERNAME}}
           password: ${{ secrets.TOKEN }}
+          
+      - name: Install yarn
+        run: apt-get install yarn -y 
       - name: Install all dependencies
         run: yarn
       - name: Build
         run: yarn run build # The build command of your project
-      - name: Build
+      - name: Verify
         run: ls
       - name: Push
         uses: s0/git-publish-subdir-action@develop
