@@ -18,14 +18,21 @@ jobs:
           registry: ${{vars.HOST}}
           username: ${{vars.USERNAME}}
           password: ${{ secrets.TOKEN }}
-          
-      - name: Install all dependencies
+      - name: Set Node.js 16.x
+        uses: actions/setup-node@v3
         with:
-          node-version: 20
-          cache: 'yarn'
-        run: yarn
-      - name: Build
-        run: yarn run build # The build command of your project
+          node-version: 16.x
+      - name: Run install
+        uses: Borales/actions-yarn@v5.0.0
+        with:
+          cmd: install # will run `yarn install` command
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # if needed
+      - name: 🚀　Build bundle
+        uses: Borales/actions-yarn@v5.0.0
+        with:
+          cmd: run build
+          dir: ./
       - name: Verify
         run: ls
       - name: Push
