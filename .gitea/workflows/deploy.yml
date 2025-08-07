@@ -19,9 +19,10 @@ jobs:
           username: ${{vars.USERNAME}}
           password: ${{ secrets.TOKEN }}
           
-      - name: Install yarn
-        run: apt-get install yarn -y 
       - name: Install all dependencies
+        with:
+          node-version: 20
+          cache: 'yarn'
         run: yarn
       - name: Build
         run: yarn run build # The build command of your project
