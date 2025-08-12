@@ -28,7 +28,7 @@ jobs:
           cmd: install # will run `yarn install` command
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # if needed
-      - name: 🚀　Build bundle
+      - name: 🚀Build bundle
         uses: Borales/actions-yarn@v5.0.0
         with:
           cmd: run build
@@ -42,7 +42,7 @@ jobs:
           REPO: self
           BRANCH: build # The branch name where you want to push the assets
           FOLDER: dist # The directory where your assets are generated
-          TOKEN: ${{ secrets.TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
+          GITHUB_TOKEN: ${{ secrets.TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
           MESSAGE: "Build: ({sha}) {msg}" # The commit
       - name: Build and push
         uses: docker/build-push-action@v4
