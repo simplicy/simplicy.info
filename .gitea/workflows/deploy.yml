@@ -18,33 +18,7 @@ jobs:
           registry: ${{vars.HOST}}
           username: ${{vars.USERNAME}}
           password: ${{ secrets.TOKEN }}
-      - name: Set Node.js 20.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20.x
-      - name: Run install
-        uses: Borales/actions-yarn@v5.0.0
-        with:
-          cmd: install # will run `yarn install` command
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # if needed
-      - name: 🚀Build bundle
-        uses: Borales/actions-yarn@v5.0.0
-        with:
-          cmd: run build
-          dir: ./
-      # - name: Push
-      #   uses: s0/git-publish-subdir-action@develop
-      #   with:
-      #     repository: ${{ vars.OWNER }}/${{ vars.REPO }}
-      #     token: ${{ secrets.TOKEN }} # `GH_PAT` is a secret that contains your PAT
-      #   env:
-      #     REPO: self
-      #     BRANCH: build # The branch name where you want to push the assets
-      #     FOLDER: dist # The directory where your assets are generated
-      #     GITHUB_TOKEN: ${{ secrets.TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
-      #     MESSAGE: "Build: ({sha}) {msg}" # The commit
-      # - name: Build and push
+      - name: Build and push
         uses: docker/build-push-action@v4
         args:
           VITE_API_URL: ${{vars.VITE_API_URL}}
