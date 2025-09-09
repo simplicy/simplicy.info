@@ -15,9 +15,9 @@ export default function Navbar() {
       <div className={styles.root}>
         <div className={styles.title}
           onClick={() => { navigate("/") }}>
-          <h1>
+          <h2>
             {Package.name.toUpperCase()}
-          </h1>
+          </h2>
           <span className={styles.blink}></span>
         </div>
         <ToggleTheme />
