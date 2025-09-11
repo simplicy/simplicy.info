@@ -1,51 +1,9 @@
 import ButtonCards from "../components/ButtonCards";
 import styles from '../style/Links.module.scss';
 import { motion } from 'framer-motion';
+import { links } from '../vars.ts';
 
 export default function Links() {
-  let links = [
-    {
-      name: "Closyt",
-      onClick: () => {
-        window.open("https://closyt.com", "_blank");
-      },
-      description: "",
-      enabled: true
-    },
-    {
-      name: "Blog",
-      onClick: () => {
-        window.open("https://blog.simplicy.info", "_blank");
-      },
-      description: "",
-      enabled: true
-    },
-    {
-      name: "Sympil",
-      onClick: () => {
-        window.open("https://sympil.com", "_blank");
-      },
-      description: "",
-      enabled: true
-    },
-    {
-      name: "Ebay",
-      onClick: () => {
-        window.open("https://ebay.com/usr/simplicy_0", "_blank");
-      },
-      description: "",
-      enabled: true
-    },
-    {
-      name: "Ko-Fi",
-      onClick: () => {
-        window.open("https://ko-fi.com/simplicy", "_blank");
-      },
-      description: "",
-      enabled: true
-    },
-
-  ];
   return (
     <>
       <motion.div

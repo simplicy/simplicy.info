@@ -8,6 +8,10 @@
   @media (max-width: 768px) {
     align-items: flex-start;
     max-height: calc(100vh - 40ch);
+    max-width: 50ch;
+  }
+  @media (max-width: 568px) {
+    max-width: 40ch;
   }
   @media (min-width: 768px) {
     min-width: 50ch;

@@ -10,15 +10,27 @@ import Tooltip from "../sacred/Tooltip";
 import ActionButton from "../sacred/ActionButton";
 import Package from "../../package.json";
 import Me from "../common/assets/me.jpg";
-import { items } from "../pages/Home";
+import { items, links } from "../vars.ts";
 import ButtonCards from "./ButtonCards";
+import { useState } from "react";
 
 
 export default function Homeview() {
   const navigate = useNavigate();
+  const [onlink, setOnlink] = useState(false);
   const { delay } = useContext() as {
     delay: number,
   }
+  // Add one to beginning of list
+  let link: Card[] = [
+    {
+      name: "Back",
+      onClick: () => { setOnlink(false); },
+      styles: null,
+      enabled: true,
+    },
+    ...links,
+  ];
   let cards: Card[] = [
     {
       name: "Bio",
@@ -28,7 +40,9 @@ export default function Homeview() {
     },
     {
       name: "Links",
-      onClick: () => { navigate("links") },
+      onClick: () => {
+        setOnlink(true);
+      },
       styles: null,
       enabled: true,
     },
@@ -39,7 +53,7 @@ export default function Homeview() {
       enabled: false,
     },
     {
-      name: "Work",
+      name: "Resume",
       onClick: () => { navigate("work"); },
       styles: null,
       enabled: true,
@@ -106,7 +120,11 @@ export default function Homeview() {
                 </Tooltip>
               ))}
             </div>
-            <ButtonCards cards={cards} />
+            {onlink ?
+              <ButtonCards cards={link} />
+              :
+              <ButtonCards cards={cards} />
+            }
           </div>
         </div>
       </div>

@@ -6,9 +6,8 @@ import Indent from "../sacred/Indent";
 import styles from "./style/Biography.module.scss";
 import Me from "../common/assets/me.jpg";
 import ActionButton from "../sacred/ActionButton";
-import { items } from "../pages/Home.tsx";
 import Tooltip from "../sacred/Tooltip.tsx";
-import TextArea from "../sacred/TextArea.tsx";
+import { items } from "../vars.ts";
 
 export default function Biography() {
 
@@ -63,9 +62,7 @@ export default function Biography() {
           </div>
         </div>
         <Divider type="DOUBLE" />
-        <TextArea
-          value="I am a 28 year old Software Developer born and raised in South Florida. My free time is split between programming, gaming, sewing, or modding electronics. Currently working on a multi-platform outfit planner and a VoIP/Messaging application."
-          isBlink />
+        I am a 28 year old Software Developer born and raised in South Florida. My free time is split between programming, gaming, sewing, or modding electronics. Currently working on a multi-platform outfit planner and a VoIP/Messaging application.
       </CardDouble>
     </div>
   )

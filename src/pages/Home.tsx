@@ -3,33 +3,8 @@ import { motion } from 'framer-motion';
 import { useContext } from '../components/page/Context';
 import Cookies from "js-cookie";
 import { useMeta } from '../common/hooks';
-import Insta from "../common/assets/insta.svg";
-import XLogo from "../common/assets/x.svg";
-import LinkedIn from "../common/assets/linkedin.svg";
-import Github from "../common/assets/github.svg";
 import Homeview from '../components/Homeview';
-export let items = [
-  {
-    icon: XLogo,
-    openHotkey: 'Twitter',
-    onClick: () => { window.open("https://x.com/simplicy_", "_blank") }
-  },
-  {
-    icon: Github,
-    openHotkey: 'GitHub',
-    onClick: () => { window.open("https://github.com/simplicy", "_blank") }
-  },
-  {
-    icon: Insta,
-    openHotkey: 'Instagram',
-    onClick: () => { window.open("https://instagram.com/simplicy_", "_blank") },
-  },
-  {
-    icon: LinkedIn,
-    openHotkey: 'LinkedIn',
-    onClick: () => { window.open("https://linkedin.com/in/sean-p-hopkins", "_blank") },
-  }
-];
+
 
 function Home() {
   const { delay } = useContext() as {

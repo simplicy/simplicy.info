@@ -17,7 +17,8 @@ export class BaseFmc<M, C, U> {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token,
     };
-    return fetch(`/api/${this.cmd_suffix}/${path}`, { method: 'GET', headers }).then((res) => res.json()).then((res) => {
+    const url = this.cmd_suffix ? `/api/${this.cmd_suffix}/${path}` : `/api/${path}`;
+    return fetch(url, { method: 'GET', headers }).then((res) => res.json()).then((res) => {
       if (res.error) {
         toast.error(res.message);
         return false;
@@ -93,7 +94,8 @@ export class BaseFmc<M, C, U> {
     let body = JSON.stringify({
       "data": data
     });
-    return fetch(`/api/${this.cmd_suffix}/${path}`, { method: 'POST', headers, body }).then((res) => res.json()).then((res) => {
+    const url = this.cmd_suffix ? `/api/${this.cmd_suffix}/${path}` : `/api/${path}`;
+    return fetch(url, { method: 'POST', headers, body }).then((res) => res.json()).then((res) => {
       if (res.error) {
         toast.error(res.message);
         return false;
