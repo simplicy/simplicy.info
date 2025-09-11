@@ -3,8 +3,6 @@ import Home from './pages/Home'
 import Error from './pages/Error.tsx'
 import Wireframe from './common/wireframe'
 import { Routes, Route, useLocation } from 'react-router-dom'
-import Links from './pages/Links.tsx';
-import Portfolio from './pages/Portfolio.tsx';
 import Work from './pages/Work.tsx';
 import Bio from './pages/Bio.tsx';
 import Contact from './pages/Contact.tsx';
@@ -21,8 +19,7 @@ function App() {
       <Route path="/" element={<Wireframe />}>
         {/* Homepage/Component set here in index */}
         <Route index element={<Home />} />
-        <Route path="links" element={<Links />} />
-        <Route path="portfolio" element={<Portfolio />} />
+        {/* <Route path="portfolio" element={<Portfolio />} /> */}
         <Route path="work" element={<Work />} />
         <Route path="admin" element={<AuthenticationGuard component={Admin} />} />
         <Route path="contact-me" element={<Contact />} />
