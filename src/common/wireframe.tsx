@@ -9,6 +9,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect } from "react";
 import { useContext } from "../components/page/Context";
 import Intro from "../components/intro/Intro";
+import Footer from "../components/page/Footer";
 // import background from "./shaders/background.glsl?raw";
 // import test from "./shaders/test.glsl?raw";
 // import fragment from "./shaders/fragment.glsl?raw";
@@ -53,6 +54,7 @@ function Wireframe() {
           <Intro />
           <Navbar />
           <Outlet />
+          <Footer />
         </Row>
       }
     </DefaultLayout>
