@@ -37,7 +37,7 @@ export let links = [
   {
     name: "Blog",
     onClick: () => {
-      window.open("https://blog.simplicy.info", "_blank");
+      window.open("https://blog.simplicy.info", "_self");
     },
     description: "",
     enabled: true
