@@ -8,8 +8,11 @@ import Me from "../common/assets/me.jpg";
 import ActionButton from "../sacred/ActionButton";
 import Tooltip from "../sacred/Tooltip.tsx";
 import { items } from "../vars.ts";
+import ButtonCards from "./ButtonCards.tsx";
+import { useNavigate } from "react-router-dom";
 
 export default function Biography() {
+  let navigation = useNavigate();
   let birthDate = new Date('1997-06-16');
   let age = new Date().getFullYear() - birthDate.getFullYear();
 
@@ -66,6 +69,17 @@ export default function Biography() {
         <Divider type="DOUBLE" />
         I am a {age} year old Software Developer born and raised in South Florida. My free time is split between programming, gaming, sewing, or modding electronics. Currently working on a multi-platform outfit planner and a VoIP/Messaging application.
       </CardDouble>
+      <div className={styles.footer}>
+        <ButtonCards cards={
+          [{
+            name: "Back",
+            onClick: () => { navigation(-1) },
+            styles: null,
+            enabled: true,
+          }]
+
+        } />
+      </div>
     </div>
   )
 }

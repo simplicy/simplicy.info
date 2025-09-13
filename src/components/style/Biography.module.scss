@@ -90,3 +90,8 @@
     max-height: calc(100vh - 40ch);
   }
 }
+
+.footer {
+  display: grid;
+  justify-content: end;
+}
