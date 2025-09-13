@@ -10,6 +10,8 @@ import Tooltip from "../sacred/Tooltip.tsx";
 import { items } from "../vars.ts";
 
 export default function Biography() {
+  let birthDate = new Date('1997-06-16');
+  let age = new Date().getFullYear() - birthDate.getFullYear();
 
   return (
     <div className={styles.root}>
@@ -62,7 +64,7 @@ export default function Biography() {
           </div>
         </div>
         <Divider type="DOUBLE" />
-        I am a 28 year old Software Developer born and raised in South Florida. My free time is split between programming, gaming, sewing, or modding electronics. Currently working on a multi-platform outfit planner and a VoIP/Messaging application.
+        I am a {age} year old Software Developer born and raised in South Florida. My free time is split between programming, gaming, sewing, or modding electronics. Currently working on a multi-platform outfit planner and a VoIP/Messaging application.
       </CardDouble>
     </div>
   )
