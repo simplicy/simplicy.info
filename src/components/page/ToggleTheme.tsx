@@ -26,7 +26,7 @@ export default function ToggleTheme() {
         style={{
           display: "flex",
           justifyContent: "flex-end",
-          height: "100%",
+          minHeight: "100%",
           width: "100%",
         }}
         animate={{ opacity: 1, }}
