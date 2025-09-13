@@ -1,17 +1,21 @@
 import styles from '../style/Footer.module.scss';
 import { motion } from 'framer-motion';
 import { useContext } from './Context';
+import { useNavigate } from 'react-router-dom';
 export default function Footer() {
+  let navigate = useNavigate();
   const { delay } = useContext() as {
     delay: number,
   }
 
   let foot = () => {
     return (
-      <div className={styles.root}>
-        <a href="https://sympil.com">
-          ❤
-        </a>
+      <div className={styles.root}
+        onClick={() => {
+          navigate("support");
+        }}
+      >
+        ❤
       </div >
     );
   }

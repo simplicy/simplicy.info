@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
-import ButtonCards from '../components/ButtonCards.tsx';
+//import ButtonCards from '../components/ButtonCards.tsx';
+import styles from "../components/style/Support.module.scss"
 import { donate_links } from '../vars.ts';
+import ActionButton from '../sacred/ActionButton.tsx';
+import Tooltip from '../sacred/Tooltip.tsx';
 
 export default function Support() {
   return (
@@ -9,6 +12,7 @@ export default function Support() {
       style={{
         display: "flex",
         justifyContent: "center",
+        flexDirection: "column",
         height: "100%",
         width: "100%",
       }}
@@ -25,7 +29,31 @@ export default function Support() {
         ease: "easeInOut",
       }}
     >
-      <ButtonCards cards={donate_links} />
-    </motion.div>
+      <div className={styles.root}>
+        <p>
+          If you would like to support me or my work, there are a couple ways to do so.
+        </p>
+        <div className={styles.header} >
+          {donate_links.map((link, index) => (
+            <div className={styles.item} >
+              <Tooltip
+                key={index}
+                title="Copy to clipboard"
+              >
+                <ActionButton
+                  key={index}
+                  onClick={link.onClick}
+                  hotkey={link.name}
+                  icon={link.icon}
+                />
+              </Tooltip>
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* <div className={styles.links} > */}
+      {/*   <ButtonCards cards={donate_links} /> */}
+      {/* </div> */}
+    </motion.div >
   )
 }
