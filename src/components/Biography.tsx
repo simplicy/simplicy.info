@@ -40,30 +40,36 @@ export default function Biography() {
               >Software Developer</p>
             </Indent>
             <div className={styles.icons}>
-              {items.map((item, index) => (
-                <Tooltip
-                  title={item.openHotkey}
-                  key={index}
-                >
-                  <ActionButton
+              {items.map((item, index) => {
+                if (!item.enabled) return null;
+                return (
+                  <Tooltip
+                    title={item.openHotkey}
                     key={index}
-                    onClick={item.onClick}
-                    icon={item.icon}
-                  />
-                </Tooltip>
-              ))}
+                  >
+                    <ActionButton
+                      key={index}
+                      onClick={item.onClick}
+                      icon={item.icon}
+                    />
+                  </Tooltip>
+                )
+              })}
             </div>
           </Avatar>
           <div className={styles.buttons}>
-            {items.map((item, index) => (
-              <ActionButton
-                key={index}
-                onClick={item.onClick}
-                hotkey={item.openHotkey}
-                icon={item.icon}
-                className={styles.actionButton}
-              />
-            ))}
+            {items.map((item, index) => {
+              if (!item.enabled) return null;
+              return (
+                <ActionButton
+                  key={index}
+                  onClick={item.onClick}
+                  hotkey={item.openHotkey}
+                  icon={item.icon}
+                  className={styles.actionButton}
+                />
+              )
+            })}
           </div>
         </div>
         <Divider type="DOUBLE" />

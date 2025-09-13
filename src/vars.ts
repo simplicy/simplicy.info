@@ -2,6 +2,7 @@ import Insta from "./common/assets/insta.svg";
 import XLogo from "./common/assets/x.svg";
 import LinkedIn from "./common/assets/linkedin.svg";
 import Github from "./common/assets/github.svg";
+import Gitea from "./common/assets/gitea.svg";
 import Kofi from "./common/assets/kofi.svg";
 import Ebay from "./common/assets/ebay.svg";
 import CopyIcon from "./common/assets/copy.svg";
@@ -9,21 +10,31 @@ import { toast } from "react-toastify";
 
 export let items = [
   {
+    enabled: true,
     icon: XLogo,
     openHotkey: 'Twitter',
     onClick: () => { window.open("https://x.com/simplicy_", "_blank") }
   },
   {
+    enabled: true,
     icon: Github,
     openHotkey: 'GitHub',
     onClick: () => { window.open("https://github.com/simplicy", "_blank") }
   },
   {
+    icon: Gitea,
+    openHotkey: 'Gitea',
+    onClick: () => { window.open("https://git.sympil.com", "_blank") },
+    enabled: false,
+  },
+  {
+    enabled: true,
     icon: Insta,
     openHotkey: 'Instagram',
     onClick: () => { window.open("https://instagram.com/simplicy_", "_blank") },
   },
   {
+    enabled: true,
     icon: LinkedIn,
     openHotkey: 'LinkedIn',
     onClick: () => { window.open("https://linkedin.com/in/sean-p-hopkins", "_blank") },
