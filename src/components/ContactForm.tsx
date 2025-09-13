@@ -8,8 +8,11 @@ import { toast } from "react-toastify";
 import { useContact } from "../common/hooks";
 import BlockLoader from "../sacred/BlockLoader";
 import AlertBanner from "../sacred/AlertBanner";
+import ButtonCards from "./ButtonCards";
+import { useNavigate } from "react-router-dom";
 
 export default function ContactForm() {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
@@ -95,6 +98,18 @@ export default function ContactForm() {
             </div>
           </div>
         </AlertBanner>
+        <div className={styles.footer}>
+          <ButtonCards cards={
+            [{
+              name: "Back",
+              onClick: () => { navigate(-1) },
+              styles: null,
+              enabled: true,
+            }]
+
+          } />
+        </div>
+
       </div>
     </>
   );

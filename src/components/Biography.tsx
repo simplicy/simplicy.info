@@ -69,17 +69,21 @@ export default function Biography() {
         <Divider type="DOUBLE" />
         I am a {age} year old Software Developer born and raised in South Florida. My free time is split between programming, gaming, sewing, or modding electronics. Currently working on a multi-platform outfit planner and a VoIP/Messaging application.
       </CardDouble>
-      <div className={styles.footer}>
-        <ButtonCards cards={
-          [{
-            name: "Back",
-            onClick: () => { navigation(-1) },
-            styles: null,
-            enabled: true,
-          }]
+      {window.location.pathname === "/bio" &&
+        <div className={styles.footer}>
+          <ButtonCards cards={
+            [{
+              name: "Back",
+              onClick: () => {
+                navigation("/")
+              },
+              styles: null,
+              enabled: true,
+            }]
 
-        } />
-      </div>
+          } />
+        </div>
+      }
     </div>
   )
 }
