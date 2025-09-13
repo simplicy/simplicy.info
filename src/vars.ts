@@ -25,19 +25,38 @@ export let items = [
     onClick: () => { window.open("https://linkedin.com/in/sean-p-hopkins", "_blank") },
   }
 ];
-export let links = [
+export let donate_links = [
   {
-    name: "Closyt",
+    name: "Ebay",
     onClick: () => {
-      window.open("https://closyt.com", "_blank");
+      window.open("https://ebay.com/usr/simplicy_0", "_blank");
     },
     description: "",
     enabled: true
   },
   {
+    name: "Ko-Fi",
+    onClick: () => {
+      window.open("https://ko-fi.com/simplicy", "_blank");
+    },
+    description: "",
+    enabled: true
+  },
+
+];
+export let links = [
+  {
     name: "Blog",
     onClick: () => {
       window.open("https://blog.simplicy.info", "_self");
+    },
+    description: "",
+    enabled: true
+  },
+  {
+    name: "Closyt",
+    onClick: () => {
+      window.open("https://closyt.com", "_blank");
     },
     description: "",
     enabled: true

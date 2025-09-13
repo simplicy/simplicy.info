@@ -8,6 +8,7 @@ import Bio from './pages/Bio.tsx';
 import Contact from './pages/Contact.tsx';
 import { AuthenticationGuard } from './common/auth0.tsx';
 import Admin from './pages/Admin.tsx';
+import Support from './pages/Support.tsx';
 
 
 
@@ -20,6 +21,7 @@ function App() {
         {/* Homepage/Component set here in index */}
         <Route index element={<Home />} />
         {/* <Route path="portfolio" element={<Portfolio />} /> */}
+        <Route path="support" element={<Support />} />
         <Route path="work" element={<Work />} />
         <Route path="admin" element={<AuthenticationGuard component={Admin} />} />
         <Route path="contact-me" element={<Contact />} />
