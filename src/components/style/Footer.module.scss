@@ -1,27 +1,19 @@
 .root{
   display: flex;
-  flex-direction: row;
   padding: 1ch;
-  gap: 3ch;
-  width: 100%;
+  cursor: pointer;
   height: 5ch;
-  margin: 0 auto;
-  justify-content: space-between;
+  width: fit-content;
   
-  align-items: flex-start;
   transition: all 0.3s ease-in-out;
   transform: scale(1);
-  a {
-    text-decoration: none;
-    background-color: unset !important;
     &:hover {
       transition: all 0.3s ease-in-out;
       transform: scale(1.5);
     }
-  }
   @media (max-width: 768px) {
-    justify-content: center;
-    align-items: center !important;
+    justify-content: center !important;
+    align-self: center !important;
   }
 }
 
