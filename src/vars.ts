@@ -22,10 +22,10 @@ export let items = [
     onClick: () => { window.open("https://github.com/simplicy", "_blank") }
   },
   {
+    enabled: false,
     icon: Gitea,
     openHotkey: 'Gitea',
-    onClick: () => { window.open("https://git.sympil.com", "_blank") },
-    enabled: false,
+    onClick: () => { window.open("https://git.sympil.com/git/simplicy", "_blank") }
   },
   {
     enabled: true,
