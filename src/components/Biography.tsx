@@ -51,6 +51,7 @@ export default function Biography() {
                       key={index}
                       onClick={item.onClick}
                       icon={item.icon}
+                      className={styles.actionButton}
                     />
                   </Tooltip>
                 )
