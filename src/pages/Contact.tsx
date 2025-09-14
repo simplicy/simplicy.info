@@ -28,29 +28,6 @@ export default function Contact() {
       }}
     >
       <div className={styles.root}>
-        <motion.div
-          style={{
-            display: "flex",
-            flexWrap: 'nowrap',
-            flexDirection: 'column',
-            overflow: "hidden",
-            textWrap: 'wrap',
-            textAlign: "center",
-            translateX: "8ch",
-            opacity: 0,
-          }}
-          animate={{
-            translateX: "0px",
-            opacity: 1,
-          }}
-          transition={{
-            delay: 0.25,
-            duration: .55,
-            ease: "easeInOut",
-          }}>
-
-          <p>For business inquries and questions, please fill out the form below.</p>
-        </motion.div>
         <ContactForm />
       </div >
     </motion.div>
