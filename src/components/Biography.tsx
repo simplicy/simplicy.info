@@ -4,7 +4,7 @@ import CardDouble from "../sacred/CardDouble";
 import Divider from "../sacred/Divider";
 import Indent from "../sacred/Indent";
 import styles from "./style/Biography.module.scss";
-import Me from "../common/assets/me.jpg";
+import Me from "../common/assets/me.png";
 import ActionButton from "../sacred/ActionButton";
 import Tooltip from "../sacred/Tooltip.tsx";
 import { items } from "../vars.ts";
