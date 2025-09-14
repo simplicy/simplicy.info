@@ -9,7 +9,7 @@ import { Card } from "../common/types";
 import Tooltip from "../sacred/Tooltip";
 import ActionButton from "../sacred/ActionButton";
 import Package from "../../package.json";
-import Me from "../common/assets/me.jpg";
+import Me from "../common/assets/me.png";
 import { items, links } from "../vars.ts";
 import ButtonCards from "./ButtonCards";
 import { useState } from "react";
