@@ -107,18 +107,21 @@ export default function Homeview() {
               </p>
             </div>
             <div className={Utilities.classNames(styles.mobile, styles.buttons)}>
-              {items.map((item, index) => (
-                <Tooltip
-                  title={item.openHotkey}
-                  key={index}
-                >
-                  <ActionButton
+              {items.map((item, index) => {
+                if (!item.enabled) return null;
+                return (
+                  <Tooltip
+                    title={item.openHotkey}
                     key={index}
-                    onClick={item.onClick}
-                    icon={item.icon}
-                  />
-                </Tooltip>
-              ))}
+                  >
+                    <ActionButton
+                      key={index}
+                      onClick={item.onClick}
+                      icon={item.icon}
+                    />
+                  </Tooltip>
+                )
+              })}
             </div>
             {onlink ?
               <ButtonCards cards={link} />
