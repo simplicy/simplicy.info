@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useContext } from '../components/page/Context';
 import Cookies from "js-cookie";
-import { useMeta } from '../common/hooks';
 import Homeview from '../components/Homeview';
 
 
@@ -10,14 +9,9 @@ function Home() {
   const { delay } = useContext() as {
     delay: number,
   }
-  let data = {
-    something: "data"
-  }
 
-  const { refetch } = useMeta(data);
   //verify cookie expiry and format
   useEffect(() => {
-    refetch();
   }, []);
 
 
