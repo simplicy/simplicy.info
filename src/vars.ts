@@ -119,7 +119,7 @@ export let links = [
       window.open("https://sympil.com", "_blank");
     },
     description: "",
-    enabled: true
+    enabled: false
   },
   {
     name: "Ebay",
