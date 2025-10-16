@@ -1,7 +1,6 @@
-import { BaseFmc, ModelMutateResultData } from "./basefmc";
+import { BaseFmc } from "./basefmc";
 import { toast } from "react-toastify";
 import { EmailForCreate } from "./types";
-import Cookies from "js-cookie";
 export class ContactFmc extends BaseFmc<any, any, any> {
   constructor() {
     super("");

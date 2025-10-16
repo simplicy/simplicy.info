@@ -5,7 +5,6 @@ import { fonts, themes } from '../../common/vars';
 import { toggleDebugGrid } from '../../sacred/DebugGrid';
 import { useEffect } from 'react';
 import * as Utilities from '../../common/utilities';
-import { useClosytAuth } from '../../common/hooks';
 
 interface ContextType {
   themes: any;

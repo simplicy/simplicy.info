@@ -6,7 +6,6 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import Work from './pages/Work.tsx';
 import Bio from './pages/Bio.tsx';
 import Contact from './pages/Contact.tsx';
-import Admin from './pages/Admin.tsx';
 import Support from './pages/Support.tsx';
 
 function App() {

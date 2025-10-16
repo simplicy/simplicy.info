@@ -5,8 +5,6 @@ import DefaultLayout from "../sacred/page/DefaultLayout";
 import Row from "../sacred/Row";
 import ModalStack from "../sacred/ModalStack";
 import Navbar from "../components/page/Navbar";
-import { useEffect } from "react";
-import { useContext } from "../components/page/Context";
 import Intro from "../components/intro/Intro";
 import Footer from "../components/page/Footer";
 // import background from "./shaders/background.glsl?raw";
