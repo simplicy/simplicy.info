@@ -13,7 +13,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@auth0/auth0-react": "^2.2.4",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^5.16.7",
@@ -24,7 +23,6 @@
     "@types/js-cookie": "^3.0.6",
     "@types/react-big-calendar": "^1.16.1",
     "@types/react-html-parser": "^2.0.6",
-    "auth0": "^4.8.0",
     "base-64": "^1.0.0",
     "dayjs": "^1.11.13",
     "dotenv": "^16.4.1",

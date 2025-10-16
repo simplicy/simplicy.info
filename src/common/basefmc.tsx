@@ -4,7 +4,6 @@ export interface ModelMutateResultData { id: string, }
 
 export class BaseFmc<M, C, U> {
   #cmd_suffix: string
-  auth0token: string = "";
   get cmd_suffix() { return this.#cmd_suffix; }
   ;
 

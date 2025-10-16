@@ -6,11 +6,8 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import Work from './pages/Work.tsx';
 import Bio from './pages/Bio.tsx';
 import Contact from './pages/Contact.tsx';
-import { AuthenticationGuard } from './common/auth0.tsx';
 import Admin from './pages/Admin.tsx';
 import Support from './pages/Support.tsx';
-
-
 
 function App() {
   // If in dev mode do this
@@ -23,7 +20,6 @@ function App() {
         {/* <Route path="portfolio" element={<Portfolio />} /> */}
         <Route path="support" element={<Support />} />
         <Route path="work" element={<Work />} />
-        <Route path="admin" element={<AuthenticationGuard component={Admin} />} />
         <Route path="contact-me" element={<Contact />} />
         <Route path="bio" element={<Bio />} />
         <Route path="error" element={<Error />} />

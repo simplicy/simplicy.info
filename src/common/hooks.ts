@@ -45,28 +45,3 @@ export const useClosytUser = (
   }
 }, { enabled: false });
 
-
-export const useClosytAuth = (
-  isAuth0Authenticated: boolean,
-  user: any,
-  handleLogout: () => void,
-  refetchAll: () => void,
-  getAccessTokenSilently: () => Promise<string>
-) => useQuery('auth', async () => {
-  let token = await getAccessTokenSilently();
-  // if not authenticated with auth0 return false
-  if (!isAuth0Authenticated) return false;
-  // Authenticate with closyt server
-  return await closytUserFmc.handleRustAuth(user, token).then((data) => {
-    // If not authenticated with closyt server logout and remove cookie
-    if (!data) {
-      handleLogout();
-      Cookies.remove('loggedin');
-      return false;
-    }
-    refetchAll();
-    // set a cookie to prevent mutliple logins calls
-    Cookies.set("loggedin", "true");
-    return true;
-  });
-}, { enabled: !!isAuth0Authenticated });
