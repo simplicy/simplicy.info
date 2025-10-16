@@ -20,12 +20,6 @@ jobs:
           password: ${{ secrets.TOKEN }}
       - name: Build and push
         uses: docker/build-push-action@v4
-        args:
-          VITE_API_URL: ${{vars.VITE_API_URL}}
-          VITE_AUTH0_AUDIENCE: ${{vars.VITE_AUTH0_AUDIENCE}}
-          VITE_AUTH0_DOMAIN: ${{vars.VITE_AUTH0_DOMAIN}}
-          VITE_AUTH0_CALLBACK_URL: ${{vars.VITE_AUTH0_CALLBACK_URL}}
-          VITE_AUTH0_CLIENT_ID: ${{VITE_AUTH0_CLIENT_ID}}
         with:
           push: true
           tags: ${{vars.HOST}}/${{ vars.OWNER }}/${{ vars.REPO }}:stable
