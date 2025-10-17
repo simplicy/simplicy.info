@@ -1,4 +1,5 @@
 import Package from "../../package.json";
+import { motion } from "framer-motion";
 import Avatar from "../sacred/Avatar";
 import CardDouble from "../sacred/CardDouble";
 import Divider from "../sacred/Divider";
@@ -12,7 +13,7 @@ import ButtonCards from "./ButtonCards.tsx";
 import { useNavigate } from "react-router-dom";
 
 export default function Biography() {
-  let navigation = useNavigate();
+  let navigate = useNavigate();
   let birthDate = new Date('1997-06-16');
   let age = new Date().getFullYear() - birthDate.getFullYear();
 
@@ -78,17 +79,38 @@ export default function Biography() {
       </CardDouble>
       {window.location.pathname === "/bio" &&
         <div className={styles.footer}>
-          <ButtonCards cards={
-            [{
-              name: "Back",
-              onClick: () => {
-                navigation("/")
-              },
-              styles: null,
-              enabled: true,
-            }]
-
-          } />
+          <motion.div
+            layout
+            style={{
+              display: "flex",
+              overflow: "hidden",
+              justifyContent: "flex-end",
+              padding: "0 1ch 1ch 0",
+              width: "100%",
+            }}
+            initial={{
+              opacity: 0,
+              y: "var(--fade-distance)",
+            }}
+            animate={{
+              opacity: 1,
+              transform: "translateY(0px)",
+            }}
+            transition={{
+              delay: 0.5,
+              duration: 0.5,
+              ease: "easeInOut",
+            }}
+          >
+            <ButtonCards cards={
+              [{
+                name: "Back",
+                onClick: () => { navigate(-1) },
+                styles: null,
+                enabled: true,
+              }]
+            } />
+          </motion.div>
         </div>
       }
     </div>

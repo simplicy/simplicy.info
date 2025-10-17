@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TextArea from "../sacred/TextArea";
 import Button from "../sacred/Button";
+import { motion } from "framer-motion";
 import styles from './style/ContactForm.module.scss';
 import Divider from "../sacred/Divider";
 import { EmailForCreate } from "../common/types";
@@ -99,16 +100,37 @@ export default function ContactForm() {
           </div>
         </AlertBanner>
         <div className={styles.footer}>
-          <ButtonCards cards={
-            [{
-              name: "Back",
-              onClick: () => { navigate(-1) },
-              styles: null,
-              enabled: true,
-            }]
-
-          } />
+          <motion.div
+            layout
+            style={{
+              padding: "1ch 0 1ch 0",
+              justifyContent: "flex-end",
+            }}
+            initial={{
+              opacity: 0,
+              y: "var(--fade-distance)",
+            }}
+            animate={{
+              opacity: 1,
+              transform: "translateY(0px)",
+            }}
+            transition={{
+              delay: 0.5,
+              duration: 0.5,
+              ease: "easeInOut",
+            }}
+          >
+            <ButtonCards cards={
+              [{
+                name: "Back",
+                onClick: () => { navigate(-1) },
+                styles: null,
+                enabled: true,
+              }]
+            } />
+          </motion.div>
         </div>
+
 
       </div>
     </>

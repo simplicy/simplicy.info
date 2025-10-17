@@ -32,7 +32,7 @@ export default function Timeline({ list }: TimelineProps) {
             ease: "easeInOut",
           }}
         >
-          <div className={styles.root}>
+          <div className={styles.box}>
             {index > 0 &&
               <div className={styles.line}></div>
             }
@@ -56,9 +56,9 @@ export default function Timeline({ list }: TimelineProps) {
 
   }
   return (
-    <>
+    <div className={styles.root}>
       {buildTimeline()}
-    </>
+    </div>
   );
 }
 
