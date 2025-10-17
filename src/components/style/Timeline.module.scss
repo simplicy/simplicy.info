@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   gap: 1ch;
   width: 100%;
   text-align: center;
@@ -14,7 +13,6 @@
 .content{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
   gap: 2ch;
   width: 100%;
@@ -40,6 +38,6 @@
   background: var(--theme-text);
   display: block;
   flex-shrink: 0;
-  height: 100px;
+  height: 35px;
   width: 2px;
 }

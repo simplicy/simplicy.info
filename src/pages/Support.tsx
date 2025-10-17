@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion';
 //import ButtonCards from '../components/ButtonCards.tsx';
 import styles from "../components/style/Support.module.scss"
-import { donate_links } from '../vars.ts';
+import { donate_links } from '../common/vars.ts';
 import ActionButton from '../sacred/ActionButton.tsx';
 import Tooltip from '../sacred/Tooltip.tsx';
+import ButtonCards from '../components/ButtonCards.tsx';
+import { useNavigate } from 'react-router-dom';
 
 export default function Support() {
+  const navigate = useNavigate();
   return (
     <motion.div
       layout
@@ -50,6 +53,16 @@ export default function Support() {
             </div>
           ))}
         </div>
+      </div>
+      <div className={styles.footer}>
+        <ButtonCards cards={
+          [{
+            name: "Back",
+            onClick: () => { navigate(-1) },
+            styles: null,
+            enabled: true,
+          }]
+        } />
       </div>
       {/* <div className={styles.links} > */}
       {/*   <ButtonCards cards={donate_links} /> */}

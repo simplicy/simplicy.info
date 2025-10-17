@@ -10,7 +10,7 @@ import Tooltip from "../sacred/Tooltip";
 import ActionButton from "../sacred/ActionButton";
 import Package from "../../package.json";
 import Me from "../common/assets/me.png";
-import { items, links } from "../vars.ts";
+import { items, links } from "../common/vars.ts";
 import ButtonCards from "./ButtonCards";
 import { useState } from "react";
 

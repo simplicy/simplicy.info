@@ -1,7 +1,7 @@
 import ButtonCards from "../components/ButtonCards";
 import styles from '../style/Links.module.scss';
 import { motion } from 'framer-motion';
-import { links } from '../vars.ts';
+import { links } from '../common/vars.ts';
 
 export default function Links() {
   return (

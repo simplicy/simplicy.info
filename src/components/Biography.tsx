@@ -7,7 +7,7 @@ import styles from "./style/Biography.module.scss";
 import Me from "../common/assets/me.png";
 import ActionButton from "../sacred/ActionButton";
 import Tooltip from "../sacred/Tooltip.tsx";
-import { items } from "../vars.ts";
+import { items } from "../common/vars.ts";
 import ButtonCards from "./ButtonCards.tsx";
 import { useNavigate } from "react-router-dom";
 

@@ -1,27 +1,11 @@
 import { motion } from "framer-motion";
 import styles from "../style/Work.module.scss";
 import Timeline from "../components/Timeline";
+import { work } from "../common/vars";
+import ButtonCards from "../components/ButtonCards";
+import { useNavigate } from "react-router-dom";
 export default function Work() {
-  let work = [
-    {
-      "companyname": "MSC Cruises",
-      "title": "IT Support Specialist",
-      "start": "2015",
-      "end": "2020",
-    },
-    {
-      "companyname": "Corporate Message Services",
-      "title": "IT Manager",
-      "start": "2021",
-      "end": "2023",
-    },
-    {
-      "companyname": "Map Communications",
-      "title": "Software Developer",
-      "start": "2023",
-      "end": "Present",
-    },
-  ]
+  const navigate = useNavigate();
   return (
     <motion.div
       layout
@@ -29,6 +13,7 @@ export default function Work() {
         display: "flex",
         overflow: "hidden",
         height: "100%",
+        flexDirection: "column",
         justifyContent: "center",
         width: "100%",
       }}
@@ -47,6 +32,16 @@ export default function Work() {
     >
       <div className={styles.root}>
         <Timeline list={work} />
+        <div className={styles.footer}>
+          <ButtonCards cards={
+            [{
+              name: "Back",
+              onClick: () => { navigate(-1) },
+              styles: null,
+              enabled: true,
+            }]
+          } />
+        </div>
       </div>
     </motion.div>
   );
