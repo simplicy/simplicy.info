@@ -78,40 +78,41 @@ export default function Biography() {
         I am a {age} year old Software Developer born and raised in South Florida. My free time is split between programming, gaming, sewing, or modding electronics. Currently working on a multi-platform outfit planner and a VoIP/Messaging application.
       </CardDouble>
       {window.location.pathname === "/bio" &&
-        <div className={styles.footer}>
-          <motion.div
-            layout
-            style={{
-              display: "flex",
-              overflow: "hidden",
-              justifyContent: "flex-end",
-              padding: "0 1ch 1ch 0",
-              width: "100%",
-            }}
-            initial={{
-              opacity: 0,
-              y: "var(--fade-distance)",
-            }}
-            animate={{
-              opacity: 1,
-              transform: "translateY(0px)",
-            }}
-            transition={{
-              delay: 0.5,
-              duration: 0.5,
-              ease: "easeInOut",
-            }}
-          >
+        <motion.div
+          layout
+          style={{
+            display: "flex",
+            overflow: "hidden",
+            padding: "1ch",
+            maxWidth: "50ch",
+            alignSelf: "center",
+            justifyContent: "flex-end",
+            width: "100%",
+          }}
+          initial={{
+            opacity: 0,
+            y: "var(--fade-distance)",
+          }}
+          animate={{
+            opacity: 1,
+            transform: "translateY(0px)",
+          }}
+          transition={{
+            duration: 0.5,
+            ease: "easeInOut",
+          }}
+        >
+          <div className={styles.footer}>
             <ButtonCards cards={
               [{
-                name: "Back",
+                name: "← Back",
                 onClick: () => { navigate(-1) },
                 styles: null,
                 enabled: true,
               }]
             } />
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       }
     </div>
   )

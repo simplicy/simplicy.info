@@ -1,19 +1,25 @@
 .root{
   display: flex;
-  padding: 1ch;
-  cursor: pointer;
+  padding: 1ch 2ch;
   height: 5ch;
-  width: fit-content;
+  margin-top: 1ch;
+  width: 100%;
   
-  transition: all 0.3s ease-in-out;
-  transform: scale(1);
-    &:hover {
-      transition: all 0.3s ease-in-out;
-      transform: scale(1.5);
-    }
+ 
   @media (max-width: 768px) {
     justify-content: center !important;
     align-self: center !important;
   }
 }
 
+.text {
+  cursor: pointer;
+  width: fit-content;
+   transition: all 0.3s ease-in-out;
+  transform: scale(1);
+    &:hover {
+      transition: all 0.3s ease-in-out;
+      transform: scale(1.5);
+    }
+  
+}

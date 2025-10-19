@@ -1,0 +1,65 @@
+.root{
+  position: relative;
+  display: flex;
+  background-color: var(--theme-background);
+  color: var(--theme-text-primary);
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+  padding: 1ch;
+  height: 5ch;
+  width: 100%;
+  
+}
+
+.overlay {
+  cursor: pointer;
+  height: 100%;
+  width: 3ch;
+  align-content: center;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--theme-background);
+  color: var(--theme-text-primary);
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: var(--theme-button);
+    color: var(--theme-button-text);
+  }
+}
+
+
+
+// make text scroll left to right infinitely
+.text {
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.text span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 30s linear infinite;
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}

@@ -6,16 +6,13 @@
   margin: 0 auto;
   width: 100%;
   @media (max-width: 768px) {
+  padding:0  2ch;
     align-items: flex-end;
     //max-height: calc(100vh - 40ch);
     max-width: 50ch;
   }
-  @media (max-width: 568px) {
-    max-width: 40ch;
-  }
   @media (min-width: 768px) {
-    min-width: 50ch;
-    max-width: 50ch;
+    width: 50ch;
   }
 }
 

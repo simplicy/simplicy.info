@@ -9,6 +9,13 @@ import Ebay from "./assets/ebay.svg";
 import CopyIcon from "./assets/copy.svg";
 import { toast } from "react-toastify";
 
+export const banner = {
+  message: "",
+  repeated: 10,
+  separator: "    •   ",
+  link: null,
+  enabled: false,
+}
 
 
 export const fonts = [
@@ -218,22 +225,22 @@ export let links = [
 ];
 
 export let work = [
-    {
-      "companyname": "MSC Cruises",
-      "title": "IT Support Specialist",
-      "start": "2015",
-      "end": "2020",
-    },
-    {
-      "companyname": "Corporate Message Services",
-      "title": "IT Manager",
-      "start": "2021",
-      "end": "2023",
-    },
-    {
-      "companyname": "Map Communications",
-      "title": "Software Developer",
-      "start": "2023",
-      "end": "Present",
-    },
-  ]
+  {
+    "companyname": "MSC Cruises",
+    "title": "IT Support Specialist",
+    "start": "2015",
+    "end": "2020",
+  },
+  {
+    "companyname": "Corporate Message Services",
+    "title": "IT Manager",
+    "start": "2021",
+    "end": "2023",
+  },
+  {
+    "companyname": "Map Communications",
+    "title": "Software Developer",
+    "start": "2023",
+    "end": "Present",
+  },
+]

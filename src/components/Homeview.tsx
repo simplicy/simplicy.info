@@ -24,7 +24,7 @@ export default function Homeview() {
   // Add one to beginning of list
   let link: Card[] = [
     {
-      name: "Back",
+      name: "← Back",
       onClick: () => { setOnlink(false); },
       styles: null,
       enabled: true,
@@ -124,14 +124,77 @@ export default function Homeview() {
               })}
             </div>
             {onlink ?
-              <ButtonCards cards={link} />
+              <motion.div
+                layout
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  height: "100%",
+                  width: "100%",
+                }}
+                initial={{
+                  display: "none",
+                  opacity: 0,
+                  y: "var(--fade-distance)",
+                }}
+                animate={{
+                  display: "flex",
+                  opacity: 1,
+                  transform: "translateY(0px)",
+                }}
+                transition={{
+                  delay: delay,
+                  duration: 0.5,
+                  ease: "easeInOut",
+                }}
+              >
+                <div className={styles.buttoncards}>
+                  <ButtonCards cards={link} />
+                </div>
+              </motion.div>
               :
-              <ButtonCards cards={cards} />
+              null
+            }
+
+
+            {onlink ? null :
+              < motion.div
+                layout
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  height: "100%",
+                  width: "100%",
+                }}
+                initial={{
+                  display: "none",
+                  opacity: 0,
+                  y: "var(--fade-distance)",
+                }}
+                animate={{
+                  display: "flex",
+                  opacity: 1,
+                  transform: "translateY(0px)",
+                }}
+                transition={{
+                  delay: delay,
+                  duration: 0.5,
+                  ease: "easeInOut",
+                }}
+              >
+                <div className={styles.buttoncards}>
+
+                  <ButtonCards cards={cards} />
+
+                </div>
+              </motion.div>
             }
           </div>
         </div>
       </div>
-    </motion.div>
+    </motion.div >
   );
 }
 

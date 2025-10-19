@@ -44,6 +44,19 @@
   font-size: 1rem;
 }
 
+.exp {
+  font-size: 2rem;
+  position: absolute;
+  top: .75ch;
+  right: .5ch;
+  transform: scale(0.8);
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1);
+    cursor: pointer;
+  }
+}
+
 
 .line {
   align-self: center;

@@ -7,6 +7,7 @@ import ModalStack from "../sacred/ModalStack";
 import Navbar from "../components/page/Navbar";
 import Intro from "../components/intro/Intro";
 import Footer from "../components/page/Footer";
+import Banner from "../components/page/Banner";
 // import background from "./shaders/background.glsl?raw";
 // import test from "./shaders/test.glsl?raw";
 // import fragment from "./shaders/fragment.glsl?raw";
@@ -26,12 +27,12 @@ function Wireframe() {
             display: "flex",
             width: "100%",
             height: "100%",
-            marginInline: "var(--sidebar-margins)",
             flexDirection: 'column',
             borderRadius: '0px',
             overflow: 'hidden',
-            overflowY: 'hidden',
+            overflowY: 'auto',
           }}>
+          <Banner />
           <Intro />
           <Navbar />
           <Outlet />

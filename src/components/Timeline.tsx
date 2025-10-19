@@ -27,18 +27,23 @@ export default function Timeline({ list }: TimelineProps) {
             transform: "translateY(0px)",
           }}
           transition={{
-            delay: index,
+            delay: index * .5,
             duration: 0.5,
             ease: "easeInOut",
           }}
         >
           <div className={styles.box}>
             {index > 0 &&
-              <div className={styles.line}></div>
+              <div className={styles.line}
+                style={{ height: (item.end - item.start) * 20 }}
+              ></div>
             }
             <Card
               title={item.start + "-" + item.end}
               key={item.companyname + index} className={styles.content}>
+              <div className={styles.exp}>
+                +
+              </div>
               <div className={styles.title}>
                 {item.title}
               </div>
@@ -49,7 +54,7 @@ export default function Timeline({ list }: TimelineProps) {
               </div>
             </Card>
           </div>
-        </motion.div>
+        </motion.div >
       )
     })
     return timeline;

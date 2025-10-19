@@ -9,7 +9,7 @@ import { useContact } from "../common/hooks";
 import BlockLoader from "../sacred/BlockLoader";
 import AlertBanner from "../sacred/AlertBanner";
 
-export default function ContactForm() {
+export default function BookForm() {
   const [name, setName] = useState("");
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
@@ -48,7 +48,7 @@ export default function ContactForm() {
           <div className={styles.form}>
             <h1 style={{
               alignSelf: "center"
-            }}>Contact</h1>
+            }}>Book</h1>
             <div className={styles.from}>
               Subject:
               <TextArea value={title}

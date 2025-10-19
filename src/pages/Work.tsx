@@ -12,6 +12,7 @@ export default function Work() {
       style={{
         display: "flex",
         overflow: "hidden",
+        padding: "2ch",
         height: "100%",
         flexDirection: "column",
         width: "100%",
@@ -48,7 +49,7 @@ export default function Work() {
             transform: "translateY(0px)",
           }}
           transition={{
-            delay: work.length,
+            delay: (work.length * 0.4) + .1,
             duration: 0.5,
             ease: "easeInOut",
           }}
@@ -56,7 +57,7 @@ export default function Work() {
           <div className={styles.footer}>
             <ButtonCards cards={
               [{
-                name: "Back",
+                name: "← Back",
                 onClick: () => { navigate(-1) },
                 styles: null,
                 enabled: true,

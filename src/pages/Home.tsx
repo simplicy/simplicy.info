@@ -30,8 +30,8 @@ function Home() {
       layout
       style={{
         display: "flex",
-        overflow: "hidden",
         height: "100%",
+        padding: "2ch",
         alignItems: "center",
         justifyContent: "center",
         width: "100%",

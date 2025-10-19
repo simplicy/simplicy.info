@@ -346,7 +346,7 @@ const CanvasSnake = ({ rows = 25 }: SnakeProps) => {
       <ActionButton hotkey="↓" onClick={onHandleClickDown}>
         Down
       </ActionButton>
-      <ActionButton hotkey="←" onClick={onHandleClickLeft}>
+      <ActionButton hotkey="← Back" onClick={onHandleClickLeft}>
         Left
       </ActionButton>
       <ActionButton hotkey="→" onClick={onHandleClickRight}>

@@ -1,11 +1,12 @@
 .root{
   display: flex;
   flex-direction: row;
-  padding: 2ch 1ch;
+  padding: 2ch 2ch;
   gap: 3ch;
   width: 100%;
   height: 5ch;
   margin: 0 auto;
+  
   justify-content: space-between;
   @media screen and (min-width: 1200px) {
     max-width: 1200px;
@@ -13,7 +14,6 @@
   
   align-items: flex-start;
   @media (max-width: 768px) {
-    padding: 1ch 0;
     justify-content: center;
     align-items: center !important;
   }
@@ -21,6 +21,7 @@
 
 .title{
   display: flex;
+  padding: 0 1ch;
   flex-direction: row;
   align-items: flex-end;
   font-size: 14px;
