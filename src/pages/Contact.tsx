@@ -96,6 +96,7 @@ export default function Contact() {
           <motion.div
             style={{
               padding: "1ch 0 1ch 0",
+              width: "100%",
               justifyContent: "flex-end",
             }}
             initial={{
