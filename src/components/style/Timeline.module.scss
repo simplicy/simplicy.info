@@ -31,6 +31,13 @@
   height: 100%;
 }
 
+.descriptioncontent {
+  &:hover {
+    cursor: default;
+    color: var(--theme-focused-foreground);
+  }
+}
+
 .companyname {
   font-size: 1.25rem;
 }
