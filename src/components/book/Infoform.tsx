@@ -46,18 +46,18 @@ export default function InfoForm({ handleContinue }: { handleContinue: (data: an
     >
       <div className={styles.root}>
         <div className={styles.from}>
-          From:
-          <TextArea value={email}
-            cursor={false}
-            placeholder="YOUR EMAIL" name="email"
-            onChange={(e) => setEmail(e.target.value)} />
-        </div>
-        <div className={styles.from}>
           Subject:
           <TextArea value={subject}
             cursor={false}
             placeholder="Title" name="title"
             onChange={(e) => setSubject(e.target.value)} />
+        </div>
+        <div className={styles.from}>
+          From:
+          <TextArea value={email}
+            cursor={false}
+            placeholder="YOUR EMAIL" name="email"
+            onChange={(e) => setEmail(e.target.value)} />
         </div>
         <Divider />
         <div className={styles.message}>
