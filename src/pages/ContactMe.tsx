@@ -1,7 +1,7 @@
 import styles from '../style/Contact.module.scss';
-import ContactForm from "../components/ContactForm";
+import ContactForm from "../components/Contact";
 import { motion } from 'framer-motion';
-import BookForm from '../components/BookForm';
+import BookForm from '../components/Book';
 import ButtonCards from '../components/ButtonCards';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -115,13 +115,13 @@ export default function Contact() {
                   },
                   {
                     name: "Contact Me",
-                    onClick: () => { setIndex(1); },
+                    onClick: () => { navigate("/message") },
                     styles: null,
                     enabled: true,
                   },
                   {
                     name: "Book a meeting",
-                    onClick: () => { setIndex(2); },
+                    onClick: () => { navigate("/book") },
                     styles: null, enabled: true,
                   },
 
