@@ -25,11 +25,9 @@ export default function Contact() {
       }}
       initial={{
         opacity: 0,
-        y: "var(--fade-distance)",
       }}
       animate={{
         opacity: 1,
-        transform: "translateY(0px)",
       }}
       transition={{
         duration: 0.5,
@@ -46,11 +44,9 @@ export default function Contact() {
             }}
             initial={{
               opacity: 0,
-              y: "var(--fade-distance)",
             }}
             animate={{
               opacity: 1,
-              transform: "translateY(0px)",
             }}
             transition={{
               duration: 0.5,
@@ -68,11 +64,9 @@ export default function Contact() {
                     }}
                     initial={{
                       opacity: 0,
-                      y: "var(--fade-distance)",
                     }}
                     animate={{
                       opacity: 1,
-                      transform: "translateY(0px)",
                     }}
                     transition={{
                       duration: 0.5,
@@ -101,11 +95,9 @@ export default function Contact() {
             }}
             initial={{
               opacity: 0,
-              y: "var(--fade-distance)",
             }}
             animate={{
               opacity: 1,
-              transform: "translateY(0px)",
             }}
             transition={{
               duration: 0.5,
@@ -117,6 +109,11 @@ export default function Contact() {
               <ButtonCards cards={
                 [
                   {
+                    name: "← Back",
+                    onClick: () => { navigate(-1); },
+                    styles: null, enabled: true,
+                  },
+                  {
                     name: "Contact Me",
                     onClick: () => { setIndex(1); },
                     styles: null,
@@ -127,11 +124,7 @@ export default function Contact() {
                     onClick: () => { setIndex(2); },
                     styles: null, enabled: true,
                   },
-                  {
-                    name: "← Back",
-                    onClick: () => { navigate(-1); },
-                    styles: null, enabled: true,
-                  }
+
 
                 ]
               } />

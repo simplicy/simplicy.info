@@ -21,7 +21,6 @@
 
 .title{
   display: flex;
-  padding: 0 1ch;
   flex-direction: row;
   align-items: flex-end;
   font-size: 14px;
@@ -29,6 +28,9 @@
   color: var(--theme-text);
   cursor: pointer;
   z-index: 100;
+  // @media (min-width: 768px) {
+  // padding: 0 1ch;
+  // }
 }
 
 @keyframes blink {

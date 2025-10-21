@@ -11,9 +11,7 @@ export default function Work() {
       layout
       style={{
         display: "flex",
-        overflow: "hidden",
         padding: "2ch",
-        height: "100%",
         flexDirection: "column",
         width: "100%",
       }}

@@ -1,0 +1,25 @@
+.root {
+  display: flex;
+  padding: 2ch 0;
+  position: relative;
+  flex-grow: 1;
+  width: 100%;
+  flex-direction: column;
+  gap: 2ch;
+}
+
+.mini {
+  display: flex;
+  max-width: fit-content;
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: 1ch;
+}
+
+.from {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 1ch;
+  width: 100%;
+}

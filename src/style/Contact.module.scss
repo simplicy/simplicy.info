@@ -41,4 +41,8 @@
   display: flex;
   width: 100%;
   justify-content: flex-end;
+  @media (min-width: 768px) {
+    align-items: center;
+    max-width: 50ch;
+  }
 }

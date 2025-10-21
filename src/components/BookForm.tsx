@@ -1,99 +1,84 @@
-import { useState } from "react";
-import TextArea from "../sacred/TextArea";
-import Button from "../sacred/Button";
+import { useEffect, useState } from "react";
 import styles from './style/ContactForm.module.scss';
-import Divider from "../sacred/Divider";
-import { EmailForCreate } from "../common/types";
-import { toast } from "react-toastify";
-import { useContact } from "../common/hooks";
-import BlockLoader from "../sacred/BlockLoader";
 import AlertBanner from "../sacred/AlertBanner";
+import Stepper from "./page/Stepper";
+import InfoForm from "./book/Infoform";
+import TimeForm from "./book/Timeform";
+import ConfirmForm, { ConfirmFormProps } from "./book/Confirmform";
+import { useBook } from "../common/hooks";
+import BlockLoader from "../sacred/BlockLoader";
 
 export default function BookForm() {
-  const [name, setName] = useState("");
-  const [title, setTitle] = useState("");
-  const [message, setMessage] = useState("");
-  const [email, setEmail] = useState("");
-  const { isFetching, refetch } = useContact({ sender_name: name, subject: title, message: message, from: email });
+  let [step, setStep] = useState(0);
+  let [completed, setCompleted] = useState(false);
 
-  const handleSubmit = async () => {
-    let data: EmailForCreate = {
-      sender_name: name,
-      subject: title,
-      message: message,
-      from: email
+  const [formData, setFormData] = useState<ConfirmFormProps>(
+    {
+      attendees: "",
+      subject: "",
+      message: "",
+      start: "",
     }
-    if (data.sender_name === "" || data.subject === "" || data.message === "" || data.from === "") {
-      toast.error("Please fill out all fields");
-      return;
-    }
-    //Check if email is somewhat an email address
-    if (data.from.indexOf("@") === -1 || data.from.indexOf(".") === -1) {
-      toast.error("Please enter a valid email address");
-      return;
-    }
-    await refetch();
-    toast.success("Submitted!");
-    setName("");
-    setTitle("");
-    setMessage("");
-    setEmail("");
-
+  );
+  const handleContinue = (data: any) => {
+    setFormData({ ...formData, ...data });
+    console.log(data);
+    setStep(step + 1);
+  };
+  const { isFetching, refetch } = useBook(formData);
+  const handleFinish = async () => {
+    refetch();
+    setFormData({
+      attendees: "",
+      subject: "",
+      message: "",
+      start: "",
+    });
+    setCompleted(true);
   }
+
+  const steps = [
+    {
+      label: "Info",
+      element: <InfoForm handleContinue={handleContinue} />,
+    },
+    {
+      label: "Time",
+      element: <TimeForm handleContinue={handleContinue} />,
+    },
+    {
+      label: "Confirm",
+      element: <ConfirmForm data={formData} handleContinue={handleFinish} />,
+    }
+  ]
+
+  useEffect(() => {
+  }, [completed, step, formData]);
 
   return (
     <>
       <div className={styles.root}>
         <AlertBanner hover={false}>
-          <div className={styles.form}>
-            <h1 style={{
-              alignSelf: "center"
-            }}>Book</h1>
-            <div className={styles.from}>
-              Subject:
-              <TextArea value={title}
-                placeholder="SUBJECT" name="title"
-                cursor={false}
-                onChange={(e) => setTitle(e.target.value)} />
+          {isFetching ?
+            <div className={styles.loader}>
+              <BlockLoader mode={7} />
             </div>
-            <div className={styles.from}>
-              From:
-              <TextArea value={email}
-                cursor={false}
-                placeholder="YOUR EMAIL" name="email"
-                onChange={(e) => setEmail(e.target.value)} />
-            </div>
-            <Divider />
-            <div className={styles.message}>
-              <TextArea value={message}
-                cursor={false}
-                name="message"
-                style={{ minHeight: "15ch" }}
-                placeholder="MESSAGE"
-                onChange={(e) => setMessage(e.target.value)} />
-            </div>
-            <div className={styles.signature}>
-              Signed,
-              <TextArea value={name}
-                cursor={false}
-                placeholder="NAME/HANDLE" name="name"
-                onChange={(e) => setName(e.target.value)} />
-            </div>
-            <div className={styles.submit}>
-              {isFetching ?
-                <BlockLoader mode={7} />
-
-                :
-                <Button onClick={() => {
-                  handleSubmit();
-                }}
-                  disabled={isFetching}
-                >
-                  SUBMIT
-                </Button>
+            :
+            <div className={styles.form}>
+              <h1 style={{
+                alignSelf: "center"
+              }}>Book</h1>
+              {completed ? <div style={{ minHeight: "2rem" }} >
+                Thank you! Your booking has been submitted.
+                Please check your email for confirmation.
+              </div> :
+                <>
+                  <Stepper step={step} steps={steps} />
+                  {steps[step].element}
+                </>
               }
             </div>
-          </div>
+          }
         </AlertBanner>
       </div>
     </>

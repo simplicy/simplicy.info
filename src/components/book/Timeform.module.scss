@@ -1,0 +1,44 @@
+.root {
+  display: flex;
+  padding: 2ch 0;
+  position: relative;
+  flex-grow: 1;
+  width: 100%;
+  flex-direction: column;
+  gap: 2ch;
+}
+
+.mini {
+  display: flex;
+  max-width: fit-content;
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: 1ch;
+}
+
+.footer .root {
+  gap: unset;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  width: unset;
+  gap: 1ch;
+  padding: 1ch;
+}
+
+.cal {
+  display: flex;
+  flex-direction: column;
+  height: 15ch;
+  gap: 1ch;
+}
+
+.loader {
+  display: flex;
+  width: 100%;
+  min-height: 4ch;
+  flex-direction: row;
+  justify-content: center;
+}

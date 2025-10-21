@@ -12,8 +12,9 @@ export default function StepperBar(
         if (!element.label)
           return null;
         return (
-          <div key={element.label + index} className={Utilities.classNames(index === step ? styles.active : styles.step)}>
-            <b>{element.label}</b>
+          <div key={element.label + index} >
+            {index === step ? "•" : index < step ? "✓" : "○"}{" "}
+            <b className={Utilities.classNames(index === step ? styles.active : styles.step)}>{element.label}</b>
           </div>
         );
       })}

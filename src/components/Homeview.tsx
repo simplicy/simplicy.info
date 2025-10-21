@@ -78,12 +78,10 @@ export default function Homeview() {
       initial={{
         display: "none",
         opacity: 0,
-        y: "var(--fade-distance)",
       }}
       animate={{
         display: "flex",
         opacity: 1,
-        transform: "translateY(0px)",
       }}
       transition={{
         delay: delay,
@@ -128,7 +126,7 @@ export default function Homeview() {
                 layout
                 style={{
                   display: "flex",
-                  alignItems: "center",
+                  alignItems: "flex-start",
                   justifyContent: "center",
                   height: "100%",
                   width: "100%",
@@ -136,15 +134,12 @@ export default function Homeview() {
                 initial={{
                   display: "none",
                   opacity: 0,
-                  y: "var(--fade-distance)",
                 }}
                 animate={{
                   display: "flex",
                   opacity: 1,
-                  transform: "translateY(0px)",
                 }}
                 transition={{
-                  delay: delay,
                   duration: 0.5,
                   ease: "easeInOut",
                 }}
@@ -163,7 +158,7 @@ export default function Homeview() {
                 layout
                 style={{
                   display: "flex",
-                  alignItems: "center",
+                  alignItems: "flex-start",
                   justifyContent: "center",
                   height: "100%",
                   width: "100%",
@@ -171,15 +166,12 @@ export default function Homeview() {
                 initial={{
                   display: "none",
                   opacity: 0,
-                  y: "var(--fade-distance)",
                 }}
                 animate={{
                   display: "flex",
                   opacity: 1,
-                  transform: "translateY(0px)",
                 }}
                 transition={{
-                  delay: delay,
                   duration: 0.5,
                   ease: "easeInOut",
                 }}

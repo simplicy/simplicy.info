@@ -6,6 +6,13 @@ export type Card = {
   styles?: string | null;
 }
 
+export type BookingInfo = {
+  attendees: string;
+  subject: string;
+  message: string;
+  start: string;
+}
+
 export type BoxItemProps = {
   name: string;
   onClick?: () => void;

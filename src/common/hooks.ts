@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import { EmailForCreate } from "./types";
+import { BookingInfo, EmailForCreate } from "./types";
 import Cookies from "js-cookie";
 import { closytUserFmc } from "./models";
 import { contactFmc } from "./models";
@@ -11,6 +11,23 @@ export const useContact = (
     return data;
   });
 }, { enabled: false });
+
+export const useSlots = (
+) => useQuery('slots', async () => {
+  return await contactFmc.slots().then((data) => {
+    return data;
+  });
+}, { enabled: false });
+
+export const useBook = (
+  data: BookingInfo
+) => useQuery('book', async () => {
+  return await contactFmc.book(data).then((data) => {
+    return data;
+  });
+}, { enabled: false });
+
+
 
 export const useAbout = () => useQuery('about', async () => {
   return await contactFmc.about().then((data) => {

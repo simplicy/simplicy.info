@@ -1,10 +1,7 @@
 import styles from '../style/Quote.module.scss';
 import { motion } from 'framer-motion';
-import { useContext } from '../page/Context';
 export default function Quote() {
-  const { currentMonth } = useContext() as {
-    currentMonth: number,
-  }
+  let currentMonth = 0;
   return (
     <motion.div
       layout
@@ -19,7 +16,7 @@ export default function Quote() {
       initial={{ opacity: 0, }}
       animate={{ opacity: 1, display: "flex", }}
       transition={{
-        delay: currentMonth + .75,
+        delay: currentMonth + 3,
         duration: 0.5,
         ease: "easeInOut",
       }}
@@ -67,7 +64,7 @@ export default function Quote() {
           transform: "translateY(0px)",
         }}
         transition={{
-          delay: currentMonth + 2.5,
+          delay: 5,
           duration: 1,
           ease: "easeInOut",
         }}

@@ -18,22 +18,20 @@ function Wireframe() {
     <DefaultLayout previewPixelSRC="https://intdev-global.s3.us-west-2.amazonaws.com/template-app-icon.png">
       <DebugGrid />
       <ModalStack />
-      {/* <canvas className='glslCanvas' data-fragment={background} id="canvas" */}
-      {/*   width={window.innerWidth} height={window.innerHeight} */}
-      {/* /> */}
       {loading ? <Loader /> :
         <Row
           style={{
             display: "flex",
             width: "100%",
-            height: "100%",
+            justifyContent: "space-between",
             flexDirection: 'column',
             borderRadius: '0px',
             overflow: 'hidden',
             overflowY: 'auto',
           }}>
-          <Banner />
           <Intro />
+
+          <Banner />
           <Navbar />
           <Outlet />
           <Footer />

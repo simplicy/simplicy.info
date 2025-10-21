@@ -11,6 +11,7 @@ import Tooltip from "../sacred/Tooltip.tsx";
 import { items } from "../common/vars.ts";
 import ButtonCards from "./ButtonCards.tsx";
 import { useNavigate } from "react-router-dom";
+import { bio } from "../common/vars.ts";
 
 export default function Biography() {
   let navigate = useNavigate();
@@ -38,7 +39,7 @@ export default function Biography() {
                 transition: "color 0.3s ease",
                 color: "var(--theme-focused-foreground)",
               }}
-              >Software Developer</p>
+              >{bio.title}</p>
             </Indent>
             <div className={styles.icons}>
               {items.map((item, index) => {
@@ -75,7 +76,8 @@ export default function Biography() {
           </div>
         </div>
         <Divider type="DOUBLE" />
-        I am a {age} year old Software Developer born and raised in South Florida. My free time is split between programming, gaming, sewing, or modding electronics. Currently working on a multi-platform outfit planner and a VoIP/Messaging application.
+        I am a {age} year old Software Developer born and raised in South Florida.
+        {bio.description}
       </CardDouble>
       {window.location.pathname === "/bio" &&
         <motion.div
@@ -114,6 +116,7 @@ export default function Biography() {
           </div>
         </motion.div>
       }
+
     </div>
   )
 }

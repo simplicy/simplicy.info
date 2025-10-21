@@ -17,10 +17,10 @@ const Context = React.createContext<ContextType | null>(null);
 
 export const Provider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   let currentMonth = new Date().getMonth();
-  let delay = currentMonth + 5;
-  //if (Cookies.get("intro")) {
-  delay = 0;
-  //}
+  let delay = 7.5;
+  if (Cookies.get("intro")) {
+    delay = 0;
+  }
 
   const navigate = useNavigate();
   // Set theme if set

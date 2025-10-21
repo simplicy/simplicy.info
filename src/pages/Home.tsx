@@ -19,7 +19,7 @@ function Home() {
     // On first load of the hour add cookie. If cookie exists, skip animation
     setTimeout(() => {
       if (!Cookies.get("intro")) {
-        Cookies.set("intro", "true");
+        Cookies.set("intro", "true", { expires: 1 });//expires in 1 day
       }
     }, 1000 * delay);
   }, []);
@@ -38,11 +38,9 @@ function Home() {
       }}
       initial={{
         opacity: 0,
-        y: "var(--fade-distance)",
       }}
       animate={{
         opacity: 1,
-        transform: "translateY(0px)",
       }}
       transition={{
         duration: 0.5,

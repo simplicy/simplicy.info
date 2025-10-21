@@ -9,6 +9,7 @@ import Ebay from "./assets/ebay.svg";
 import CopyIcon from "./assets/copy.svg";
 import { toast } from "react-toastify";
 
+
 export const banner = {
   message: "",
   repeated: 10,
@@ -226,21 +227,47 @@ export let links = [
 
 export let work = [
   {
-    "companyname": "MSC Cruises",
-    "title": "IT Support Specialist",
-    "start": "2015",
-    "end": "2020",
+    companyname: "Map Communications",
+    title: "Software Developer",
+    start: "2023",
+    end: "Present",
+    notes: [
+      "Analyzed partner networks to identify applications and services, designing solutions to transition customers and partners onto the company’s proprietary software platform.",
+      "Managed and deployed software solutions declaratively across distributed infrastructure using Portainer, GitLab, Kubernetes, and ArgoCD.",
+      "Built services using Terraform, Python and AWS to synchronize databases with external platforms such as Snowflake and Looker, streamlining data movement and integration.",
+      "Engineered integrations between core systems, external APIs, and healthcare platforms (Athena, Epic, Oracle Cerner) to enable real-time messaging, unified booking, and seamless cross-platform communication with Java Spring Boot, Oracle and React.",
+      "Leveraged AI-driven tools to analyze user and customer metrics, predicting cancellation risks, reducing churn, and improving long-term retention.",
+      "Maintained and optimized databases with migrations and updates in SQL and Rust, consolidating legacy brand databases into a unified Oracle-backed system.",
+    ]
   },
   {
-    "companyname": "Corporate Message Services",
-    "title": "IT Manager",
-    "start": "2021",
-    "end": "2023",
+    companyname: "Corporate Message Services",
+    title: "IT Manager",
+    start: "2021",
+    end: "2023",
+    notes: [
+      "Orchestrated the upkeep and administration of IT infrastructure, including virtual machine deployments, remote workstation updates via VPN, and end-to-end imaging, configuration, and troubleshooting of laptops and workstations for on-site and remote staff, leveraging NinjaRMM, AnyDesk, and Zendesk for lifecycle and remote support management.",
+      "Built and managed IVRs, phone numbers, and Twilio Shaken/Stir configurations to ensure secure, and reliable communication for our customers.",
+      "Created disaster recovery action plans to ensure 24/7 system reliability, safeguarding critical operations and client emergency lines.",
+      "Designed, developed, and deployed internal applications to extend booking system functionality and integrate with ServiceMinder, Zendesk, ServiceTitan, Google Calendar, and other 3rd party APIs.",
+    ]
   },
   {
-    "companyname": "Map Communications",
-    "title": "Software Developer",
-    "start": "2023",
-    "end": "Present",
+    companyname: "MSC Cruises",
+    title: "IT Support Specialist",
+    start: "2015",
+    end: "2020",
+    notes: [
+      "Delivered on-site technical support during high-profile events (ship christenings, private island operations) and supported the setup of remote offices in Canada and the Caribbean, ensuring system stability, seamless connectivity, and workflow continuity for executive, management, and operations teams.",
+      "Partnered with the Disaster Recovery team to maintain uninterrupted operations for sales offices and local functions, ensuring business continuity during multiple severe weather events.",
+      "Leveraged ServiceNow to manage, triage, and route technical support requests for North American Operations, adhering to SLA standards and generating weekly reports to identify systemic issues and opportunities for improvement."
+    ]
   },
 ]
+
+
+export const bio = {
+  description: " I make terminal applications, API's, and desktop applications; mostly with Rust. My free time is split between programming and DevOps, gaming, sewing, or modding electronics. Currently, I am working on a multi-platform outfit planner and a VoIP/Messaging application.",
+  title: "Software Developer",
+  links: items,
+}

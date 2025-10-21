@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import Card from '../sacred/Card';
+import Divider from '../sacred/Divider';
 import styles from './style/Timeline.module.scss';
 import { motion } from 'framer-motion';
 
@@ -8,6 +10,7 @@ interface TimelineProps {
 export default function Timeline({ list }: TimelineProps) {
   let buildTimeline = () => {
     let timeline = list.map((item: any, index: number) => {
+      let [showDescription, setShowDescription] = useState(false);
       return (
         <motion.div
           key={index}
@@ -41,8 +44,10 @@ export default function Timeline({ list }: TimelineProps) {
             <Card
               title={item.start + "-" + item.end}
               key={item.companyname + index} className={styles.content}>
-              <div className={styles.exp}>
-                +
+              <div className={styles.exp}
+                onClick={() => setShowDescription(!showDescription)}
+              >
+                {showDescription ? "-" : "+"}
               </div>
               <div className={styles.title}>
                 {item.title}
@@ -52,6 +57,18 @@ export default function Timeline({ list }: TimelineProps) {
               </div>
               <div className={styles.date}>
               </div>
+              {showDescription &&
+                <div className={styles.description}>
+                  <Divider type="DOUBLE" />
+                  <ul>
+                    {item.notes.map((note: string, noteIndex: number) => (
+                      <li key={noteIndex} className={styles.descriptioncontent}>
+                        {note}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              }
             </Card>
           </div>
         </motion.div >

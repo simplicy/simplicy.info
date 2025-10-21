@@ -26,6 +26,15 @@
   width: 100%;
 }
 
+.loader {
+  display: flex;
+  width: 100%;
+  min-height: 30ch;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .submit {
   display: flex;
   justify-content: center;

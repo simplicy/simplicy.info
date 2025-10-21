@@ -1,12 +1,14 @@
 'use client';
 
 import styles from './DatePicker.module.scss';
+import * as utilites from '../common/utilities';
 
 import * as React from 'react';
 
 interface DatePickerProps {
   year?: number;
   month?: number;
+  setSelectedDate: (date: Date) => void;
 }
 
 const WEEKDAYS = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
@@ -18,12 +20,13 @@ const MONTH_NAMES = [
 
 const MAX_CELLS = 42;
 
-const DatePicker: React.FC<DatePickerProps> = ({ year, month }) => {
+const DatePicker: React.FC<DatePickerProps> = ({ year, month, setSelectedDate }) => {
   const today = new Date();
+  const [selectedDate, setDate] = React.useState<Date>(new Date());
   const [currentYear, setYear] = React.useState(year || today.getFullYear());
-  const [currentMonth, setMonth] = React.useState(month || today.getMonth() + 1);
+  const [currentMonth, setMonth] = React.useState(month || today.getMonth());
 
-  const first = new Date(currentYear, currentMonth - 1, 1);
+  const first = new Date(currentYear, currentMonth, 1);
   const startingWeekday = first.getDay();
   const daysInMonth = new Date(currentYear, currentMonth, 0).getDate();
 
@@ -38,9 +41,15 @@ const DatePicker: React.FC<DatePickerProps> = ({ year, month }) => {
     cells.push(
       <div
         key={day}
-        className={styles.cell}
+        // if selected date matches current date, add selected class
+        className={utilites.classNames(selectedDate && new Date(currentYear, currentMonth, day).toDateString() === selectedDate.toDateString() ? styles.selectedCell : "", styles.cell)}
         tabIndex={0}
         aria-label={`${currentYear}-${String(currentMonth).padStart(2, '0')}-${presentationDay}`}
+        onClick={() => {
+          setSelectedDate(new Date(currentYear, currentMonth, day));
+          setDate(new Date(currentYear, currentMonth, day));
+          console.log(new Date(currentYear, currentMonth, day));
+        }}
       >
         {presentationDay}
       </div>
@@ -80,7 +89,7 @@ const DatePicker: React.FC<DatePickerProps> = ({ year, month }) => {
           ▲
         </button>
         <div className={styles.date}>
-          {currentYear} {MONTH_NAMES[currentMonth - 1].toUpperCase()}
+          {currentYear} {MONTH_NAMES[currentMonth].toUpperCase()}
         </div>
         <button type="button" className={styles.button} onClick={onSwitchNextMonth} aria-label="Next month">
           ▼
