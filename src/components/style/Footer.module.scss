@@ -4,7 +4,8 @@
   height: 5ch;
   margin-top: 1ch;
   width: 100%;
-  justify-content: center;
+  justify-content: flex-start;
+  align-self: center;
   @media screen and (min-width: 1200px) {
     max-width: 1200px;
   }
