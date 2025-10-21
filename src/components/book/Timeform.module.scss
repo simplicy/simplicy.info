@@ -15,7 +15,8 @@
   gap: 1ch;
 }
 
-.footer .root {
+.footer div {
+  justify-content: center !important;
   gap: unset;
 }
 

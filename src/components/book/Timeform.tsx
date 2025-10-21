@@ -46,6 +46,17 @@ export default function TimeForm({ handleContinue }: { handleContinue: (data: an
                 enabled: true,
               })) : []
           } />
+          {data && data
+            .filter((slot: any) => {
+              const slotDate = new Date(slot.start);
+              if (slotDate.toDateString() !== selectedDate.toDateString()) {
+                return false;
+              }
+              return true;
+            }).length === 0 && <div className={styles.noSlots}>
+              No available slots for this date.
+            </div>
+          }
         </div>
       }
     </div>

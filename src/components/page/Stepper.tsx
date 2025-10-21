@@ -2,8 +2,8 @@ import styles from "../style/Stepper.module.scss";
 import * as Utilities from "../../common/utilities";
 
 export default function StepperBar(
-  { steps, step }: {
-    steps: any[], step: number
+  { steps, step, setStep }: {
+    steps: any[], step: number, setStep?: (step: number) => void
   }
 ) {
   return (
@@ -12,7 +12,13 @@ export default function StepperBar(
         if (!element.label)
           return null;
         return (
-          <div key={element.label + index} >
+          <div key={element.label + index}
+            onClick={() => {
+              if (setStep && index <= step) {
+                setStep(index);
+              }
+            }}
+          >
             {index === step ? "•" : index < step ? "✓" : "○"}{" "}
             <b className={Utilities.classNames(index === step ? styles.active : styles.step)}>{element.label}</b>
           </div>
