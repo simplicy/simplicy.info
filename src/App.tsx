@@ -1,4 +1,4 @@
-
+declare const window: any;
 import Home from './pages/Home'
 import Error from './pages/Error.tsx'
 import Wireframe from './common/wireframe'
@@ -7,8 +7,17 @@ import Work from './pages/Work.tsx';
 import Bio from './pages/Bio.tsx';
 import Contact from './pages/Contact.tsx';
 import Support from './pages/Support.tsx';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    var _mtm = window._mtm = window._mtm || [];
+    _mtm.push({ 'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start' });
+    (function() {
+      var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+      g.async = true; g.src = 'https://analytics.sympil.com/js/container_YUiMa9yU.js'; s.parentNode?.insertBefore(g, s);
+    })();
+  }, []);
   // If in dev mode do this
   let location = useLocation();
   return (
