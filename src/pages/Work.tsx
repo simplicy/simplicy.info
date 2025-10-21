@@ -12,6 +12,7 @@ export default function Work() {
       style={{
         display: "flex",
         padding: "2ch",
+        flexGrow: 1,
         flexDirection: "column",
         width: "100%",
       }}
