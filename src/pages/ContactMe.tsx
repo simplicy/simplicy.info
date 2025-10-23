@@ -105,7 +105,9 @@ export default function Contact() {
             }}
           >
             <div className={styles.buttons}>
-              Want to work with me or get in touch?
+              <p>
+                Want to work with me or get in touch?
+              </p>
               <ButtonCards cards={
                 [
                   {
