@@ -8,12 +8,9 @@ import Navbar from "../components/page/Navbar";
 import Intro from "../components/intro/Intro";
 import Footer from "../components/page/Footer";
 import Banner from "../components/page/Banner";
-// import background from "./shaders/background.glsl?raw";
-// import test from "./shaders/test.glsl?raw";
-// import fragment from "./shaders/fragment.glsl?raw";
+
 function Wireframe() {
   const loading = false;
-
   return (
     <DefaultLayout previewPixelSRC="https://intdev-global.s3.us-west-2.amazonaws.com/template-app-icon.png">
       <DebugGrid />
@@ -31,7 +28,6 @@ function Wireframe() {
             overflowY: 'auto',
           }}>
           <Intro />
-
           <Banner />
           <Navbar />
           <Outlet />

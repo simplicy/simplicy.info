@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import styles from './style/ContactForm.module.scss';
+import styles from '../style/ContactForm.module.scss';
 import AlertBanner from "../sacred/AlertBanner";
-import Stepper from "./page/Stepper";
-import InfoForm from "./book/Infoform";
-import TimeForm from "./book/Timeform";
-import ConfirmForm, { ConfirmFormProps } from "./book/Confirmform";
+import Stepper from "../components/page/Stepper";
+import InfoForm from "../components/book/Infoform";
+import TimeForm from "../components/book/Timeform";
+import ConfirmForm, { ConfirmFormProps } from "../components/book/Confirmform";
 import { useBook } from "../common/hooks";
 import BlockLoader from "../sacred/BlockLoader";
-import ButtonCards from "./ButtonCards";
+import ButtonCards from "../components/ButtonCards";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 

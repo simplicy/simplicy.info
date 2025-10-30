@@ -47,12 +47,6 @@ export default function Homeview() {
       enabled: true,
     },
     {
-      name: "Portfolio",
-      onClick: () => { navigate("portfolio"); },
-      styles: null,
-      enabled: false,
-    },
-    {
       name: "Resume",
       onClick: () => { navigate("work"); },
       styles: null,

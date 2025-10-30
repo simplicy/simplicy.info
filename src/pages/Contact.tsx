@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TextArea from "../sacred/TextArea";
 import Button from "../sacred/Button";
-import styles from './style/ContactForm.module.scss';
+import styles from '../style/ContactForm.module.scss';
 import Divider from "../sacred/Divider";
 import { EmailForCreate } from "../common/types";
 import { motion } from "framer-motion";
@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 import { useContact } from "../common/hooks";
 import BlockLoader from "../sacred/BlockLoader";
 import AlertBanner from "../sacred/AlertBanner";
-import ButtonCards from "./ButtonCards";
+import ButtonCards from "../components/ButtonCards";
 import { useNavigate } from "react-router-dom";
 
 export default function ContactForm() {

@@ -1,7 +1,7 @@
 import styles from '../style/Contact.module.scss';
-import ContactForm from "../components/Contact";
+import ContactForm from "./Contact";
 import { motion } from 'framer-motion';
-import BookForm from '../components/Book';
+import BookForm from './Book';
 import ButtonCards from '../components/ButtonCards';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';

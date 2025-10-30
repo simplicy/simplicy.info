@@ -8,8 +8,8 @@ import Bio from './pages/Bio.tsx';
 import Contact from './pages/ContactMe.tsx';
 import Support from './pages/Support.tsx';
 import { useEffect } from 'react';
-import BookForm from './components/Book.tsx';
-import ContactForm from './components/Contact.tsx';
+import BookForm from './pages/Book.tsx';
+import ContactForm from './pages/Contact.tsx';
 
 function App() {
   useEffect(() => {

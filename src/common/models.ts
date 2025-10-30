@@ -42,29 +42,6 @@ export class ContactFmc extends BaseFmc<any, any, any> {
       return false;
     });
   }
-  async about(): Promise<any[]> {
-    const headers = {
-      'Content-Type': 'application/json',
-    };
-    return fetch(`/api/`, { method: 'GET', headers }).then((res) => res.json()).then((res) => {
-      if (res.error) {
-        toast.error(res.message);
-        return false;
-      }
-      if (res.data) {
-        if (res.message) {
-          toast.success(res.message);
-        }
-        return res.data;
-      }
-    }).catch((error) => {
-      toast.error("Error Ocurred:" + error.message)
-      console.error('Error:', error);
-      return false;
-    });
-  }
-
-
 
   async send_email(data: EmailForCreate): Promise<any[]> {
     const headers = {
@@ -90,11 +67,4 @@ export class ContactFmc extends BaseFmc<any, any, any> {
   }
 }
 export const contactFmc = new ContactFmc();
-
-export class ClosytUserFmc extends BaseFmc<any, any, any> {
-  constructor() {
-    super("auth");
-  }
-}
-export const closytUserFmc = new ClosytUserFmc();
 
