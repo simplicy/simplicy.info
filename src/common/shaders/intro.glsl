@@ -13,7 +13,7 @@ uniform float u_time;
 uniform sampler2D u_tex0;
 uniform vec2 u_tex0Resolution; 
 
-uniform sampler2D u_logo; // data/logo.jpg
+uniform sampler2D u_logo;
 uniform vec2 u_logoResolution;
 
 vec2 scale(vec2 st, float s) {

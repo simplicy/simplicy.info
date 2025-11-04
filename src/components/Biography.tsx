@@ -12,15 +12,16 @@ import { items } from "../common/vars.ts";
 import ButtonCards from "./ButtonCards.tsx";
 import { useNavigate } from "react-router-dom";
 import { bio } from "../common/vars.ts";
-
 export default function Biography() {
   let navigate = useNavigate();
   let birthDate = new Date('1997-06-16');
   let age = new Date().getFullYear() - birthDate.getFullYear();
-
+  let intro = "I am a " + age + " year old Software Developer born and raised in South Florida.";
+  // let song = "Yeat - 2TONE";
+  // let game = "RV There Yet?";
+  // let location = "USA";
   return (
     <div className={styles.root}>
-
       <CardDouble title="Bio">
         <div className={styles.desc}>
           <Avatar src={Me} target="_blank" style={{
@@ -34,11 +35,14 @@ export default function Biography() {
               fontWeight: "bold",
               justifyContent: "space-between",
             }}>
-              <p>{Package.author}</p>
-              <p style={{
-                transition: "color 0.3s ease",
-                color: "var(--theme-focused-foreground)",
-              }}
+              <p className="scramble" title={Package.author}>{Package.author}</p>
+              <p
+                className="scramble"
+                style={{
+                  transition: "color 0.3s ease",
+                  color: "var(--theme-focused-foreground)",
+                }}
+                title={bio.title}
               >{bio.title}</p>
             </Indent>
             <div className={styles.icons}>
@@ -76,7 +80,7 @@ export default function Biography() {
           </div>
         </div>
         <Divider type="DOUBLE" />
-        I am a {age} year old Software Developer born and raised in South Florida.
+        {intro}
         {bio.description}
       </CardDouble>
       {window.location.pathname === "/bio" &&

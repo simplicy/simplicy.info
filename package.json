@@ -27,6 +27,7 @@
     "dayjs": "^1.11.13",
     "dotenv": "^16.4.1",
     "glslCanvas": "^0.2.6",
+    "gsap": "^3.13.0",
     "js-cookie": "^3.0.5",
     "motion": "^11.11.17",
     "quad-shader": "^0.0.3",
