@@ -62,7 +62,6 @@ export default function Homeview() {
   ];
   return (
     <motion.div
-      layout
       style={{
         display: "flex",
         alignItems: "center",
@@ -119,7 +118,7 @@ export default function Homeview() {
               })}
             </div>
             {onlink ?
-              <motion.div
+              < motion.div
                 layout
                 style={{
                   display: "flex",
