@@ -1,7 +1,33 @@
+import { defaultChars } from "./vars";
+import { gsap } from "gsap";
+import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+
+gsap.registerPlugin(ScrambleTextPlugin);
+
+
+
 const hasOwn = {}.hasOwnProperty;
 const localhostDomainRE = /^localhost[\:?\d]*(?:[^\:?\d]\S*)?$/;
 const nonLocalhostDomainRE = /^[^\s\.]+\.\S{2,}$/;
 const protocolAndDomainRE = /^(?:\w+:)?\/\/(\S+)$/;
+
+let randomDelay = (min: number, max: number) => {
+  return Math.random() * (max - min) + min;
+}
+export const scramble = (event: any) => {
+  const target = event.target.firstElementChild || event.target;
+  if (!gsap.isTweening(target)) {
+    gsap.to(target, {
+      duration: randomDelay(.5, 1.5),
+      ease: 'sine.in',
+      scrambleText: {
+        text: target.title,
+        speed: 2,
+        chars: true ? defaultChars : target.innerText.replace(/\s/g, '')
+      }
+    });
+  }
+}
 
 export function noop() {
   return null;

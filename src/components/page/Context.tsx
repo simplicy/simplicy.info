@@ -5,10 +5,15 @@ import { fonts, themes } from '../../common/vars';
 import { toggleDebugGrid } from '../../sacred/DebugGrid';
 import { useEffect } from 'react';
 import * as Utilities from '../../common/utilities';
+import { usePlaying } from '../../common/hooks';
+import { Game } from '../../common/types';
 
 interface ContextType {
   themes: any;
   fonts: any;
+  playing: any;
+  refetchPlaying?: () => void;
+  isFetchingPlaying: boolean;
   currentMonth: number;
   delay: number;
 }
@@ -21,7 +26,11 @@ export const Provider: React.FC<{ children: React.ReactNode }> = ({ children }) 
   if (Cookies.get("intro")) {
     delay = 0;
   }
-
+  const { data: playing, refetch: refetchPlaying, isFetching: isFetchingPlaying } = usePlaying() as {
+    data: Game[];
+    refetch: () => void;
+    isFetching: boolean;
+  };
   const navigate = useNavigate();
   // Set theme if set
   if (Cookies.get("theme")) {
@@ -53,6 +62,9 @@ export const Provider: React.FC<{ children: React.ReactNode }> = ({ children }) 
 
   return (
     <Context.Provider value={{
+      playing,
+      refetchPlaying,
+      isFetchingPlaying,
       themes,
       fonts,
       currentMonth,

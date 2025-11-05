@@ -145,7 +145,8 @@ video {
   margin: 0;
   padding: 0;
   vertical-align: baseline;
-  transition: background-color 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  transition-property: background-color, color, border-color, fill, stroke;
 }
 
 a {
@@ -576,4 +577,21 @@ body {
   &::-webkit-scrollbar-thumb:hover {
     background: var(--theme-border);
   }
+}
+
+.scramble {
+  overflow: hidden;
+  word-break: break-word;
+}
+
+#game {
+    font-weight: bold;
+    &:hover {
+      color: var(--theme-focused-foreground);
+      cursor: pointer;
+    }
+}
+#time {
+  color: var(--theme-text-secondary);
+  font-size: 0.8em;
 }

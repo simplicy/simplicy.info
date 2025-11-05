@@ -3,8 +3,6 @@ import BlockLoader from '../../sacred/BlockLoader';
 function Loader() {
   return (
     <Box sx={{
-      height: '100vh',
-      width: '100%',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',

@@ -9,6 +9,7 @@ import Ebay from "./assets/ebay.svg";
 import CopyIcon from "./assets/copy.svg";
 import { toast } from "react-toastify";
 
+export const defaultChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:,.<>?~';
 
 export const banner = {
   message: "",

@@ -24,6 +24,25 @@ export class ContactFmc extends BaseFmc<any, any, any> {
       return false;
     });
   }
+
+  async playing(): Promise<any[]> {
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+    return fetch(`/api/playing`, { method: 'GET', headers }).then((res) => res.json()).then((res) => {
+      if (res.error) {
+        toast.error(res.message);
+        return false;
+      }
+      if (res.data) {
+        return res.data;
+      }
+    }).catch((error) => {
+      toast.error("Error Ocurred:" + error.message)
+      console.error('Error:', error);
+      return false;
+    });
+  }
   async slots(): Promise<any[]> {
     const headers = {
       'Content-Type': 'application/json',

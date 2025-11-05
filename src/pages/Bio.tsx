@@ -7,17 +7,15 @@ export default function Bio() {
       layout
       style={{
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "start",
         height: "100%",
         width: "100%",
       }}
       initial={{
         opacity: 0,
-        y: "var(--fade-distance)",
       }}
       animate={{
         opacity: 1,
-        transform: "translateY(0px)",
       }}
       transition={{
         duration: 0.5,

@@ -12,10 +12,13 @@ export class BaseFmc<M, C, U> {
   }
 
   async get(path: string, token: string): Promise<M> {
-    const headers = {
+    let headers: any = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + token,
     };
+    if (token && token.length > 0) {
+      // Add authorization header if token is provided
+      headers['Authorization'] = 'Bearer ' + token;
+    }
     const url = this.cmd_suffix ? `/api/${this.cmd_suffix}/${path}` : `/api/${path}`;
     return fetch(url, { method: 'GET', headers }).then((res) => res.json()).then((res) => {
       if (res.error) {

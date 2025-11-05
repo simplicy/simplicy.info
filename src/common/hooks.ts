@@ -10,6 +10,13 @@ export const useContact = (
   });
 }, { enabled: false });
 
+export const usePlaying = (
+) => useQuery('playing', async () => {
+  return await contactFmc.playing().then((data) => {
+    return data;
+  });
+}, { enabled: false });
+
 export const useSlots = (
 ) => useQuery('slots', async () => {
   return await contactFmc.slots().then((data) => {

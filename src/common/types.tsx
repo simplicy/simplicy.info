@@ -6,6 +6,12 @@ export type Card = {
   styles?: string | null;
 }
 
+export type Game = {
+  appid: number;
+  name: string;
+  playtime_forever: number;
+}
+
 export type BookingInfo = {
   attendees: string;
   subject: string;
