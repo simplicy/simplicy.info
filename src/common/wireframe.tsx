@@ -12,11 +12,15 @@ import { gsap } from "gsap";
 const defaultChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:,.<>?~';
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 import { useEffect } from "react";
+import { useContext } from "../components/page/Context";
 
 gsap.registerPlugin(ScrambleTextPlugin);
 
 function Wireframe() {
   const loading = false;
+  const { delay } = useContext() as {
+    delay: number,
+  }
   useEffect(() => {
     const links = document.querySelectorAll('.scramble');
     console.log(links);
@@ -34,9 +38,11 @@ function Wireframe() {
         });
       }
     }
-    for (const link of links) {
-      scramble({ target: link });
-    }
+    setTimeout(() => {
+      for (const link of links) {
+        scramble({ target: link });
+      }
+    }, delay * 1000 + 200);
   }, []);
 
 

@@ -35,7 +35,7 @@ export default function Biography() {
               fontWeight: "bold",
               justifyContent: "space-between",
             }}>
-              <p className="scramble" title={Package.author}>{Package.author}</p>
+              <p className="scramble" title={Package.author}>000000000000000000</p>
               <p
                 className="scramble"
                 style={{
@@ -43,7 +43,7 @@ export default function Biography() {
                   color: "var(--theme-focused-foreground)",
                 }}
                 title={bio.title}
-              >{bio.title}</p>
+              >000000000000000000</p>
             </Indent>
             <div className={styles.icons}>
               {items.map((item, index) => {
