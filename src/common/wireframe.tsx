@@ -18,7 +18,6 @@ function Wireframe() {
           display: "flex",
           width: "100%",
           backgroundColor: "var(--color-background)",
-          justifyContent: "space-between",
           flexDirection: 'column',
           borderRadius: '0px',
           overflow: 'hidden',

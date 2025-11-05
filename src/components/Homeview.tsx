@@ -13,6 +13,7 @@ import Me from "../common/assets/me.png";
 import { items, links } from "../common/vars.ts";
 import ButtonCards from "./ButtonCards";
 import { useState } from "react";
+import { bio } from "../common/vars.ts";
 
 
 export default function Homeview() {
@@ -93,9 +94,11 @@ export default function Homeview() {
               <Avatar src={Me} target="_blank"
                 className={styles.avatar}
               />
-              @{Package.author}
-              <p>
-                Software Developer
+              <p className="scramble" title={"@" + Package.author} >
+                00000000000000000
+              </p>
+              <p title={bio.title} className="scramble">
+                00000000000000000
               </p>
             </div>
             <div className={Utilities.classNames(styles.mobile, styles.buttons)}>

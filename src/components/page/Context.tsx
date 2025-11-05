@@ -12,7 +12,7 @@ interface ContextType {
   themes: any;
   fonts: any;
   playing: any;
-  refetchPlaying?: () => void;
+  refetchPlaying: () => void;
   isFetchingPlaying: boolean;
   currentMonth: number;
   delay: number;

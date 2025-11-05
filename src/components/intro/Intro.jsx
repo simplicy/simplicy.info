@@ -5,7 +5,7 @@ import intro from '../../common/shaders/intro.glsl?raw';
 import { useEffect } from 'react';
 import GlslCanvas from 'glslCanvas';
 import moon from '../../common/assets/moon.jpg';
-import planet from '../../common/assets/pluto.jpg';
+import planet from '../../common/assets/back.jpg';
 import Quote from './Quote';
 import Cookies from 'js-cookie';
 

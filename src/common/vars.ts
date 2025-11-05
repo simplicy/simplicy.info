@@ -268,7 +268,10 @@ export let work = [
 
 
 export const bio = {
-  description: " I make terminal applications, API's, and desktop applications; mostly with Rust. My free time is split between programming and DevOps, gaming, sewing, or modding electronics. Currently, I am working on a multi-platform outfit planner and a VoIP/Messaging application.",
+  description: " I make terminal applications, API's, and desktop applications; \
+  mostly with Rust. My free time is split between Programming and DevOps, Gaming/Modding, \
+  Sewing, or Breadboarding. Currently, I am working on a multi-platform outfit \
+  planner among other projects.",
   title: "Software Developer",
   links: items,
 }
