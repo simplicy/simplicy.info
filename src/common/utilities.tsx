@@ -3,14 +3,6 @@ import { gsap } from "gsap";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 
 gsap.registerPlugin(ScrambleTextPlugin);
-
-
-
-const hasOwn = {}.hasOwnProperty;
-const localhostDomainRE = /^localhost[\:?\d]*(?:[^\:?\d]\S*)?$/;
-const nonLocalhostDomainRE = /^[^\s\.]+\.\S{2,}$/;
-const protocolAndDomainRE = /^(?:\w+:)?\/\/(\S+)$/;
-
 let randomDelay = (min: number, max: number) => {
   return Math.random() * (max - min) + min;
 }
@@ -28,6 +20,15 @@ export const scramble = (event: any) => {
     });
   }
 }
+
+
+
+const hasOwn = {}.hasOwnProperty;
+const localhostDomainRE = /^localhost[\:?\d]*(?:[^\:?\d]\S*)?$/;
+const nonLocalhostDomainRE = /^[^\s\.]+\.\S{2,}$/;
+const protocolAndDomainRE = /^(?:\w+:)?\/\/(\S+)$/;
+
+
 
 export function noop() {
   return null;
