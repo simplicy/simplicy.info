@@ -17,7 +17,7 @@ RUN yarn build
 # Final stage
 FROM debian:bullseye-slim as Final
 WORKDIR /dist
-COPY --from=Build /dist /dist
+COPY --from=Build /app/dist /dist
 # Copy the compiled binary and setup caddy
 RUN apt-get update 
 RUN apt-get install -y debian-keyring debian-archive-keyring apt-transport-https curl
