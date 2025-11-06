@@ -154,7 +154,7 @@ export default function Biography() {
                   let url = "https://store.steampowered.com/app/" + playing[0].appid;
                   window.open(url, "_blank");
                 }}
-                title={game}>000000000000000000</p>
+                title={game}>000000000000</p>
               <p id="time" className="scramble" title={" - " + gametime}>000000</p>
             </div>
             <div className={styles.nowplaying}>
@@ -172,7 +172,7 @@ export default function Biography() {
               <p
                 className="scramble"
                 title={song}
-              >000000000000000000</p>
+              >00000000000000</p>
             </div>
           </div>
           <div className={styles.nowplaying}>
