@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TextArea from "../sacred/TextArea";
 import Button from "../sacred/Button";
-import styles from '../style/ContactForm.module.scss';
+import styles from './style/ContactForm.module.scss';
 import Divider from "../sacred/Divider";
 import { EmailForCreate } from "../common/types";
 import { motion } from "framer-motion";

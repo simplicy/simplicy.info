@@ -128,11 +128,9 @@ export default function Homeview() {
                   width: "100%",
                 }}
                 initial={{
-                  display: "none",
                   opacity: 0,
                 }}
                 animate={{
-                  display: "flex",
                   opacity: 1,
                 }}
                 transition={{
@@ -160,11 +158,9 @@ export default function Homeview() {
                   width: "100%",
                 }}
                 initial={{
-                  display: "none",
                   opacity: 0,
                 }}
                 animate={{
-                  display: "flex",
                   opacity: 1,
                 }}
                 transition={{

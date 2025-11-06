@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from '../style/ContactForm.module.scss';
+import styles from './style/ContactForm.module.scss';
 import AlertBanner from "../sacred/AlertBanner";
 import Stepper from "../components/page/Stepper";
 import InfoForm from "../components/book/Infoform";

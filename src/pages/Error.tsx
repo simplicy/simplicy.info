@@ -1,4 +1,4 @@
-import styles from '../style/Error.module.scss';
+import styles from './style/Error.module.scss';
 import { motion } from 'framer-motion';
 function Error() {
   return (

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import styles from "../style/Work.module.scss";
+import styles from "./style/Work.module.scss";
 import Timeline from "../components/Timeline";
 import { work } from "../common/vars";
 import ButtonCards from "../components/ButtonCards";
