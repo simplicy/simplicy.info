@@ -16,7 +16,7 @@ RUN yarn build
 
 # Final stage
 FROM debian:bullseye-slim as Final
-WORKDIR /dist
+WORKDIR /app
 COPY --from=Build /app/dist .
 # Copy the compiled binary and setup caddy
 RUN apt-get update 
@@ -27,6 +27,6 @@ RUN chmod o+r /usr/share/keyrings/caddy-stable-archive-keyring.gpg
 RUN chmod o+r /etc/apt/sources.list.d/caddy-stable.list
 RUN apt update
 RUN apt install caddy
-RUN cd /dist
+RUN cd /app
 # Start caddy static file server without tls
-CMD caddy file-server --browse --root /dist --listen :80
+CMD caddy file-server --browse --root ./dist --listen :80
