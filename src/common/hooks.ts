@@ -1,25 +1,27 @@
 import { useQuery } from "react-query";
 import { BookingInfo, EmailForCreate } from "./types";
-import { contactFmc } from "./models";
+import { contactFmc } from "./models/contact";
+import { steamFmc } from "./models/steam";
+import { calendarFmc } from "./models/calendar";
 
 export const useContact = (
   data: EmailForCreate,
-) => useQuery('closytUser', async () => {
-  return await contactFmc.send_email(data).then((data) => {
+) => useQuery('contact', async () => {
+  return await contactFmc.post(data, "contact").then((data) => {
     return data;
   });
 }, { enabled: false });
 
 export const usePlaying = (
 ) => useQuery('playing', async () => {
-  return await contactFmc.playing().then((data) => {
+  return await steamFmc.get("playing").then((data) => {
     return data;
   });
 }, { enabled: false });
 
 export const useSlots = (
 ) => useQuery('slots', async () => {
-  return await contactFmc.slots().then((data) => {
+  return await calendarFmc.get("open").then((data) => {
     return data;
   });
 }, { enabled: false });
@@ -27,7 +29,7 @@ export const useSlots = (
 export const useBook = (
   data: BookingInfo
 ) => useQuery('book', async () => {
-  return await contactFmc.book(data).then((data) => {
+  return await calendarFmc.post(data, "book").then((data) => {
     return data;
   });
 }, { enabled: false });

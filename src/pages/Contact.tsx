@@ -36,12 +36,12 @@ export default function ContactForm() {
       toast.error("Please enter a valid email address");
       return;
     }
-    await refetch();
-    toast.success("Submitted!");
-    setName("");
-    setTitle("");
-    setMessage("");
-    setEmail("");
+    await refetch().then((_res) => {
+      setName("");
+      setTitle("");
+      setMessage("");
+      setEmail("");
+    });
 
   }
 

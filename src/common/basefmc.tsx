@@ -11,7 +11,7 @@ export class BaseFmc<M, C, U> {
     this.#cmd_suffix = cmd_suffix;
   }
 
-  async get(path: string, token: string): Promise<M> {
+  async get(path: string, token?: string): Promise<M> {
     let headers: any = {
       'Content-Type': 'application/json',
     };
