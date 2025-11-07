@@ -13,8 +13,8 @@ export const useContact = (
 }, { enabled: false });
 
 export const usePlaying = (
-) => useQuery('playing', async () => {
-  return await steamFmc.get("playing").then((data) => {
+) => useQuery('recent', async () => {
+  return await steamFmc.get("recent").then((data) => {
     return data;
   });
 }, { enabled: false });

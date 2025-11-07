@@ -26,22 +26,22 @@ export default function Biography() {
   let intro = "I am a " + age + " year old Software Developer born and raised in South Florida.";
   const { delay, playing, isFetchingPlaying, refetchPlaying } = useContext() as {
     delay: number,
-    playing: Game[],
+    playing: Game,
     refetchPlaying: () => void,
     isFetchingPlaying: boolean,
   }
   // rund to nearest hour
   const [game, setGame] = useState("");
-  const [gametime, setGametime] = useState(playing ? Math.round(playing[0]?.playtime_forever / 60) + " hours" : "");
+  const [gametime, setGametime] = useState(playing ? Math.round(playing?.playtime_forever / 60) + " hours" : "");
   const [song, _setSong] = useState("No recent songs");
   useEffect(() => {
-    setGame(playing && playing.length > 0 ? playing[0].name : "Not Currently Playing");
-    setGametime(playing && playing.length > 0 ? Math.round(playing[0].playtime_forever / 60) + " hours" : "");
+    setGame(playing ? playing.name : "Not Currently Playing");
+    setGametime(playing ? Math.round(playing.playtime_forever / 60) + " hours" : "");
   }, [playing]);
 
 
   useEffect(() => {
-    if (!playing || playing.length == 0)
+    if (!playing)
       refetchPlaying();
     setTimeout(() => {
       const links = document.querySelectorAll('.scramble');
@@ -148,7 +148,7 @@ export default function Biography() {
                 <>
                   <p id="game" className="scramble"
                     onClick={() => {
-                      let url = "https://store.steampowered.com/app/" + playing[0].appid;
+                      let url = "https://store.steampowered.com/app/" + playing.appid;
                       window.open(url, "_blank");
                     }}
                     title={game}>000000000000</p>
