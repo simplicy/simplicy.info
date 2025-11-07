@@ -41,7 +41,7 @@ export default function Biography() {
 
 
   useEffect(() => {
-    if (!playing)
+    if (!playing && !isFetchingPlaying)
       refetchPlaying();
     setTimeout(() => {
       const links = document.querySelectorAll('.scramble');
