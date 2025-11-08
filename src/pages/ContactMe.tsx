@@ -17,6 +17,7 @@ export default function Contact() {
       layout
       style={{
         display: "flex",
+        overflowY: "auto",
         height: "100%",
         alignItems: "center",
         padding: "0 2ch",

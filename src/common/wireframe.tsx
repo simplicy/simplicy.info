@@ -21,7 +21,6 @@ function Wireframe() {
           flexDirection: 'column',
           borderRadius: '0px',
           overflow: 'hidden',
-          overflowY: 'auto',
         }}>
         <Intro />
         <Banner />

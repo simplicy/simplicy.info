@@ -21,6 +21,7 @@ function Home() {
     <div
       style={{
         height: "100%",
+        overflowY: "auto",
         padding: "2ch",
         width: "100%",
       }}

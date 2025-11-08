@@ -22,7 +22,7 @@ const AlertBanner: React.FC<AlertBannerProps> = ({
   let stylz = Utilities.classNames(styles.root, isSelected ? styles.selected : null, hover ? styles.hover : null);
 
   return (
-    <div className={stylz} {...rest} style={style} onClick={onClick} />
+    <button className={stylz} {...rest} style={style} onClick={onClick} />
   );
 };
 

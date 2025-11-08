@@ -8,6 +8,7 @@ export default function Bio() {
       style={{
         display: "flex",
         justifyContent: "start",
+        overflowY: "auto",
         height: "100%",
         width: "100%",
       }}

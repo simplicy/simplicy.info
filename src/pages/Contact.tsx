@@ -52,6 +52,7 @@ export default function ContactForm() {
         style={{
           display: "flex",
           height: "100%",
+          overflowY: "auto",
           alignItems: "flex-start",
           padding: "0 2ch",
           paddingTop: "1ch",

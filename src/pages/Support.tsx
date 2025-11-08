@@ -15,6 +15,7 @@ export default function Support() {
       style={{
         display: "flex",
         justifyContent: "center",
+        overflowY: "auto",
         flexDirection: "column",
         height: "100%",
         width: "100%",

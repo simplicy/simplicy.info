@@ -4,6 +4,9 @@
   user-select: none;
 }
 
+
+
+
 .controls {
   align-items: center;
   background: var(--theme-border);
@@ -57,9 +60,25 @@
   padding: 0 1ch 0 1ch;
   text-align: center;
   cursor: pointer;
+  &:focus {
+    background: var(--theme-focused-foreground-subdued);
+    outline: 0;
+  }
 
   
 }
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  line-height: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+}
 .selectedCell {
-    background: var(--theme-focused-foreground);
+    background: var(--theme-focused-foreground) !important;
 }

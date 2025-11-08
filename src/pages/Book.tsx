@@ -64,6 +64,7 @@ export default function BookForm() {
       layout
       style={{
         display: "flex",
+        overflowY: "auto",
         paddingTop: "1ch",
         height: "100%",
         alignItems: "flex-start",
