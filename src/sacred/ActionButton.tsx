@@ -1,4 +1,5 @@
 import styles from './ActionButton.module.scss';
+import '../global.scss';
 
 import * as React from 'react';
 import * as Utilities from '../common/utilities';

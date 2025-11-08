@@ -10,7 +10,7 @@ export const scramble = (event: any) => {
   const target = event.target.firstElementChild || event.target;
   if (!gsap.isTweening(target)) {
     gsap.to(target, {
-      duration: randomDelay(.5, 1.5),
+      duration: randomDelay(.3, 1.2),
       ease: 'sine.in',
       scrambleText: {
         text: target.title,

@@ -232,6 +232,7 @@ body.theme-blue {
 }
 
 body.theme-light {
+  --theme-icon-invert: 0;
   --theme-overlay: var(--color-black-100-4);
   --theme-background: var(--color-white);
   --theme-background-modal: var(--color-gray-20);
@@ -249,6 +250,7 @@ body.theme-light {
 }
 
 body.theme-dark {
+  --theme-icon-invert: 1;
   --theme-overlay: var(--color-black-100-4);
   --theme-background: var(--color-black-100);
   --theme-background-modal: var(--color-gray-80);

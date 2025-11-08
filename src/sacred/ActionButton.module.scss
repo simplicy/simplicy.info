@@ -9,14 +9,16 @@
 .icon {
   display: flex;
   height: 2.1ch;
-  filter: invert(1) grayscale(1) brightness(.5) contrast(1.5);
   transform: scale(1);
   @media (max-width: 768px) {
-  &:hover {
-    transform: scale(1.1);
-  filter: invert(1) grayscale(1) brightness(.4) contrast(1.5);
+    &:hover {
+      transform: scale(1.1);
+    }
   }
+  &:focus  {
+    background: var(--theme-focused-foreground);
   }
+  
   
 }
 
@@ -45,29 +47,25 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-size);
   flex-shrink: 0;
+  img {
+    filter: invert(var(--theme-icon-invert));
+  }
 
-  &:hover {
+  &:hover, &:focus {
     background: var(--theme-focused-foreground);
   }
 
-  &:hover .content {
+  &:hover, &:focus .content {
     box-shadow: inset 0 0 0 2px var(--theme-focused-foreground);
   }
 
-  &:focus .hotkey {
-    background: var(--theme-focused-foreground);
-  }
-
-  &:focus .content {
-    box-shadow: inset 0 0 0 2px var(--theme-focused-foreground);
-  }
   @media (max-width: 768px) {
     &:hover {
       background: unset !important;
     }
   }
   @media (min-width: 768px) {
-    background-color: var(--theme-button-background);
+    background: var(--theme-button-background);
   }
 }
 

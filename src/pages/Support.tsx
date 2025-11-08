@@ -6,8 +6,19 @@ import ActionButton from '../sacred/ActionButton.tsx';
 import Tooltip from '../sacred/Tooltip.tsx';
 import ButtonCards from '../components/ButtonCards.tsx';
 import { useNavigate } from 'react-router-dom';
+import { scramble } from '../common/utilities.tsx';
+import { useEffect } from 'react';
 
 export default function Support() {
+  useEffect(() => {
+    setTimeout(() => {
+      const links = document.querySelectorAll('.scramble');
+      for (const link of links) {
+        scramble({ target: link });
+      }
+    }, 500);
+  }, []);
+
   const navigate = useNavigate();
   return (
     <motion.div
@@ -15,7 +26,6 @@ export default function Support() {
       style={{
         display: "flex",
         justifyContent: "center",
-        overflowY: "auto",
         flexDirection: "column",
         height: "100%",
         width: "100%",
@@ -34,29 +44,44 @@ export default function Support() {
       }}
     >
       <div className={styles.root}>
-        <p>
-          If you would like to support me or my work, there are a couple ways to do so.
+        <p className="scramble" title="If you would like to support me or my work, there are a couple ways to do so.">
+          00000000000 00000000000 00000000000 00000000000 00000000000 00000000000
         </p>
+
         <div className={styles.header} >
           {donate_links.map((link, index) => (
-            <div className={styles.item} >
-              <Tooltip
-                key={index}
-                title="Copy to clipboard"
-              >
-                <ActionButton
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: "var(--fade-distance)",
+              }}
+              animate={{
+                opacity: 1,
+                transform: "translateX(0px)",
+              }}
+              transition={{
+                duration: 0.2 * index,
+                ease: "easeInOut",
+              }}
+            >
+              <div className={styles.item} >
+                <Tooltip
                   key={index}
-                  onClick={link.onClick}
-                  hotkey={link.name}
-                  icon={link.icon}
-                />
-              </Tooltip>
-            </div>
+                  title="Copy to clipboard"
+                >
+                  <ActionButton
+                    key={index}
+                    onClick={link.onClick}
+                    hotkey={link.name}
+                    icon={link.icon}
+                  />
+                </Tooltip>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
       <motion.div
-        layout
         style={{
           display: "flex",
           overflow: "hidden",
@@ -74,7 +99,7 @@ export default function Support() {
           transform: "translateY(0px)",
         }}
         transition={{
-          duration: 0.5,
+          duration: 0.8,
           ease: "easeInOut",
         }}
       >
