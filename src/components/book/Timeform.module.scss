@@ -14,6 +14,9 @@
   flex-direction: row;
   gap: 1ch;
 }
+button {
+  width: unset;
+}
 
 .footer div {
   justify-content: center !important;
@@ -41,7 +44,7 @@
 .cal {
   display: flex;
   flex-direction: column;
-  height: 15ch;
+  height: 15.25ch;
   gap: 1ch;
 }
 
