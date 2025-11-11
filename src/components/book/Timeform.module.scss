@@ -14,9 +14,7 @@
   flex-direction: row;
   gap: 1ch;
 }
-button {
-  width: unset;
-}
+
 
 .footer div {
   justify-content: center !important;
@@ -46,6 +44,9 @@ button {
   flex-direction: column;
   height: 15.25ch;
   gap: 1ch;
+  button {
+  width: unset;
+}
 }
 
 .loader {
