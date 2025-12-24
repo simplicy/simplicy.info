@@ -24,6 +24,7 @@
   gap: 1ch;
 }
 .nowplaying {
+  min-width: 6.5ch;
   align-items: center;
   color: var(--theme-text);
   fill: var(--theme-text);
@@ -40,8 +41,9 @@
     }
   }
 #time {
-color: var(--theme-text-secondary);
-font-size: 0.8em;
+  min-width: 7ch;
+  color: var(--theme-text-secondary);
+  font-size: 0.8em;
 }
 .ascii {
   position: absolute;
