@@ -233,12 +233,10 @@ export let work = [
     start: "2023",
     end: "Present",
     notes: [
-      "Analyzed partner networks to identify applications and services, designing solutions to transition customers and partners onto the company’s proprietary software platform.",
-      "Managed and deployed software solutions declaratively across distributed infrastructure using Portainer, GitLab, Kubernetes, and ArgoCD.",
-      "Built services using Terraform, Python and AWS to synchronize databases with external platforms such as Snowflake and Looker, streamlining data movement and integration.",
-      "Engineered integrations between core systems, external APIs, and healthcare platforms (Athena, Epic, Oracle Cerner) to enable real-time messaging, unified booking, and seamless cross-platform communication with Java Spring Boot, Oracle and React.",
-      "Leveraged AI-driven tools to analyze user and customer metrics, predicting cancellation risks, reducing churn, and improving long-term retention.",
-      "Maintained and optimized databases with migrations and updates in SQL and Rust, consolidating legacy brand databases into a unified Oracle-backed system.",
+      "Designed intelligent migration and integration strategies by analyzing partner ecosystems and application data, transitioning customers and partners to a proprietary platform while ensuring data integrity and continuity.",
+      "Architected and deployed scalable, cloud-native distributed systems on Kubernetes and AWS using Terraform, ArgoCD, and GitLab, supporting data-intensive and ML-enabled workloads.",
+      "Built end-to-end data pipelines and real-time integrations across internal platforms, external APIs, and healthcare systems to power messaging, booking, analytics, and ML-driven insights using Java Spring Boot, Oracle, React, and Rust.",
+      "Applied AI and ML techniques to user and customer data to build predictive models for churn and retention, while optimizing and consolidating large-scale databases to support analytics and model training.",
     ]
   },
   {
@@ -247,10 +245,10 @@ export let work = [
     start: "2021",
     end: "2023",
     notes: [
-      "Orchestrated the upkeep and administration of IT infrastructure, including virtual machine deployments, remote workstation updates via VPN, and end-to-end imaging, configuration, and troubleshooting of laptops and workstations for on-site and remote staff, leveraging NinjaRMM, AnyDesk, and Zendesk for lifecycle and remote support management.",
-      "Built and managed IVRs, phone numbers, and Twilio Shaken/Stir configurations to ensure secure, and reliable communication for our customers.",
-      "Created disaster recovery action plans to ensure 24/7 system reliability, safeguarding critical operations and client emergency lines.",
-      "Designed, developed, and deployed internal applications to extend booking system functionality and integrate with ServiceMinder, Zendesk, ServiceTitan, Google Calendar, and other 3rd party APIs.",
+
+      "Engineered and automated enterprise IT systems including virtual desktops, endpoint management, VPNs, and monitoring, supporting secure, scalable remote operations.",
+      "Designed and developed internal applications and integrations leveraging ServiceNow, Zendesk, ServiceTitan, and third-party APIs to automate workflows, data synchronization, and operational decision-making.",
+      "Built resilient communication infrastructure (IVRs, Twilio Shaken/Stir, call routing) and disaster recovery strategies to ensure high availability, data integrity, and system observability."
     ]
   },
   {
@@ -259,9 +257,9 @@ export let work = [
     start: "2015",
     end: "2020",
     notes: [
-      "Delivered on-site technical support during high-profile events (ship christenings, private island operations) and supported the setup of remote offices in Canada and the Caribbean, ensuring system stability, seamless connectivity, and workflow continuity for executive, management, and operations teams.",
-      "Partnered with the Disaster Recovery team to maintain uninterrupted operations for sales offices and local functions, ensuring business continuity during multiple severe weather events.",
-      "Leveraged ServiceNow to manage, triage, and route technical support requests for North American Operations, adhering to SLA standards and generating weekly reports to identify systemic issues and opportunities for improvement."
+      "Delivered technical support and infrastructure operations for large-scale, international environments, ensuring reliable systems during high-visibility events and distributed deployments.",
+      "Supported disaster recovery and continuity initiatives, maintaining uptime and data accessibility during severe weather and operational disruptions.",
+      "Leveraged ServiceNow data and SLA reporting to identify trends, improve resolution workflows, and drive continuous process optimization."
     ]
   },
 ]
