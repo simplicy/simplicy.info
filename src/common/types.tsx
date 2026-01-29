@@ -6,6 +6,16 @@ export type Card = {
   styles?: string | null;
 }
 
+export type Song = {
+  title: string;
+  album: string;
+  artist: string;
+  duration: number;
+  genre: string;
+  year: number;
+  img_url: string;
+}
+
 export type Game = {
   appid: number;
   name: string;

@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 import { bio } from "../common/vars.ts";
 import { useContext } from "./page/Context.tsx";
 import Loader from "./page/Loader.tsx";
-import { Game } from "../common/types.tsx";
+import { Game, Song } from "../common/types.tsx";
 import { useEffect, useState } from "react";
 import { scramble } from "../common/utilities.tsx";
 
@@ -24,25 +24,31 @@ export default function Biography() {
   let birthDate = new Date('1997-06-16');
   let age = new Date().getFullYear() - birthDate.getFullYear();
   let intro = "I am a " + age + " year old Software Developer born and raised in South Florida.";
-  const { delay, playing, isFetchingPlaying, refetchPlaying } = useContext() as {
+  const { delay, playing, isFetchingPlaying, refetchPlaying, nowplaying, refetchNowPlaying, isFetchingNowPlaying } = useContext() as {
     delay: number,
     playing: Game,
+    nowplaying: Song,
     refetchPlaying: () => void,
+    refetchNowPlaying: () => void,
     isFetchingPlaying: boolean,
+    isFetchingNowPlaying: boolean,
   }
   // rund to nearest hour
   const [game, setGame] = useState("");
   const [gametime, setGametime] = useState(playing ? Math.round(playing?.playtime_forever / 60) + " hours" : "");
-  const [song, _setSong] = useState("No recent songs");
+  const [song, setSong] = useState("No recent songs");
   useEffect(() => {
     setGame(playing ? playing.name : "Not Currently Playing");
     setGametime(playing ? Math.round(playing.playtime_forever / 60) + " hours" : "");
   }, [playing]);
 
-
   useEffect(() => {
-    if (!playing && !isFetchingPlaying)
+    if (!playing && !isFetchingPlaying) {
       refetchPlaying();
+    }
+    if (!nowplaying && !isFetchingNowPlaying) {
+      refetchNowPlaying();
+    }
     setTimeout(() => {
       const links = document.querySelectorAll('.scramble');
       for (const link of links) {
@@ -60,6 +66,11 @@ export default function Biography() {
       }
     }, delay * 1000 + 200);
   }, [playing]);
+  useEffect(() => {
+    setSong(nowplaying ?
+      // "[" + nowplaying.album + "] " + 
+      nowplaying.title + " - " + nowplaying.artist : "No recent songs");
+  }, [nowplaying]);
 
 
   return (
@@ -168,10 +179,16 @@ export default function Biography() {
                   </g>
                 </g>
               </svg>
-              <p
-                className="scramble"
-                title={song}
-              >00000000000000</p>
+              {isFetchingNowPlaying ?
+                <Loader />
+                :
+                <>
+                  <p
+                    className="scramble"
+                    title={song}
+                  >00000000000000</p>
+                </>
+              }
             </div>
           </div>
           <div className={styles.nowplaying}>
