@@ -200,6 +200,14 @@ export let links = [
     enabled: true
   },
   {
+    name: "DMS",
+    onClick: () => {
+      window.open("https://dms.sympil.com", "_blank");
+    },
+    description: "",
+    enabled: true
+  },
+  {
     name: "Sympil",
     onClick: () => {
       window.open("https://sympil.com", "_blank");
@@ -213,7 +221,7 @@ export let links = [
       window.open("https://ebay.com/usr/simplicy_0", "_blank");
     },
     description: "",
-    enabled: true
+    enabled: false
   },
   {
     name: "Ko-Fi",
@@ -221,7 +229,7 @@ export let links = [
       window.open("https://ko-fi.com/simplicy", "_blank");
     },
     description: "",
-    enabled: true
+    enabled: false
   },
 
 ];
