@@ -17,6 +17,7 @@ import Loader from "./page/Loader.tsx";
 import { Game, Song } from "../common/types.tsx";
 import { useEffect, useState } from "react";
 import { scramble } from "../common/utilities.tsx";
+import Badge from "../sacred/Badge.tsx";
 
 
 export default function Biography() {
@@ -163,7 +164,13 @@ export default function Biography() {
                       window.open(url, "_blank");
                     }}
                     title={game}>000000000000</p>
-                  <p id="time" className="scramble" title={" - " + gametime}>000000</p>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: isFetchingPlaying ? 0.3 : 1, duration: 0.5, ease: "easeInOut" }}
+                  >
+                    <Badge id="time">{gametime}</Badge>
+                  </motion.div>
                 </>
               }
             </div>
