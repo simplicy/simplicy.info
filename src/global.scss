@@ -1,3 +1,14 @@
+.Toastify__toast {
+  color: var(--theme-text);
+  background: var(--theme-background-modal);
+  box-shadow: 1ch 1ch 0 2px var(--theme-border-subdued);
+  border-radius: 0;
+  opacity: 1;
+  &:hover, &:focus {
+    box-shadow: 1ch 1ch 0 2px var(--theme-focused-foreground-subdued);
+  }
+}
+
 @font-face {
   font-family: 'CommitMono-Regular';
   src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/3fecb478-80cf-41c5-b834-8562ab0baae0.woff2') format('woff2');
@@ -582,6 +593,7 @@ body {
     width: auto;
   }
 }
+
 
 .scramble {
   overflow: hidden;

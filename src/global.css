@@ -1,0 +1,14 @@
+.Toastify__toast {
+  color: var(--theme-text);
+  background: var(--theme-background-modal);
+  box-shadow: 1ch 1ch 0 2px var(--theme-border-subdued);
+  svg {
+    fill: var(--theme-text);
+  }
+  border-radius: 0;
+  opacity: 1;
+  cursor: pointer;
+  &:hover, &:focus {
+    box-shadow: 1ch 1ch 0 2px var(--theme-focused-foreground-subdued);
+  }
+}
