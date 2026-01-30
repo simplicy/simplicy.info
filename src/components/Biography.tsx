@@ -66,7 +66,7 @@ export default function Biography() {
         scramble({ target: link });
       }
     }, delay * 1000 + 200);
-  }, [playing]);
+  }, [playing, nowplaying]);
   useEffect(() => {
     setSong(nowplaying ?
       // "[" + nowplaying.album + "] " + 
