@@ -37,9 +37,9 @@ export default function Biography() {
   // rund to nearest hour
   const [game, setGame] = useState("");
   const [gametime, setGametime] = useState(playing ? Math.round(playing?.playtime_forever / 60) + " hours" : "");
-  const [song, setSong] = useState("No recent songs");
+  const [song, setSong] = useState("Nothing playing");
   useEffect(() => {
-    setGame(playing ? playing.name : "Not Currently Playing");
+    setGame(playing ? playing.name : "Nothing playing");
     setGametime(playing ? Math.round(playing.playtime_forever / 60) + " hours" : "");
   }, [playing]);
 
@@ -70,7 +70,7 @@ export default function Biography() {
   useEffect(() => {
     setSong(nowplaying ?
       // "[" + nowplaying.album + "] " + 
-      nowplaying.title + " - " + nowplaying.artist : "No recent songs");
+      nowplaying.title + " - " + nowplaying.artist : "Nothing playing");
   }, [nowplaying]);
 
 
@@ -178,7 +178,7 @@ export default function Biography() {
             <div className={styles.nowplaying}>
               <div className={nowplaying?.title ? styles.spinner : styles.normal}>
                 <svg width="12px" height="12px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M12,23 C5.92486775,23 1,18.0751322 1,12 C1,5.92486775 5.92486775,1 12,1 C18.0751322,1 23,5.92486775 23,12 C23,18.0751322 18.0751322,23 12,23 Z M12,21 C16.9705627,21 21,16.9705627 21,12 C21,7.02943725 16.9705627,3 12,3 C7.02943725,3 3,7.02943725 3,12 C3,16.9705627 7.02943725,21 12,21 Z M12,7 L12,5 C15.8659932,5 19,8.13400675 19,12 L17,12 C17,9.23857625 14.7614237,7 12,7 Z M12,15 C10.3431458,15 9,13.6568542 9,12 C9,10.3431458 10.3431458,9 12,9 C13.6568542,9 15,10.3431458 15,12 C15,13.6568542 13.6568542,15 12,15 Z M12,13 C12.5522847,13 13,12.5522847 13,12 C13,11.4477153 12.5522847,11 12,11 C11.4477153,11 11,11.4477153 11,12 C11,12.5522847 11.4477153,13 12,13 Z" />
+                  <path fillRule="evenodd" d="M12,23 C5.92486775,23 1,18.0751322 1,12 C1,5.92486775 5.92486775,1 12,1 C18.0751322,1 23,5.92486775 23,12 C23,18.0751322 18.0751322,23 12,23 Z M12,21 C16.9705627,21 21,16.9705627 21,12 C21,7.02943725 16.9705627,3 12,3 C7.02943725,3 3,7.02943725 3,12 C3,16.9705627 7.02943725,21 12,21 Z M12,7 L12,5 C15.8659932,5 19,8.13400675 19,12 L17,12 C17,9.23857625 14.7614237,7 12,7 Z M12,15 C10.3431458,15 9,13.6568542 9,12 C9,10.3431458 10.3431458,9 12,9 C13.6568542,9 15,10.3431458 15,12 C15,13.6568542 13.6568542,15 12,15 Z M12,13 C12.5522847,13 13,12.5522847 13,12 C13,11.4477153 12.5522847,11 12,11 C11.4477153,11 11,11.4477153 11,12 C11,12.5522847 11.4477153,13 12,13 Z" />
                 </svg>
               </div>
               {isFetchingNowPlaying ?
@@ -196,7 +196,7 @@ export default function Biography() {
           <div className={styles.nowplaying}>
             <div className={styles.nowplaying}>
               <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                width="12px" height="12px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" >
+                width="12px" height="12px" viewBox="0 0 64 64" enableBackground="new 0 0 64 64" >
                 <path d="M32,0C18.746,0,8,10.746,8,24c0,5.219,1.711,10.008,4.555,13.93c0.051,0.094,0.059,0.199,0.117,0.289l16,24
 	C29.414,63.332,30.664,64,32,64s2.586-0.668,3.328-1.781l16-24c0.059-0.09,0.066-0.195,0.117-0.289C54.289,34.008,56,29.219,56,24
 	C56,10.746,45.254,0,32,0z M32,32c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S36.418,32,32,32z"/>
