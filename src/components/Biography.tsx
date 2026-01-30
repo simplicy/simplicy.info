@@ -67,8 +67,9 @@ export default function Biography() {
       }
     }, delay * 1000 + 200);
   }, [playing, nowplaying]);
+
   useEffect(() => {
-    setSong(nowplaying ?
+    setSong(nowplaying && nowplaying.title ?
       // "[" + nowplaying.album + "] " + 
       nowplaying.title + " - " + nowplaying.artist : "Nothing playing");
   }, [nowplaying]);
