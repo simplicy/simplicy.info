@@ -27,8 +27,7 @@
 // spinning animation
 .spinner{
   svg{
-    //transform x 
-    display: flex;
+    display: block;
     justify-self: center;
     width: 1.05em;
     height: 1.05em;
