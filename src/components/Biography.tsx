@@ -145,6 +145,7 @@ export default function Biography() {
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
+          gap: "0.5ch"
         }}>
           <div style={{
             display: "flex",
