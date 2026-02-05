@@ -10,21 +10,22 @@
 }
 .app {
   text-align: left;
-  &:hover,&:focus {
-    cursor: pointer;
-    div:has(div) div{
-      background-color: var(--theme-focused-foreground);
-    }
-  }
   box-shadow: 1ch 1ch 0 0 var(--theme-border-subdued);
   section {
     padding: 1ch;
   }
 }
+.appButtons {
+  display: flex;
+  gap: .5ch;
+  justify-content: start;
+}
+
 .appInfo{
   padding-top: .5ch;
   display: flex;
   flex-direction: column;
+  fill: var(--theme-text);
 }
 
 .actionButton {

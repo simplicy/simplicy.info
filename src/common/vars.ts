@@ -31,7 +31,7 @@ export const apps = [
   },
   {
     name: "SMTPI",
-    date: "June 2025",
+    date: "JUN 2023",
     description: "An application to support my portfolio site. Built to interact with many external APIs  and services (Steam, SMTP, Subsonic, and more) to make the data usable for my portfolio site.",
     link: "https://git.sympil.com/git/simplicy/smtpi",
     version: "",
@@ -40,9 +40,10 @@ export const apps = [
   {
     name: "CLOSYT",
     image: "",
-    date: "AUG 2025",
+    date: "MAR 2025",
     description: "An peronal outfit planner. Enables users to plan and organize their closet digitally. Built using a Rust API and a React front end. Users are handled by Keycloak and images and outfit data are handled by SurrealDB.",
     link: "https://closyt.com",
+    git: "https://git.sympil.com/git/closyt/closyt",
     version: "",
     tags: ["Rust", "TS", "React", "API"],
   },
@@ -52,6 +53,7 @@ export const apps = [
     date: "AUG 2025",
     description: "A personal pinging application. Pings the user everday to check-in. Notifies the user's email list when they miss a check-in. Has an API to handle the UI interactions and a Scheduler to handle the pings.",
     link: "https://dms.sympil.com",
+    git: "https://git.sympil.com/git/simplicy/dms",
     version: "",
     tags: ["Rust", "CLI", "API"],
   }

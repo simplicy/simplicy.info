@@ -7,12 +7,14 @@ import Badge from "../sacred/Badge";
 import Indent from "../sacred/Indent";
 import Avatar from "../sacred/Avatar";
 import Divider from "../sacred/Divider";
+import ActionButton from "../sacred/ActionButton";
+import Gitea from "../common/assets/gitea.svg";
+import Link from "../common/assets/link.svg";
 export default function Projects() {
   const navigate = useNavigate();
 
   return (
     <motion.div
-      layout
       style={{
         display: "flex",
         padding: "2ch",
@@ -61,13 +63,7 @@ export default function Projects() {
                 ease: "easeInOut",
               }}
             >
-              <button className={styles.app}
-                onClick={() => {
-                  if (app.link && app.link !== "") {
-                    window.open(app.link, "_blank");
-                  }
-                }}
-              >
+              <div className={styles.app} >
                 <Avatar src={app.image && app.image} target="_blank" style={{
                   width: "7ch",
                   height: "7ch",
@@ -81,6 +77,32 @@ export default function Projects() {
                     justifyContent: "space-between",
                   }}>
                     <p className={styles.appName}>{app.name}</p>
+
+                    <div className={styles.appButtons}>
+                      {app.link &&
+                        <ActionButton
+                          icon={Link}
+                          onClick={() => {
+                            if (app.link && app.link !== "") {
+                              window.open(app.link, "_blank");
+                            }
+                          }}
+                          hotkey="View"
+                        />
+                      }
+                      {app.git &&
+                        <ActionButton
+                          icon={Gitea}
+                          onClick={() => {
+                            if (app.git && app.git !== "") {
+                              window.open(app.git, "_blank");
+                            }
+                          }}
+                          hotkey="Git"
+                        />
+                      }
+                    </div>
+
                   </Indent>
                   <span className={styles.appHeader}>
                     <span className={styles.appTags}>
@@ -95,7 +117,7 @@ export default function Projects() {
                 </Avatar>
                 <p className={styles.appInfo}>{app.description}</p>
                 <Divider type="DOUBLE" />
-              </button>
+              </div>
             </motion.div>
           )
         })}
