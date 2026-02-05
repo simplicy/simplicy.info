@@ -1,0 +1,52 @@
+.appHeader {
+  display: flex;
+  min-height: 7ch;
+  gap: .5ch;
+  justify-content: space-between;
+  flex-direction: column;
+  p {
+    text-align: end;
+  }
+}
+.app {
+  &:hover,&:focus {
+    cursor: pointer;
+  }
+}
+.appInfo{
+  padding-top: .5ch;
+  display: flex;
+  flex-direction: column;
+}
+
+.actionButton {
+  background-color: unset !important;
+}
+.appTags {
+  gap: 1ch;
+  width: 20ch;
+  justify-content: end;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  span{
+    transition: unset;
+  }
+}
+.root{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2ch;
+  width: 100%;
+  align-self: center;
+  @media (min-width: 768px) {
+    max-width: 50ch;
+  }
+  
+}
+.footer {
+  padding: 1ch;
+  display: grid;
+  align-self: end;
+}

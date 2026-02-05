@@ -48,6 +48,12 @@ export default function Homeview() {
       enabled: true,
     },
     {
+      name: "Projects",
+      onClick: () => { navigate("projects"); },
+      styles: null,
+      enabled: true,
+    },
+    {
       name: "Resume",
       onClick: () => { navigate("work"); },
       styles: null,

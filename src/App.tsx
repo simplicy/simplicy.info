@@ -10,6 +10,7 @@ import Support from './pages/Support.tsx';
 import { useEffect } from 'react';
 import BookForm from './pages/Book.tsx';
 import ContactForm from './pages/Contact.tsx';
+import Projects from './pages/Projects.tsx';
 
 function App() {
   useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
         <Route index element={<Home />} />
         {/* <Route path="portfolio" element={<Portfolio />} /> */}
         <Route path="support" element={<Support />} />
+        <Route path="projects" element={<Projects />} />
         <Route path="work" element={<Work />} />
         <Route path="contact-me" element={<Contact />} />
         <Route path="book" element={<BookForm />} />

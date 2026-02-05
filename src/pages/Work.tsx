@@ -33,7 +33,9 @@ export default function Work() {
       }}
     >
       <div className={styles.root}>
-        <Timeline list={work} />
+        {/* <Timeline list={work} /> */}
+
+
         <motion.div
           layout
           style={{

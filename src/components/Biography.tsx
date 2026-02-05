@@ -167,13 +167,15 @@ export default function Biography() {
                       window.open(url, "_blank");
                     }}
                     title={game}>000000000000</p>
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: isFetchingPlaying ? 0.3 : 1, duration: 0.5, ease: "easeInOut" }}
-                  >
-                    <Badge id="time">{gametime}</Badge>
-                  </motion.div>
+                  {playing &&
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: isFetchingPlaying ? 0.3 : 1, duration: 0.5, ease: "easeInOut" }}
+                    >
+                      <Badge id="time">{gametime}</Badge>
+                    </motion.div>
+                  }
                 </>
               }
             </div>

@@ -19,6 +19,36 @@ export const banner = {
   enabled: false,
 }
 
+export const apps = [
+  {
+    name: "SIMPLICY.INFO",
+    image: "",
+    date: "JAN 2023",
+    description: "My portfolio site built with React. The site is built to be highly customizable and configurable using variables. It interacts with SMTPI to get data and handle UI interactions.",
+    link: "https://simplicy.info",
+    version: "",
+    tags: ["JS", "React", "TS"],
+  },
+  {
+    name: "SMTPI",
+    image: "public/clothes-hanger.svg",
+    date: "June 2025",
+    description: "An application to support my portfolio site. Built to interact with many external APIs  and services (Steam, SMTP, Subsonic, and more) to make the data usable for my portfolio site.",
+    link: "https://git.sympil.com/git/simplicy/smtpi",
+    version: "",
+    tags: ["Rust", "CLI", "API"],
+  },
+  {
+    name: "DMS",
+    image: "",
+    date: "AUG 2025",
+    description: "A personal pinging application. Pings the user everday to check-in. Notifies the user's email list when they miss a check-in. Has an API to handle the UI interactions and a Scheduler to handle the pings.",
+    link: "https://dms.sympil.com",
+    version: "",
+    tags: ["Rust", "CLI", "API"],
+  }
+];
+
 
 export const fonts = [
   {
