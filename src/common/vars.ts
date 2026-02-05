@@ -43,7 +43,6 @@ export const apps = [
     date: "MAR 2025",
     description: "An peronal outfit planner. Enables users to plan and organize their closet digitally. Built using a Rust API and a React front end. Users are handled by Keycloak and images and outfit data are handled by SurrealDB.",
     link: "https://closyt.com",
-    git: "https://git.sympil.com/git/closyt/closyt",
     version: "",
     tags: ["Rust", "TS", "React", "API"],
   },
