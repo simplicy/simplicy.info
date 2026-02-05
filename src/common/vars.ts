@@ -1,7 +1,6 @@
 import * as Utilities from './utilities';
 import Insta from "./assets/insta.svg";
 import XLogo from "./assets/x.svg";
-import Hanger from "./assets/clothes-hanger.svg";
 import LinkedIn from "./assets/linkedin.svg";
 import Github from "./assets/github.svg";
 import Gitea from "./assets/gitea.svg";
