@@ -24,6 +24,9 @@ export default function Biography() {
   let navigate = useNavigate();
   let birthDate = new Date('1997-06-16');
   let age = new Date().getFullYear() - birthDate.getFullYear();
+  if (new Date().getMonth() < birthDate.getMonth() || (new Date().getMonth() === birthDate.getMonth() && new Date().getDate() < birthDate.getDate())) {
+    age--;
+  }
   let intro = "I am a " + age + " year old Software Developer born and raised in South Florida.";
   const { delay, playing, isFetchingPlaying, refetchPlaying, nowplaying, refetchNowPlaying, isFetchingNowPlaying } = useContext() as {
     delay: number,
