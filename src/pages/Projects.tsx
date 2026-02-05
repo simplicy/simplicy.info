@@ -3,10 +3,10 @@ import styles from "./style/Projects.module.scss";
 import { apps } from "../common/vars";
 import ButtonCards from "../components/ButtonCards";
 import { useNavigate } from "react-router-dom";
-import Card from "../sacred/Card";
 import Badge from "../sacred/Badge";
 import Indent from "../sacred/Indent";
 import Avatar from "../sacred/Avatar";
+import Divider from "../sacred/Divider";
 export default function Projects() {
   const navigate = useNavigate();
 
@@ -16,6 +16,7 @@ export default function Projects() {
       style={{
         display: "flex",
         padding: "2ch",
+        outline: "none",
         overflowY: "auto",
         flexGrow: 1,
         flexDirection: "column",
@@ -60,42 +61,41 @@ export default function Projects() {
                 ease: "easeInOut",
               }}
             >
-              <div className={styles.app}
+              <button className={styles.app}
                 onClick={() => {
                   if (app.link && app.link !== "") {
                     window.open(app.link, "_blank");
                   }
                 }}
               >
-                <Card key={i + app.name}>
-                  <Avatar src={app.image && app.image} target="_blank" style={{
-                    width: "7ch",
-                    height: "7ch",
+                <Avatar src={app.image && app.image} target="_blank" style={{
+                  width: "7ch",
+                  height: "7ch",
+                }}>
+                  <Indent style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    width: "100%",
+                    fontSize: "2ch",
+                    fontWeight: "bold",
+                    justifyContent: "space-between",
                   }}>
-                    <Indent style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      width: "100%",
-                      fontSize: "2ch",
-                      fontWeight: "bold",
-                      justifyContent: "space-between",
-                    }}>
-                      <p className={styles.appName}>{app.name}</p>
-                    </Indent>
-                    <div className={styles.appHeader}>
-                      <div className={styles.appTags}>
-                        {app.tags.map((tag: string, i: any) =>
-                          <Badge key={i + tag + app.name}>
-                            {tag}
-                          </Badge>
-                        )}
-                      </div>
-                      <p className={styles.appDate}>{app.date}</p>
-                    </div>
-                  </Avatar>
-                  <p className={styles.appInfo}>{app.description}</p>
-                </Card>
-              </div>
+                    <p className={styles.appName}>{app.name}</p>
+                  </Indent>
+                  <span className={styles.appHeader}>
+                    <span className={styles.appTags}>
+                      {app.tags.map((tag: string, i: any) =>
+                        <Badge key={i + tag + app.name}>
+                          {tag}
+                        </Badge>
+                      )}
+                    </span>
+                    <p className={styles.appDate}>{app.date}</p>
+                  </span>
+                </Avatar>
+                <p className={styles.appInfo}>{app.description}</p>
+                <Divider type="DOUBLE" />
+              </button>
             </motion.div>
           )
         })}

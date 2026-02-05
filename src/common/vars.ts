@@ -1,6 +1,7 @@
 import * as Utilities from './utilities';
 import Insta from "./assets/insta.svg";
 import XLogo from "./assets/x.svg";
+import Hanger from "./assets/clothes-hanger.svg";
 import LinkedIn from "./assets/linkedin.svg";
 import Github from "./assets/github.svg";
 import Gitea from "./assets/gitea.svg";
@@ -31,12 +32,20 @@ export const apps = [
   },
   {
     name: "SMTPI",
-    image: "public/clothes-hanger.svg",
     date: "June 2025",
     description: "An application to support my portfolio site. Built to interact with many external APIs  and services (Steam, SMTP, Subsonic, and more) to make the data usable for my portfolio site.",
     link: "https://git.sympil.com/git/simplicy/smtpi",
     version: "",
     tags: ["Rust", "CLI", "API"],
+  },
+  {
+    name: "CLOSYT",
+    image: "",
+    date: "AUG 2025",
+    description: "An peronal outfit planner. Enables users to plan and organize their closet digitally. Built using a Rust API and a React front end. Users are handled by Keycloak and images and outfit data are handled by SurrealDB.",
+    link: "https://closyt.com",
+    version: "",
+    tags: ["Rust", "TS", "React", "API"],
   },
   {
     name: "DMS",

@@ -45,7 +45,7 @@ export default function Support() {
     >
       <div className={styles.root}>
         <p className="scramble" title="If you would like to support me or my work, there are a couple ways to do so.">
-          00000000000 00000000000 00000000000 00000000000 00000000000 00000000000
+          00000000000 00000000000 00000000000
         </p>
 
         <div className={styles.header} >

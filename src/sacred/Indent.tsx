@@ -8,9 +8,9 @@ interface IndentProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const Indent: React.FC<IndentProps> = ({ children, ...rest }) => {
   return (
-    <div className={styles.root} {...rest}>
+    <span className={styles.root} {...rest}>
       {children}
-    </div>
+    </span>
   );
 };
 
