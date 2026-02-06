@@ -77,7 +77,6 @@ export default function Projects() {
                     justifyContent: "space-between",
                   }}>
                     <p className={styles.appName}>{app.name}</p>
-
                     <div className={styles.appButtons}>
                       {app.link &&
                         <ActionButton

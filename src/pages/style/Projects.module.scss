@@ -2,6 +2,7 @@
   display: flex;
   min-height: 7ch;
   gap: .5ch;
+  width: 100%;
   justify-content: space-between;
   flex-direction: column;
   p {
@@ -33,7 +34,6 @@
 }
 .appTags {
   gap: 1ch;
-  width: 20ch;
   justify-content: end;
   display: flex;
   flex-direction: row;
