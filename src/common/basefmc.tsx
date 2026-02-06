@@ -11,6 +11,7 @@ export class BaseFmc<M, C, U> {
     this.#cmd_suffix = cmd_suffix;
   }
 
+
   async get(path: string, token?: string): Promise<M> {
     let headers: any = {
       'Content-Type': 'application/json',
@@ -20,7 +21,12 @@ export class BaseFmc<M, C, U> {
       headers['Authorization'] = 'Bearer ' + token;
     }
     const url = this.cmd_suffix ? `/api/${this.cmd_suffix}/${path}` : `/api/${path}`;
-    return fetch(url, { method: 'GET', headers }).then((res) => res.json()).then((res) => {
+    return fetch(url, { method: 'GET', headers }).then(async (res) => {
+      if (res.headers.get('Content-Disposition')) {
+        return res.blob();
+      }
+      return res.json()
+    }).then((res) => {
       if (res.error) {
         toast.error(res.message);
         return false;
@@ -31,6 +37,7 @@ export class BaseFmc<M, C, U> {
         }
         return res.data;
       }
+      return res
     }).catch((error) => {
       toast.error("Error Ocurred:" + error.message)
       console.error('Error:', error);
@@ -238,6 +245,7 @@ export class BaseFmc<M, C, U> {
         return "";
       });
   }
+
 
   async index(): Promise<M[]> {
     const headers = {

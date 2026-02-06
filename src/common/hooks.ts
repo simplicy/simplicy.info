@@ -4,12 +4,20 @@ import { contactFmc } from "./models/contact";
 import { steamFmc } from "./models/steam";
 import { calendarFmc } from "./models/calendar";
 import { subsonicFmc } from "./models/subsonic";
+import { filesFmc } from "./models/files";
 
 export const useContact = (
   data: EmailForCreate,
 ) => useQuery('contact', async () => {
   return await contactFmc.post(data, "contact").then((data) => {
     return data;
+  });
+}, { enabled: false });
+
+export const useFiles = (
+) => useQuery('files', async () => {
+  return await filesFmc.get("").then((data) => {
+    return URL.createObjectURL(data);
   });
 }, { enabled: false });
 

@@ -1,11 +1,22 @@
 import { motion } from "framer-motion";
 import styles from "./style/Work.module.scss";
-import Timeline from "../components/Timeline";
 import { work } from "../common/vars";
 import ButtonCards from "../components/ButtonCards";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "../components/page/Context";
+import { useEffect } from "react";
+import Loader from "../components/page/Loader";
 export default function Work() {
   const navigate = useNavigate();
+  const { file, isFetchingFile, refetchFile } = useContext() as {
+    file: string,
+    refetchFile: () => void,
+    isFetchingFile: boolean,
+  }
+  useEffect(() => {
+    refetchFile();
+  }, []);
+
   return (
     <motion.div
       layout
@@ -28,12 +39,15 @@ export default function Work() {
         transform: "translateY(0px)",
       }}
       transition={{
+        delay: isFetchingFile ? 0 : 0.4,
         duration: 0.5,
         ease: "easeInOut",
       }}
     >
       <div className={styles.root}>
-        <Timeline list={work} />
+        {isFetchingFile ? <Loader /> :
+          <iframe src={file} className={styles.pdf} />
+        }
         <motion.div
           layout
           style={{

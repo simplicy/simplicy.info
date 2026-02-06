@@ -55,7 +55,7 @@ export default function Homeview() {
     },
     {
       name: "Resume",
-      onClick: () => { navigate("work"); },
+      onClick: () => { navigate("resume"); },
       styles: null,
       enabled: true,
     },

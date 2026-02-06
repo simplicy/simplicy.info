@@ -5,7 +5,7 @@ import { fonts, themes } from '../../common/vars';
 import { toggleDebugGrid } from '../../sacred/DebugGrid';
 import { useEffect } from 'react';
 import * as Utilities from '../../common/utilities';
-import { useNowPlaying, usePlaying } from '../../common/hooks';
+import { useFiles, useNowPlaying, usePlaying } from '../../common/hooks';
 import { Game, Song } from '../../common/types';
 
 interface ContextType {
@@ -17,6 +17,9 @@ interface ContextType {
   refetchPlaying: () => void;
   isFetchingNowPlaying: boolean;
   isFetchingPlaying: boolean;
+  isFetchingFile: boolean;
+  refetchFile: () => void;
+  file: any;
   currentMonth: number;
   delay: number;
 }
@@ -34,6 +37,12 @@ export const Provider: React.FC<{ children: React.ReactNode }> = ({ children }) 
     refetch: () => void;
     isFetching: boolean;
   };
+  const { data: file, refetch: refetchFile, isFetching: isFetchingFile } = useFiles() as {
+    data: any;
+    refetch: () => void;
+    isFetching: boolean;
+  };
+
   const { data: playing, refetch: refetchPlaying, isFetching: isFetchingPlaying } = usePlaying() as {
     data: Game[];
     refetch: () => void;
@@ -71,6 +80,9 @@ export const Provider: React.FC<{ children: React.ReactNode }> = ({ children }) 
   return (
     <Context.Provider value={{
       playing,
+      file,
+      refetchFile,
+      isFetchingFile,
       nowplaying,
       refetchNowPlaying,
       refetchPlaying,
