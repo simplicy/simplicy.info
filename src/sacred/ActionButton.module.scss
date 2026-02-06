@@ -10,11 +10,6 @@
   display: flex;
   height: 2.1ch;
   transform: scale(1);
-  @media (max-width: 768px) {
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
   &:focus  {
     background: var(--theme-focused-foreground);
   }
