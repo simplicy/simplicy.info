@@ -46,7 +46,13 @@ export default function Work() {
     >
       <div className={styles.root}>
         {isFetchingFile ? <Loader /> :
-          <iframe src={file} className={styles.pdf} />
+
+          <object data={file} type="application/pdf" width="100%" height="100%">
+            <iframe src={file} width="100%" height="100%">
+              <p>This browser does not support PDFs. Please download the PDF to view it:
+                <a href={file}>Download PDF</a></p>
+            </iframe>
+          </object>
         }
         <motion.div
           layout
