@@ -209,9 +209,7 @@ export default function Biography() {
 	C56,10.746,45.254,0,32,0z M32,32c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S36.418,32,32,32z"/>
               </svg>
               <p
-                className="scramble"
-                title="USA"
-              >000</p>
+              >USA</p>
             </div>
           </div>
         </div>
@@ -254,7 +252,6 @@ export default function Biography() {
           </div>
         </motion.div>
       }
-
     </div >
   )
 }
