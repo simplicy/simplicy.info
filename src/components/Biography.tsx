@@ -95,15 +95,13 @@ export default function Biography() {
               justifyContent: "space-between",
             }}>
 
-              <p className="scramble" title={Package.author}>0000000000</p>
+              <p>{Package.author}</p>
               <p
-                className="scramble"
                 style={{
                   transition: "color 0.3s ease",
                   color: "var(--theme-focused-foreground)",
                 }}
-                title={bio.title}
-              >0000000000</p>
+              >{bio.title}</p>
             </Indent>
             <div className={styles.icons}>
               {items.map((item, index) => {
