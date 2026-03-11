@@ -56,7 +56,17 @@ export const apps = [
     git: "https://git.sympil.com/git/simplicy/dms",
     version: "",
     tags: ["Rust", "CLI", "API"],
-  }
+  },
+  {
+    name: "TTYT",
+    image: "",
+    date: "JAN 2026",
+    description: "A Rust TUI blogging app. Users can download and run the applications locally. It is currently hosted on my domain's SSH port, or users can install to view their own MD files on their machine. Blog posts are stored as MD files and are read by the application on connection/launch.",
+    link: "",
+    git: "https://git.sympil.com/git/simplicy/ttyt",
+    version: "",
+    tags: ["Rust", "CLI", "TUI"],
+  },
 ];
 
 
