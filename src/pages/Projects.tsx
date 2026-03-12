@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import styles from "./style/Projects.module.scss";
 import { apps } from "../common/vars";
 import ButtonCards from "../components/ButtonCards";
+import { toast } from "react-toastify";
+import Copy from "../common/assets/copy.svg";
 import { useNavigate } from "react-router-dom";
 import Badge from "../sacred/Badge";
 import Indent from "../sacred/Indent";
@@ -87,6 +89,18 @@ export default function Projects() {
                             }
                           }}
                           hotkey="View"
+                        />
+                      }
+                      {app.copytext &&
+                        <ActionButton
+                          icon={Copy}
+                          onClick={() => {
+                            if (app.copytext && app.copytext !== "") {
+                              navigator.clipboard.writeText(app.copytext);
+                              toast.info("Copied to clipboard");
+                            }
+                          }}
+                          hotkey="Connect"
                         />
                       }
                       {app.git &&
