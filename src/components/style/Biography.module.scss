@@ -1,10 +1,12 @@
 .root{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1ch;
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
+  overflow: hidden;
+  overflow-Y: auto;
   width: 100%;
   @media (max-width: 668px) {
     padding:0  2ch;
